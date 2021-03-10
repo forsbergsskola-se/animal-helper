@@ -6,13 +6,16 @@ namespace Gatcha
     public class GatchaCalculator : MonoBehaviour
     {
         public int[] GatchaTable = { 40, 30, 20, 8, 2 };
-        //Rarity: White: Common, Green: Uncommon, Blue: Rare, Purple: Epic, Gold: Ledgendary
-        //White: 20, Green: 40, Blut: 30, Purple: 8, Gold: 2
+        //Rarity: White: Common, Green: Uncommon, Blue: Rare, Purple: Epic, Gold: Legendary
+        //White: 30, Green: 40, Blue: 20, Purple: 8, Gold: 2
+
+        public GatchaScriptableObjects[] PlayerItems = { };
 
         private void Start()
         {
             /// <41
             /// <31
+            
         }
     }
 }

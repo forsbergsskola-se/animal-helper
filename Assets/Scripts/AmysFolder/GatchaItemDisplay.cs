@@ -8,6 +8,7 @@ namespace Gatcha
     public class GatchaItemDisplay : MonoBehaviour
     {
         public GatchaScriptableObjects[] gatchaItem = { };
+        // Add var of X to be the number of which the rarity has in the list/array for it later in the desplaying.
         public Text rarityText;
         public Image artworkImage;
         public Text amount;
@@ -18,6 +19,7 @@ namespace Gatcha
            foreach(GatchaScriptableObjects i in gatchaItem)
             {
                 //Debug.Log(i.gatchaItemRarity, i);
+                
                 rarityText.text = i.gatchaItemRarity;
                 artworkImage.sprite = i.gatchaItemSprite;
                 amount.text = i.gatchaItemAmount.ToString();

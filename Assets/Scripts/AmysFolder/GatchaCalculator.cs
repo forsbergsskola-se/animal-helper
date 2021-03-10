@@ -5,11 +5,16 @@ namespace Gatcha
 {
     public class GatchaCalculator : MonoBehaviour
     {
-        public int[] GatchaTable = { 40, 30, 20, 8, 2 };
+        public int[] GatchaTableDropRate = { 40, 30, 20, 8, 2 };
         //Rarity: White: Common, Green: Uncommon, Blue: Rare, Purple: Epic, Gold: Legendary
         //White: 30, Green: 40, Blue: 20, Purple: 8, Gold: 2
 
-        public GatchaScriptableObjects[] PlayerItems = { };
+        //Make Arrays for all the Pieces in Display. Text rarity, Image sprite, Text amount ++, color for the sprite.
+        //Each rarity should be able to hold there own thing.
+        public string[] rarities; //Call for its name + Color
+        //  Or
+        public GatchaScriptableObjects[] gatchaRarities = { };
+        public GatchaScriptableObjects[] GatchaItems = { };
 
         private void Start()
         {

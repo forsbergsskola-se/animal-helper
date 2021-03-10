@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: 2392c75a932cafd42a586f545417f1a4, type: 2}
+  - {fileID: 0}
   rarityText: {fileID: 619967439}
   artworkImage: {fileID: 49893983}
   amount: {fileID: 630313547}
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: 59dcd0888df2b1948b203720b9c1ff9e, type: 2}
+  - {fileID: 0}
   rarityText: {fileID: 1624604226}
   artworkImage: {fileID: 133748048}
   amount: {fileID: 1388176755}
@@ -493,13 +493,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91df0edabf59164b9229f89ab3ab7ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GatchaTable: 280000001e000000140000000800000002000000
-  PlayerItems:
-  - {fileID: 11400000, guid: ce98123999d5de2489835fd8a2d93bb9, type: 2}
-  - {fileID: 11400000, guid: 1184af74060b28244887b495b893afcb, type: 2}
-  - {fileID: 11400000, guid: 59dcd0888df2b1948b203720b9c1ff9e, type: 2}
-  - {fileID: 11400000, guid: 2392c75a932cafd42a586f545417f1a4, type: 2}
-  - {fileID: 11400000, guid: 1a9db5de1607df840af2571fb7cfe08f, type: 2}
+  GatchaTableDropRate: 280000001e000000140000000800000002000000
+  rarities:
+  - Common
+  - Uncommon
+  - Rare
+  - Epic
+  - Legendary
+  gatchaRarities:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  GatchaItems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &408975504
 Transform:
   m_ObjectHideFlags: 0
@@ -611,6 +623,7 @@ RectTransform:
   - {fileID: 133748047}
   - {fileID: 49893981}
   - {fileID: 1618684080}
+  - {fileID: 1146279922}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -855,6 +868,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701700634}
+  m_CullTransparentMesh: 1
+--- !u!1 &1146279921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146279922}
+  - component: {fileID: 1146279924}
+  - component: {fileID: 1146279923}
+  m_Layer: 5
+  m_Name: GatchaDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1146279922
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146279921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 575334477}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 390, y: 90}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1146279923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146279921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1146279924
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146279921}
   m_CullTransparentMesh: 1
 --- !u!1 &1198248578
 GameObject:
@@ -1188,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: 1a9db5de1607df840af2571fb7cfe08f, type: 2}
+  - {fileID: 0}
   rarityText: {fileID: 1760949956}
   artworkImage: {fileID: 1618684082}
   amount: {fileID: 701700636}
@@ -1638,7 +1726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: 1184af74060b28244887b495b893afcb, type: 2}
+  - {fileID: 0}
   rarityText: {fileID: 1646052710}
   artworkImage: {fileID: 1850626465}
   amount: {fileID: 1230198185}
@@ -1892,7 +1980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: ce98123999d5de2489835fd8a2d93bb9, type: 2}
+  - {fileID: 0}
   rarityText: {fileID: 1856978918}
   artworkImage: {fileID: 1949691433}
   amount: {fileID: 1860928667}
@@ -1927,11 +2015,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatchaItem:
-  - {fileID: 11400000, guid: ce98123999d5de2489835fd8a2d93bb9, type: 2}
-  - {fileID: 11400000, guid: 1184af74060b28244887b495b893afcb, type: 2}
-  - {fileID: 11400000, guid: 59dcd0888df2b1948b203720b9c1ff9e, type: 2}
-  - {fileID: 11400000, guid: 2392c75a932cafd42a586f545417f1a4, type: 2}
-  - {fileID: 11400000, guid: 1a9db5de1607df840af2571fb7cfe08f, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   rarityText: {fileID: 0}
   artworkImage: {fileID: 0}
   amount: {fileID: 0}

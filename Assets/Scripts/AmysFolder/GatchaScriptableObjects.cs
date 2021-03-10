@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 namespace Gatcha
 {
-    [CreateAssetMenu(fileName = "New Gatcha Item", menuName = "Gatcha Scriptable Object")]
+    [CreateAssetMenu(fileName = "New Gatcha Item", menuName = "Gatcha Scriptable Object Item")]
     public class GatchaScriptableObjects : ScriptableObject
     {
         

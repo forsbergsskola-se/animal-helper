@@ -7,7 +7,7 @@ public class SpawnCar : MonoBehaviour
     public GameObject Car;
     private GameObject frontWheel;
     private GameObject backWheel;
-    public Vector2 connectedAnchor;
+    private Vector2 connectedAnchor;
 
     private WheelJoint2D[] wheelJoints;
 

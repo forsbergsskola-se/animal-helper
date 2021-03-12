@@ -8,39 +8,32 @@ public class MoveCar : MonoBehaviour
     public Text distanceText;
    
     public float speed = 5f;
-    public float turnSpeed = 2f;
-    private float horizontalInput;
-    private Rigidbody rb;
-    private Vector3 startPos;
+
+
+    private Rigidbody2D rb;
+    private Vector2 startPos;
+    private Vector2 distance;
 
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         startPos = rb.transform.position;
     }
     
     private void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        rb.AddForce(Vector3.forward * speed);
-        //Vector3 forwardMove = transform.forward * speed; 
+        //rb.AddForce(Vector2.right * speed);
 
-        // rb.transform.position = startPos;
-        var distance = rb.transform.position - startPos;
-        distanceText.text = distance.ToString();                  
+         distance = rb.position - startPos;
+        distanceText.text = "Distance: " + Mathf.FloorToInt(distance.x).ToString("D");                  
     }
-
-    private void FixedUpdate()
-    {
-        var horizontalMove = transform.right * horizontalInput * (speed / 20) * Time.fixedDeltaTime * turnSpeed;
-        rb.MovePosition(rb.position + horizontalMove);
-    }
+    
 
     public void PushTheCar()
     {
         //horizontalInput = Input.GetAxisRaw("Horizontal");
-        rb.AddForce(Vector3.forward * (speed * 200));
+        rb.AddForce(Vector2.right * (speed * 200));
         Debug.Log("Pushed the car! ");
     }
 }

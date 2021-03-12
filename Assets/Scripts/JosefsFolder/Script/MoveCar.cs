@@ -1,8 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+<<<<<<< Updated upstream
 public class MoveCar : MonoBehaviour {
     public Text distanceText;
+=======
+public class MoveCar : MonoBehaviour
+{
+    private Text distanceText;
+>>>>>>> Stashed changes
    
     public float speed = 5f;
     private bool raceStarted;
@@ -17,7 +23,14 @@ public class MoveCar : MonoBehaviour {
 //     float timeOffset;
 //     float timeStart;
 
+<<<<<<< Updated upstream
     private void Start() {
+=======
+
+    private void Start()
+    {
+        distanceText = GameObject.Find("CarDistanceText").GetComponent<Text>();
+>>>>>>> Stashed changes
         rb = GetComponent<Rigidbody2D>();
         startPos = rb.transform.position;
     }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 755ee7c93ca17704a96332de470c884f, type: 3}
-  m_Name: Back Part
+  m_Name: Pickup Trunk
   m_EditorClassIdentifier: 
   gatchaItemAmount: 1
   rarityColor: {r: 1, g: 1, b: 1, a: 1}

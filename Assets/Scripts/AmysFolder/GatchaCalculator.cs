@@ -39,15 +39,8 @@ namespace Gatcha
         public Text[] amount;
         public void GachaRoll()
         {
-            
             for (int d = 0; d < rewardAmount; d++)
             {
-                /*
-                foreach (var item in GatchaTableDropRate)
-                {
-                    total += item;
-                }
-                */
                 randomNumber = Random.Range(0, 100);
 
                 for (int i = 0; i < GatchaTableDropRate.Length; i++)
@@ -60,7 +53,7 @@ namespace Gatcha
                         gachaList[d].gatchaItemAmount++;
                         amount[d].text = gachaList[i].gatchaItemAmount.ToString();
                         artworkImage[d].color = gachaList[i].rarityColor;
-                        return;
+                        //return;
                     }
                     else
                     {

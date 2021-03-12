@@ -5,8 +5,7 @@ using UnityEngine.UI;
 public class MoveCar : MonoBehaviour
 {
     private Text distanceText;
-
-   
+    
     public float speed = 5f;
     private bool raceStarted;
 
@@ -19,8 +18,6 @@ public class MoveCar : MonoBehaviour
 //     Vector3 screenPositionDifference;
 //     float timeOffset;
 //     float timeStart;
-
-
 
     private void Start()
     {
@@ -36,6 +33,12 @@ public class MoveCar : MonoBehaviour
         if (!raceStarted) {
             CheckIfMouseButtonDown();
             CheckIfMouseButtonUp();
+        }
+        else {
+            if (rb.velocity.x < 0.3) {
+                Debug.Log("Race is over");
+                //TODO Maybe a popup with your distance and a button for going back to the workshop
+            }
         }
     }
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 755ee7c93ca17704a96332de470c884f, type: 3}
-  m_Name: Sand
+  m_Name: Cogwheel wheels
   m_EditorClassIdentifier: 
   gatchaItemAmount: 0
-  rarityColor: {r: 0.7254902, g: 0.5647059, b: 0.3803922, a: 1}
-  gatchaItemRarity: 
-  gatchaItemSprite: {fileID: 0}
+  rarityColor: {r: 1, g: 0.6666667, b: 0, a: 1}
+  gatchaItemRarity: Legendary
+  gatchaItemSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

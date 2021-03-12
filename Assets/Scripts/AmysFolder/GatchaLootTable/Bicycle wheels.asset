@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 755ee7c93ca17704a96332de470c884f, type: 3}
-  m_Name: Stone
+  m_Name: Bicycle wheels
   m_EditorClassIdentifier: 
-  gatchaItemAmount: 1
-  rarityColor: {r: 0.5660378, g: 0.509968, b: 0.509968, a: 1}
-  gatchaItemRarity: Uncommon
-  gatchaItemSprite: {fileID: 0}
+  gatchaItemAmount: 2
+  rarityColor: {r: 0, g: 0.50980395, b: 1, a: 1}
+  gatchaItemRarity: Rare
+  gatchaItemSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

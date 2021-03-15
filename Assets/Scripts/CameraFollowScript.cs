@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//github access test
 public class CameraFollowScript : MonoBehaviour
 {
 private Transform player;

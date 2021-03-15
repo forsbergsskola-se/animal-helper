@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
+    private const string savePath = "invSave";
 
     public void AddItem(ItemObject _item, int _amount) {
         for (int i = 0; i < Container.Count; i++) {
@@ -13,6 +14,19 @@ public class InventoryObject : ScriptableObject {
             }
         }
         Container.Add(new InventorySlot(_item, _amount));
+    }
+    
+    public void Save() {
+        string saveData = JsonUtility.ToJson(this, true);
+        PlayerPrefs.SetString(savePath,saveData);
+        
+        // File.WriteAllText(Path.Combine(Application.persistentDataPath,savePath), saveData);
+    }
+
+    public void Load() {
+        if (PlayerPrefs.HasKey(savePath)) {
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(savePath), this);
+        }
     }
 
 }

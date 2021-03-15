@@ -3,7 +3,8 @@
 public enum ItemType {
     Spoiler,
     Wheels,
-    Body
+    Body,
+    Front
 }
 public abstract class ItemObject : ScriptableObject {
     public GameObject prefab;

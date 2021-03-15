@@ -28,6 +28,7 @@ public class MoveCar : MonoBehaviour
     }
     
     private void Update() {
+        Debug.Log(rb.velocity.x);
         distance = rb.position - startPos;
         distanceText.text = "Distance: " + Mathf.FloorToInt(distance.x).ToString("D");       
         if (!raceStarted) {
@@ -37,6 +38,7 @@ public class MoveCar : MonoBehaviour
         else {
             if (rb.velocity.x < 0.3) {
                 Debug.Log("Race is over");
+                GameObject.Find("MoneyWon").GetComponent<MoneyWon>().Money = Mathf.FloorToInt(distance.x);
                 //TODO Maybe a popup with your distance and a button for going back to the workshop
             }
         }

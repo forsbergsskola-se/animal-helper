@@ -4,8 +4,5 @@
 public class WheelsObject : ItemObject {
     public float speedBonus;
     public float frictionReduction;
-
-    public void Awake() {
-        type = ItemType.Wheels;
-    }
+    public override ItemType type => ItemType.Wheels;
 }

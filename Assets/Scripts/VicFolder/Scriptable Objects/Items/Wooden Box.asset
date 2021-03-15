@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wooden Box
   m_EditorClassIdentifier: 
   prefab: {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  type: 2
   description: A wooden box as a car body. Good luck
+  forceBonus: 5

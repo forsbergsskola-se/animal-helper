@@ -4,8 +4,6 @@
 public class FrontObject : ItemObject {
     public float dragReduction;
     public int forceBonus;
+    public override ItemType type => ItemType.Front;
 
-    public void Awake() {
-        type = ItemType.Front;
-    }
 }

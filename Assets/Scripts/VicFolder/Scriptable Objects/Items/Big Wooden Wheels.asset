@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Big Wooden Wheels
   m_EditorClassIdentifier: 
   prefab: {fileID: 7802958507153949901, guid: 4b45ae536a11f234c932602a5ac2e76f, type: 3}
-  type: 1
   description: Small wooden wheels but bigger
-  atkBonus: 15
-  defenceBonus: 0
+  speedBonus: 20
+  frictionReduction: 1

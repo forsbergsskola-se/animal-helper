@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Hot rod Front
   m_EditorClassIdentifier: 
   prefab: {fileID: 7802958507153949901, guid: 060b9792ebac30348be1f7afa33df967, type: 3}
-  type: 3
   description: The cool one
-  dragReduction: 0
-  forceBonus: 0
+  dragReduction: 1.5
+  forceBonus: 20

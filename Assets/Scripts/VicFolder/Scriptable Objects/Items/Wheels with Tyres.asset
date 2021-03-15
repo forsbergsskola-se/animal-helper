@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Wheels with Tyres
   m_EditorClassIdentifier: 
   prefab: {fileID: 7802958507153949901, guid: e304006cbb902024ca209d1413de2dea, type: 3}
-  type: 1
   description: Wheels with actual tyres
-  atkBonus: 20
-  defenceBonus: 0
+  speedBonus: 20
+  frictionReduction: 5

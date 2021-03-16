@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
                 if (item) {
                     inventory.AddItem(item.item, 1);
                     Destroy(hit.collider.gameObject);
-                    print("Destroyed thing at " + Input.mousePosition);
+                    // print("Destroyed thing at " + Input.mousePosition);
                 }
             }
         }

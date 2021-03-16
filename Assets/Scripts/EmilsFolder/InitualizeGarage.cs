@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,11 @@ public class InitualizeGarage : MonoBehaviour
     // Start is called before the first frame update
     public GameObject MoneyText;
     public GameObject PlayerModel;
+
+    void Awake() {
+        MoneyText.GetComponent<Text>().text = $"{PlayerModel.GetComponent<PlayerModel>().Gold} cogweels";
+    }
+
     void Start() {
         
         

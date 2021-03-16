@@ -8,6 +8,8 @@ public class PlayerModel : MonoBehaviour {
     public event GoldEvent ListenToGoldChange;
     private int _gold = 100;
 
+    private float posX = 0;
+
     public int Gold {
         get => _gold;
         set {
@@ -31,11 +33,12 @@ public class PlayerModel : MonoBehaviour {
         inventory.Container.Clear();
     }
     
-    public ItemObject[] items;
+    public GameObject[] items;
     public int[] weights = {50, 40, 30, 20, 10, 1};
     public int rewardAmount = 3;
 
     public void RollIt() {
+        posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weights.Sum();
             var random = Random.Range(0, totalWeights);
@@ -46,9 +49,10 @@ public class PlayerModel : MonoBehaviour {
                 i++; 
                 total += weights[i];
             }
-
+            
             Debug.Log(items[i].name);
-            // Instantiate items[i] somehow
+            Instantiate(items[i], new Vector3(posX, 0, 0), Quaternion.identity);
+            posX += 1.5f;
         }
     }
 

@@ -27,7 +27,7 @@ public class MoneyWon : MonoBehaviour
         GameObject.Find("PlayerModel").GetComponent<PlayerModel>().Gold += Money;
         // call cool money falling animaton/sound klirr i kassan
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     

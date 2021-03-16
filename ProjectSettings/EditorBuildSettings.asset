@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Inventory.unity
+    path: Assets/Scenes/TestScenes/Inventory.unity
     guid: f63f4c9ac80fc854589a34cc9272732c
   - enabled: 1
     path: Assets/Scenes/CarRollScene.unity

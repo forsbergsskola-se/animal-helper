@@ -6,7 +6,7 @@ public class PlayerModel : MonoBehaviour {
     public event GoldEvent ListenToGoldChange;
     private int _gold = 100;
     
-    public GameObject[] items;
+    public GameObject[] gachaLootTable;
 
     public int Gold {
         get => _gold;

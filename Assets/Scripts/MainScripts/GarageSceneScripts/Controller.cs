@@ -48,8 +48,8 @@ public class Controller : MonoBehaviour {
                 total += weights[i];
             }
             
-            Debug.Log(player.items[i].name);
-            Instantiate(player.items[i], new Vector3(posX, 0, 0), Quaternion.identity);
+            Debug.Log(player.gachaLootTable[i].name);
+            Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
             posX += 1.5f;
         }
     }

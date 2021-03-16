@@ -11,11 +11,12 @@ public class InitualizeGarage : MonoBehaviour
     void Start() {
         
         
-        
+        Debug.Log(PlayerModel.GetComponent<PlayerModel>().Gold);
         var moneyWon = GameObject.Find("MoneyWon");
         if (moneyWon != null) {
             moneyWon.GetComponent<MoneyWon>().AddToStash();
         }
+        Debug.Log(PlayerModel.GetComponent<PlayerModel>().Gold);
         MoneyText.GetComponent<Text>().text = $"{PlayerModel.GetComponent<PlayerModel>().Gold} cogweels";
 
         

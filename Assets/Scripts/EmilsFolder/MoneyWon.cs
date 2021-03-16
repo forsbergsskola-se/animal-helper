@@ -5,14 +5,14 @@ using UnityEngine;
 public class MoneyWon : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int _Money;
+    private int _money;
     public int moneyPerDistance = 3;
     public int Money {
         private get {
-            return _Money;
+            return _money;
         }
         set {
-            _Money = value % moneyPerDistance;
+            _money = value / moneyPerDistance;
         }
     }
     void Start()

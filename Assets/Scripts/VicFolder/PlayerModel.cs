@@ -14,6 +14,7 @@ public class PlayerModel : MonoBehaviour {
         get => _gold;
         set {
             _gold = value;
+            PlayerPrefs.SetInt("Gold", value);
             ListenToGoldChange?.Invoke(value);
         }
     }
@@ -23,6 +24,7 @@ public class PlayerModel : MonoBehaviour {
     }
 
     private void Start() {
+        Gold = PlayerPrefs.GetInt("Gold");
         inventory.Load();
     }
     

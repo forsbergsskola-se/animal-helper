@@ -23,12 +23,11 @@ public class MoneyWon : MonoBehaviour
     //called when garage scene starts
     public void AddToStash() 
     {
-        //add money to money stash
-        //playermodel.money = Money
         
+        GameObject.Find("PlayerModel").GetComponent<PlayerModel>().Gold += Money;
         // call cool money falling animaton/sound klirr i kassan
 
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     

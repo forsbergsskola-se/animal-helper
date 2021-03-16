@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -40,6 +41,8 @@ public class MoveCar : MonoBehaviour
                 Debug.Log("Race is over");
                 GameObject.Find("MoneyWon").GetComponent<MoneyWon>().Money = Mathf.FloorToInt(distance.x);
                 //TODO Maybe a popup with your distance and a button for going back to the workshop
+                //For now just go to garage scene
+                SceneManager.LoadScene("GarageScene");
             }
         }
     }

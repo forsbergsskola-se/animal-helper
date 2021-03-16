@@ -21,12 +21,8 @@ public class MoneyWon : MonoBehaviour
     }
     
     //called when garage scene starts
-    public void AddToStash() 
-    {
-        
+    public void AddToStash() {
         GameObject.Find("PlayerModel").GetComponent<PlayerModel>().Gold += Money;
-        // call cool money falling animaton/sound klirr i kassan
-
         Destroy(gameObject);
     }
 

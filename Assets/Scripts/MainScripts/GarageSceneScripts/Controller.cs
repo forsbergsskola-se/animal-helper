@@ -36,7 +36,7 @@ public class Controller : MonoBehaviour {
     public void RollGacha() {
         if (!player.HasEnoughGold(rollCost)) return;
         player.Gold -= rollCost;
-        posX = 0;
+        posX = -1.5f;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weights.Sum();
             var random = Random.Range(0, totalWeights);

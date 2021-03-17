@@ -7,6 +7,7 @@ public class InventoryObject : ScriptableObject {
     private const string savePath = "invSave";
 
     public void AddItem(ItemObject _item, int _amount) {
+        // remove this loop for non-stackable items
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
                 Container[i].AddAmount(_amount);

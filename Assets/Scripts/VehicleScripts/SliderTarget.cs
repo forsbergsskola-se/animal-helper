@@ -12,6 +12,7 @@ public class SliderTarget : MonoBehaviour
     private GameObject car;
     private Wheel wheel;
 
+    public float targetPos;
 
     private float randompos;
     // Start is called before the first frame update
@@ -34,13 +35,15 @@ public class SliderTarget : MonoBehaviour
 
     void Steering()
     {
-        float a = Mathf.Sin(Time.time * 0.7f);
-        float b = Mathf.Sin(Time.time * 2f);
+        float a = Mathf.Sin(Time.time * 1.7f);
+        float b = Mathf.Sin(Time.time * 4f);
         float c = Mathf.Clamp((car.GetComponent<Rigidbody2D>().velocity.x * 0.1f), 0f, 1f);
 
         float y = a * b * Mathf.Sin(Time.time) *0.5f;
         slider.value = Mathf.Lerp(slider.value, 0.5f + (randompos + y) * c, 0.05f) ;
-         
+
+
+        targetPos = slider.value;
     }
 
     IEnumerator wheelPosition()

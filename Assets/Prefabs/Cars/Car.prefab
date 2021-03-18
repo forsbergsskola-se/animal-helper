@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5524275583780581176}
   - component: {fileID: 5524275583780581177}
   - component: {fileID: 5524275583780581179}
+  - component: {fileID: -1874399857153285699}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -196,8 +197,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb26b8ca9a8e11c4aa6127f44048eec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceText: {fileID: 0}
   speed: 5
+--- !u!114 &-1874399857153285699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524275583780581170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af5385d1f0e90d54b99541498f9cc7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5524275583827077036
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d2f79bfcc9be4e84099c8abfd50bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnGround: 0
 --- !u!1 &5524275583832715598
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,3 +479,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d2f79bfcc9be4e84099c8abfd50bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnGround: 0

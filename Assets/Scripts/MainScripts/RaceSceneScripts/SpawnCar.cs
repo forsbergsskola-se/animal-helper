@@ -19,8 +19,8 @@ public class SpawnCar : MonoBehaviour
 
         wheelJoints = Car.GetComponents<WheelJoint2D>();
         
-        wheelJoints[0].connectedAnchor = new Vector2(0.04f,0.12f);
-        wheelJoints[1].connectedAnchor = new Vector2(0.08f,-0.05f);
+       // wheelJoints[0].connectedAnchor = new Vector2(0.04f,0.12f);
+       // wheelJoints[1].connectedAnchor = new Vector2(0.08f,-0.05f);
 
         Camera.main.GetComponent<CameraFollowScript>().enabled = true;
     }

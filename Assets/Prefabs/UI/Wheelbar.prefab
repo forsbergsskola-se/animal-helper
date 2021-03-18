@@ -90,6 +90,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelFrame01: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
   wheelFrame02: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
+  WobbleAmount: 0
+  sliderTarget: {fileID: 0}
+  sliderSteeringWheel: {fileID: 0}
+  LeftWheel: 0
 --- !u!1 &2909551309787003851
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2909551309897962125}
+  - component: {fileID: 227875692632950038}
   m_Layer: 5
   m_Name: Wheelbar
   m_TagString: Untagged
@@ -203,6 +208,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -161.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &227875692632950038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909551309897962124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7948a5d156822b40afc2b92d66f37fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2909551309989309600
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,3 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelFrame01: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
   wheelFrame02: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
+  WobbleAmount: 0
+  sliderTarget: {fileID: 0}
+  sliderSteeringWheel: {fileID: 0}
+  LeftWheel: 0

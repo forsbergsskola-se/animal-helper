@@ -619,6 +619,13 @@ MonoBehaviour:
   - {fileID: 2109240954722640898, guid: 771795c76a3adae4ab7b142dea1c3c55, type: 3}
   - {fileID: 8066629381630479991, guid: c5c78d3f052c0b4408971200d0cf78a6, type: 3}
   - {fileID: 3631747834882616547, guid: 608d2832a3432d1428af1704eccb2da4, type: 3}
+  gachaLootTableTest:
+  - {fileID: 8755463999927250746, guid: d61954374cb4a6f47a0140b9c9f6b296, type: 3}
+  - {fileID: 7030660166995883454, guid: 13d8c3eee95bc7e46b2c1cc3752fdc33, type: 3}
+  - {fileID: 8853202324905324557, guid: 7999b4a1dcad77b4891f60aadd89cbb9, type: 3}
+  - {fileID: 3526162423199212213, guid: 0146ab8e05545bc49b5cb68fde501882, type: 3}
+  - {fileID: 7030660166995883454, guid: 13d8c3eee95bc7e46b2c1cc3752fdc33, type: 3}
+  - {fileID: 3526162423199212213, guid: 0146ab8e05545bc49b5cb68fde501882, type: 3}
 --- !u!4 &484601541
 Transform:
   m_ObjectHideFlags: 0
@@ -664,7 +671,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
   player: {fileID: 484601540}
-  crafting: {fileID: 11400000, guid: 5755a05ef3f69914395b4360dc994af9, type: 2}
   weightsSoft: 32000000280000001e000000140000000a00000001000000
   weightsHard: 32000000280000001e000000140000000a00000001000000
   rollCost: 20
@@ -1500,7 +1506,7 @@ GameObject:
   - component: {fileID: 4605149813783490760}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

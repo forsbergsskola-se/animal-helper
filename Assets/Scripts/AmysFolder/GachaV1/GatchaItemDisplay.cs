@@ -7,6 +7,15 @@ namespace Gatcha
 {
     public class GatchaItemDisplay : MonoBehaviour
     {
+        [SerializeField]
+        public class SO_Display
+        {
+            public Text nameText;
+            public Text rarityText;
+            public Image artworkImage;
+            public Text amount;
+        }
+
         public GatchaScriptableObjects[] gatchaItem = { };
         // Add var of X to be the number of which the rarity has in the list/array for it later in the desplaying.
         public Text rarityText;

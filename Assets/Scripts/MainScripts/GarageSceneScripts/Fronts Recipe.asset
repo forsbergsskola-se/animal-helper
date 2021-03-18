@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21d503bbf69a596499a36607a7ce5450, type: 3}
-  m_Name: New Crafting Recipe
+  m_Name: Fronts Recipe
   m_EditorClassIdentifier: 
   Materials:
-  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
+  - item: {fileID: 11400000, guid: 4b654ce4768a0f54dbe025858a082203, type: 2}
     amount: 4
   Results:
-  - item: {fileID: 11400000, guid: 0ac6f1f74e98c2741a365a3019ea94db, type: 2}
+  - item: {fileID: 11400000, guid: 896de8d37fcd38746bbf3a9540bd13c4, type: 2}
     amount: 1

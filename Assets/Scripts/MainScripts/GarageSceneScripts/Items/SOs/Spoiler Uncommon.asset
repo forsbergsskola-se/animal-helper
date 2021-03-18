@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
-  m_Name: Spoiler Common
+  m_Name: Spoiler Uncommon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  description: A small spoiler
+  prefab: {fileID: 7802958507153949901, guid: 060b9792ebac30348be1f7afa33df967, type: 3}
+  description: 
   itemSprite: {fileID: 0}
   itemSpriteColor: {r: 0, g: 0, b: 0, a: 0}
-  dragReduction: 0.5
+  dragReduction: 0

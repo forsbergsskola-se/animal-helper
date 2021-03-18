@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
-  m_Name: Spoiler Common
+  m_Script: {fileID: 11500000, guid: a38ccd5dd4d6021428fd3a7d466639f6, type: 3}
+  m_Name: Front Rare
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  description: A small spoiler
+  prefab: {fileID: 2622744891815454007, guid: 63df0d77d06d4924c86fb3dc98aa10b4, type: 3}
+  description: 
   itemSprite: {fileID: 0}
   itemSpriteColor: {r: 0, g: 0, b: 0, a: 0}
-  dragReduction: 0.5
+  dragReduction: 0
+  forceBonus: 0

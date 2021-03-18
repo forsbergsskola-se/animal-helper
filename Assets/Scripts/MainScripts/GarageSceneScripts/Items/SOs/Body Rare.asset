@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b86c807f8919296419fb9a61e0c1c20c, type: 3}
-  m_Name: Body Common
+  m_Name: Body Rare
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  description: A wooden box as a car body. Good luck
-  forceBonus: 5
+  prefab: {fileID: 7802958507153949901, guid: e304006cbb902024ca209d1413de2dea, type: 3}
+  description: 
+  itemSprite: {fileID: 0}
+  itemSpriteColor: {r: 0, g: 0, b: 0, a: 0}
+  forceBonus: 0

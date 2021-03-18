@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Name
-      value: Image Variant 5
+      value: Image Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168827, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Pivot.x
@@ -77,11 +77,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168827, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168827, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168827, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -96,20 +96,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168828, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854891391357168828, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Color.b
-      value: 0.5882816
+      value: 0.6509434
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168828, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Color.g
-      value: 0.1960784
+      value: 0.2707012
       objectReference: {fileID: 0}
     - target: {fileID: 1854891391357168828, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Color.r
-      value: 0.6431373
+      value: 0.12588999
       objectReference: {fileID: 0}
     - target: {fileID: 1854891393129297827, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
       propertyPath: m_Pivot.x
@@ -143,5 +139,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7972195992782812630, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}

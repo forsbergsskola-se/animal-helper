@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
-  m_Name: Spoiler Common
+  m_Script: {fileID: 11500000, guid: b86c807f8919296419fb9a61e0c1c20c, type: 3}
+  m_Name: Body Uncommon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  description: A small spoiler
+  prefab: {fileID: 7802958507153949901, guid: 4b45ae536a11f234c932602a5ac2e76f, type: 3}
+  description: A wooden box as a car body. Good luck
   itemSprite: {fileID: 0}
   itemSpriteColor: {r: 0, g: 0, b: 0, a: 0}
-  dragReduction: 0.5
+  forceBonus: 5

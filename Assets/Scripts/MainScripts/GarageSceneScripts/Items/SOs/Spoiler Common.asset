@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35e0d8591ec73b44e961b8e56d090f1b, type: 3}
-  m_Name: Small Wooden Wheels
+  m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
+  m_Name: Spoiler Common
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
-  description: Small wooden wheel
-  speedBonus: 10
-  frictionReduction: 1
+  prefab: {fileID: 7802958507153949901, guid: 1acc0bdf4c8a1d940ba79ea7a00858d1, type: 3}
+  description: A small spoiler
+  dragReduction: 0.5

@@ -6,6 +6,15 @@ ModelImporter:
   - first:
       74: 4559562236191579391
     second: trashcan|Cylinder.003Action.002
+  - first:
+      74: -7759934406760108624
+    second: electromagnet|Cylinder.003Action.001
+  - first:
+      74: -260579892856134724
+    second: electromagnet|Cylinder.003Action.002
+  - first:
+      74: -4675711548881795129
+    second: chainlink.001|Cylinder.003Action.001
   externalObjects: {}
   materials:
     materialImportMode: 2

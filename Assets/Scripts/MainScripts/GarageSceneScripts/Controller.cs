@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour {
     public InventoryObject inventory;
     public PlayerModel player;
+    public CraftingRecipe recipes;
     
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
     public int[] weightsHard = {30, 30, 30, 30, 10, 10};
@@ -34,6 +35,10 @@ public class Controller : MonoBehaviour {
                 var gButton = hit.collider.CompareTag("GachaButton");
                 if (gButton) {
                     RollGachaHard();
+                }                
+                var fButton = hit.collider.CompareTag("Fusion");
+                if (fButton) {
+                    recipes.Craft(inventory);
                 }
             }
         }
@@ -56,10 +61,10 @@ public class Controller : MonoBehaviour {
             }
             
             Debug.Log(player.gachaLootTableTest[i].name);
-            GameObject loot = Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity) as GameObject; //This is the Loot created.
-            loot.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false); // This then place the Gameobject loot into the Canvas.
+            GameObject loot = Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity) as GameObject;
+            loot.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
             //Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-            posX += 150.0f; //Also had to change this since they would spawn ontop of eachother otherwise.
+            posX += 150.0f;
         }
     }
     

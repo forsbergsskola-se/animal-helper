@@ -7,6 +7,7 @@ public class PlayerModel : MonoBehaviour {
     private int _gold = 100;
     
     public GameObject[] gachaLootTable;
+    public GameObject[] gachaLootTableTest;
 
     public int Gold {
         get => _gold;

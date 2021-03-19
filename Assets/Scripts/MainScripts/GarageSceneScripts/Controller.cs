@@ -23,25 +23,25 @@ public class Controller : MonoBehaviour {
     }
     public void Update() {
         if (Input.GetMouseButtonDown(0)) {
-                var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(ray, out var hit)) {
-                    var item = hit.collider.GetComponent<Item>();
-                    var gButton = hit.collider.CompareTag("GachaButton");
-                
-                    if (item) {
-                        inventory.AddItem(item.item, 1);
-                        Destroy(hit.collider.gameObject);
-                    }
-                    if (gButton) {
-                        RollGachaSoft();
-                    }
+            if (Physics.Raycast(ray, out var hit)) {
+                // var item = hit.collider.GetComponent<Item>();
+                // if (item) {
+                //     inventory.AddItem(item.item, 1);
+                //     Destroy(hit.collider.gameObject);
+                // }
+                var gButton = hit.collider.CompareTag("GachaButton");
+                if (gButton) {
+                    RollGachaHard();
                 }
+            }
         }
     }
-
+    
     public void RollGachaSoft() {
         if (!player.HasEnoughGold(rollCost)) return;
+        Debug.Log("Rolled Soft Currency Gacha");
         player.Gold -= rollCost;
         posX = -1.5f;
         for (int j = 0; j < rewardAmount; j++) {
@@ -55,32 +55,32 @@ public class Controller : MonoBehaviour {
                 total += weightsSoft[i];
             }
             
-            Debug.Log(player.gachaLootTable[i].name);
-            Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
-            posX += 1.5f;
+            Debug.Log(player.gachaLootTableTest[i].name);
+            GameObject loot = Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity) as GameObject; //This is the Loot created.
+            loot.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false); // This then place the Gameobject loot into the Canvas.
+            //Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+            posX += 150.0f; //Also had to change this since they would spawn ontop of eachother otherwise.
         }
     }
     
     public void RollGachaHard() {
         if (!player.HasEnoughGold(rollCost)) return;
-        // Change type of currency
         player.Gold -= rollCost;
-        posX = -1.5f;
+        posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
             var random = Random.Range(0, totalWeights);
-
             var total = weightsHard[0];
             var i = 0;
             while (total < random) { 
                 i++; 
                 total += weightsHard[i];
             }
-            
-            Debug.Log(player.gachaLootTable[i].name);
-            Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
-            posX += 1.5f;
+            // Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
+            Instantiate(player.gachaLootTable[i], new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            posX += 100f;
         }
+        
     }
     
     public void StartRace() {

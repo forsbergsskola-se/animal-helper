@@ -24,10 +24,13 @@ public class ItemView: MonoBehaviour {
     }
 
     public void AddToInv(InventoryObject inventory) {
-        var item = GetComponent<Item>();
-        if (item) {
-            inventory.AddItem(item.item, 1);
-            Destroy(gameObject);
+        var parentName = transform.parent.name;
+        if(parentName != "InventoryScreen") {
+            var item = GetComponent<Item>();
+            if (item) {
+                inventory.AddItem(item.item, 1);
+                Destroy(gameObject);
+            }
         }
     }
 }

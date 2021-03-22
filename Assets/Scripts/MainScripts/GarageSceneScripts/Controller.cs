@@ -15,6 +15,8 @@ public class Controller : MonoBehaviour {
     private float posX;
     private Camera _camera;
 
+    public GameObject ItemViewPrefab;
+
     void Start() {
         _camera = Camera.main;
         var moneyWon = GameObject.Find("MoneyWon");
@@ -82,10 +84,12 @@ public class Controller : MonoBehaviour {
                 total += weightsHard[i];
             }
             // Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
-            Instantiate(player.gachaLootTable[i], new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            var go =
+            Instantiate(ItemViewPrefab, new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            go.GetComponent<ItemView>().Display(player.gachaLootTableNew[i]);
+            //replace this with itemView prefab
             posX += 100f;
         }
-        
     }
     
     public void StartRace() {

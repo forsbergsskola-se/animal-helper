@@ -7,6 +7,7 @@ public class PlayerModel : MonoBehaviour {
     private int _gold = 100;
     
     public GameObject[] gachaLootTable;
+    public InventorySlot[] gachaLootTableNew;
     public GameObject[] gachaLootTableTest;
 
     public int Gold {

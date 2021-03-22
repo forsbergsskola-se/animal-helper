@@ -1427,6 +1427,23 @@ MonoBehaviour:
   - {fileID: 7802958507153949901, guid: e304006cbb902024ca209d1413de2dea, type: 3}
   - {fileID: 2622744891815454007, guid: 63df0d77d06d4924c86fb3dc98aa10b4, type: 3}
   - {fileID: 5435347240979115065, guid: 6527fc9494fbee14aa936968f7aecf00, type: 3}
+  gachaLootTableNew:
+  - item: {fileID: 11400000, guid: 58bd9b8c457166c4bba8d4aa4076c45b, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 0872da23670f3ff42948930706bf59f4, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 896de8d37fcd38746bbf3a9540bd13c4, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 4b654ce4768a0f54dbe025858a082203, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: bd85018f7a9eb584e85064e87c124ece, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: 0ac6f1f74e98c2741a365a3019ea94db, type: 2}
+    amount: 1
   gachaLootTableTest:
   - {fileID: 8755463999927250746, guid: d61954374cb4a6f47a0140b9c9f6b296, type: 3}
   - {fileID: 7030660166995883454, guid: 13d8c3eee95bc7e46b2c1cc3752fdc33, type: 3}
@@ -1561,11 +1578,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
   player: {fileID: 484601540}
-  recipies: {fileID: 11400000, guid: 5755a05ef3f69914395b4360dc994af9, type: 2}
+  recipes: {fileID: 0}
   weightsSoft: 32000000280000001e000000140000000a0000000a0000000a0000000a000000
   weightsHard: 3c0000003c00000028000000280000002800000014000000140000000a000000
   rollCost: 20
   rewardAmount: 3
+  ItemViewPrefab: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
 --- !u!4 &507825408
 Transform:
   m_ObjectHideFlags: 0
@@ -2101,7 +2119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231015454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0, z: -50.9}
+  m_LocalPosition: {x: -0.6, y: 0, z: -50.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

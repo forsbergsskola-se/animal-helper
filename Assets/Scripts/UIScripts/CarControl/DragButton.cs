@@ -44,18 +44,15 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
     {
         yield return new WaitForSeconds(0.1f);
         car = GameObject.Find("Car(Clone)");
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(1.2f);
         image.sprite = imageDown;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.25f);
         image.sprite = imageUp;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.25f);
         image.sprite = imageDown;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.25f);
         image.sprite = imageUp;
-        yield return new WaitForSeconds(0.3f);
-        image.sprite = imageDown;
-        yield return new WaitForSeconds(0.3f);
-        image.sprite = imageUp;
+
         flashbutton = false;
     }
 

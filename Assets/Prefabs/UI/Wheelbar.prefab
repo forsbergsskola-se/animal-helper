@@ -430,6 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2909551309897962125}
   - component: {fileID: 227875692632950038}
+  - component: {fileID: 7840555001842166298}
   m_Layer: 5
   m_Name: Wheelbar
   m_TagString: Untagged
@@ -475,6 +476,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wobbleAmount: 0
   wobbleSpeedTimer: 0
+--- !u!114 &7840555001842166298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909551309897962124}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65829e78fe99994eb068cd3538ce1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2909551309989309600
 GameObject:
   m_ObjectHideFlags: 0

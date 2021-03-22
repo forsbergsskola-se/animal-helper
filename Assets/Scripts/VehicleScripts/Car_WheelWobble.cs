@@ -9,7 +9,7 @@ public class Car_WheelWobble : MonoBehaviour
     
     private WheelJoint2D[] wheelJoints;
 
-    private Vector2 frontWheel;
+    private Vector2 WheelWobble;
     
 
     void Start()
@@ -22,9 +22,8 @@ public class Car_WheelWobble : MonoBehaviour
 
     void FixedUpdate()
     {
-        frontWheel.x = Mathf.Clamp(wheelBar.wobbleAmount*0.05f,0,0.3f);
-        Debug.Log(frontWheel.x);
-        wheelJoints[0].connectedAnchor = frontWheel;
-        wheelJoints[1].connectedAnchor = frontWheel;
+        WheelWobble.x = Mathf.Clamp(wheelBar.wobbleAmount*0.05f,0,0.3f);
+        wheelJoints[0].connectedAnchor = WheelWobble;
+        wheelJoints[1].connectedAnchor = WheelWobble;
     }
 }

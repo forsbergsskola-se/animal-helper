@@ -26,8 +26,8 @@ public class SliderSteeringWheel : MonoBehaviour
 
     void FixedUpdate()
     {
+        GetRotationAndPosUpdate();
 
-   
     }
 
     public void GetRotationAndPosUpdate()

@@ -14,7 +14,6 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
 
     private GameObject car;
 
-    public float delayBeforeInitialize;
     private bool flashbutton;
     // Start is called before the first frame update
     void Start()
@@ -43,7 +42,7 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
     {
         yield return new WaitForSeconds(0.1f);
         car = GameObject.Find("Car(Clone)");
-        yield return new WaitForSeconds(delayBeforeInitialize);
+        yield return new WaitForSeconds(1.2f);
         image.sprite = imageDown;
         yield return new WaitForSeconds(0.8f);
         image.sprite = imageUp;

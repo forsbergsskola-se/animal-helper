@@ -5,6 +5,9 @@ using UnityEngine;
 public class StartCarButton : MonoBehaviour
 {
     private GameObject car;
+    public int FramesDelayCarRolls = 0;
+
+    private bool countDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,9 +15,18 @@ public class StartCarButton : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (countDown)
+        {
+            FramesDelayCarRolls--;
+            if (FramesDelayCarRolls <= 0)
+            {
+                car.GetComponent<MoveCar>().PushTheCar();
+                countDown = false;
+                this.enabled = false;
+            }
+        }
     }
 
     IEnumerator Initiate()
@@ -26,6 +38,6 @@ public class StartCarButton : MonoBehaviour
 
     public void StartRace()
     {
-        car.GetComponent<MoveCar>().PushTheCar();
+        countDown = true;
     }
 }

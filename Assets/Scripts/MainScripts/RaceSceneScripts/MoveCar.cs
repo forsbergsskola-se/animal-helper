@@ -31,6 +31,8 @@ public class MoveCar : MonoBehaviour
     private void Update() 
     {
 
+        
+       
         distance = rb.position - startPos;
         distanceText.text = "Distance: " + Mathf.FloorToInt(distance.x).ToString("D");
         if (raceStarted) 

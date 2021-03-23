@@ -22,7 +22,7 @@ public class UI_WheelBar : MonoBehaviour
 
 
         wobbleAmount *= 0.96f;
-        Debug.Log(wobbleAmount);
+
     }
     
     

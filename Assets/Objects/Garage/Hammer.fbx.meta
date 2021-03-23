@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 635371e7521fe814f8124596708f3038
+guid: e57abbd05279a7f4eaa32770040ce60a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Pizza_Spoiler
-    second: {fileID: -6591826060951858676, guid: 635371e7521fe814f8124596708f3038, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

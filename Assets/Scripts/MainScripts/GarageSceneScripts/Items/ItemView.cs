@@ -9,7 +9,7 @@ public class ItemView: MonoBehaviour {
     private bool selected;
     private Color ogColour;
     [SerializeField] private InventorySlot item;
-
+    
     private void Start() {
         ogColour = image.color;
         if (this.item != null) {
@@ -24,9 +24,13 @@ public class ItemView: MonoBehaviour {
         image.sprite = item.item.itemSprite;
     }
     
-    public void OnMouseDown() {
+    public void SelectPart(InventoryObject inventory) {
+        var parentName = transform.parent.name;
+        if (parentName != "InventoryScreen") return;
         selected = !selected;
+        item.item.selected = selected;
         image.color = selected ? Color.green : ogColour;
+        inventory.AddToSelected(item.item, 1);
     }
 
     public void AddToInv(InventoryObject inventory) {

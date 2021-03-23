@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   Container: []
+  SelectedParts: []

@@ -13,4 +13,5 @@ public abstract class ItemObject : ScriptableObject {
     public string description;
     public Sprite itemSprite;
     public int rarityLevel;
+    public bool selected;
 }

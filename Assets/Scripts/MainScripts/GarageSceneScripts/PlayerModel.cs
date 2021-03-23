@@ -31,7 +31,8 @@ public class PlayerModel : MonoBehaviour {
     }
 
     private void OnApplicationQuit() {
+        inventory.SelectedParts.Clear();
         inventory.Save();
-        inventory.Container.Clear();
+        // inventory.Container.Clear();
     }
 }

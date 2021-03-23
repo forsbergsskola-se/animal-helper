@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
+    public List<InventorySlot> SelectedParts = new List<InventorySlot>();
     private const string savePath = "invSave";
 
     public void AddItem(ItemObject _item, int _amount) {
@@ -16,18 +17,31 @@ public class InventoryObject : ScriptableObject {
         }
         Container.Add(new InventorySlot(_item, _amount));
     }
+    public void AddToSelected(ItemObject _item, int _amount) {
+        if (_item.selected) {
+            SelectedParts.Add(new InventorySlot(_item, _amount));
+            return;
+        }
+        for (int i = 0; i < SelectedParts.Count; i++) {
+            if (SelectedParts[i].item.selected == false) {
+                SelectedParts.RemoveAt(i);
+                return;
+            }
+        }
+    }
     
     public void RemoveItem(ItemObject _item, int _amount) {
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
                 Container[i].ReduceAmount(_amount);
+                // if (Container[i].amount == 0) {
+                //     Container.RemoveAt(i);
+                // }
                 return;
             }
-            // Container.RemoveAt(index); what happens if 0 left?
         }
     }
     
-    // [ContextMenu("ItemCount")]
     public int ItemCount(ItemObject _item) {
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {

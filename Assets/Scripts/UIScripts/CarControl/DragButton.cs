@@ -15,7 +15,9 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
 
     private GameObject car;
 
-
+    private float DefaultDrag;
+    public float DuckDrag;
+    
     private bool flashbutton;
     // Start is called before the first frame update
     void Start()
@@ -26,24 +28,13 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
         flashbutton = true;
         StartCoroutine(Initiate());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-    void onPressed()
-    {
-        
-    }
-
+    
 
     IEnumerator Initiate()
     {
         yield return new WaitForSeconds(0.1f);
         car = GameObject.Find("Car(Clone)");
+        DefaultDrag = car.GetComponent<Rigidbody2D>().drag;
         yield return new WaitForSeconds(1.2f);
         image.sprite = imageDown;
         yield return new WaitForSeconds(0.25f);
@@ -63,12 +54,12 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
         //Debug.Log(name + " Game Object Click in Progress");
 
 
-        car.GetComponent<Rigidbody2D>().drag = 0;
+        car.GetComponent<Rigidbody2D>().drag = DuckDrag;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         image.sprite = imageUp;
-        car.GetComponent<Rigidbody2D>().drag = 1;
+        car.GetComponent<Rigidbody2D>().drag =DefaultDrag;
     }
 }

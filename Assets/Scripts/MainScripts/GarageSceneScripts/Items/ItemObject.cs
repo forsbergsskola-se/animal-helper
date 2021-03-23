@@ -12,4 +12,5 @@ public abstract class ItemObject : ScriptableObject {
     [TextArea(5,10)]
     public string description;
     public Sprite itemSprite;
+    public int rarityLevel;
 }

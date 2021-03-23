@@ -10,12 +10,14 @@ public class MoveCar : MonoBehaviour
     
     public float speed = 5f;
     private bool raceStarted;
-
+    private bool raceIsOver;
+    
     private Rigidbody2D rb;
     private Vector2 startPos;
     private Vector2 distance;
-    
 
+    private Vector3 lastPosition;
+    private Vector3 currentPosition;
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class MoveCar : MonoBehaviour
      
     }
     
-    private void Update() 
+    private void FixedUpdate() 
     {
 
         
@@ -37,7 +39,8 @@ public class MoveCar : MonoBehaviour
         distanceText.text = "Distance: " + Mathf.FloorToInt(distance.x).ToString("D");
         if (raceStarted) 
         {
-            if (rb.velocity.x < 0.4) 
+            
+            if (raceIsOver) 
             {
                 Debug.Log("Race is over");
                 GameObject.Find("MoneyWon").GetComponent<MoneyWon>().Money = Mathf.FloorToInt(distance.x);
@@ -48,12 +51,25 @@ public class MoveCar : MonoBehaviour
                 GameObject.Find("Wheelbar").GetComponent<UI_CloseAnim>().enabled = true;
                 GameObject.Find("DragButton").GetComponent<UI_CloseAnim>().enabled = true;
                 GameObject.Find("BoostButton").GetComponent<UI_CloseAnim>().enabled = true;
- 
+                raceStarted = false;
             }
         }
     }
 
+    IEnumerator PositionCheck()
+    {
+        lastPosition = this.gameObject.transform.position;
+        yield return new WaitForSeconds(0.3f);
+        currentPosition = this.gameObject.transform.position;
 
+        Vector3 movedDistance = lastPosition - currentPosition;
+        if (movedDistance.magnitude < 0.05 && rb.velocity.magnitude < 0.3f && rb.velocity.magnitude > -0.3f) {raceIsOver = true;}
+
+        Debug.Log(movedDistance.magnitude);
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(PositionCheck());
+        
+    }
 
 
     IEnumerator Initiate()
@@ -64,7 +80,7 @@ public class MoveCar : MonoBehaviour
 
     public void PushTheCar() {
         rb.AddForce(Vector2.right * (speed * 200));
-        
         StartCoroutine(Initiate());
+        StartCoroutine(PositionCheck());
     }
 }

@@ -30,8 +30,8 @@ public class GachaController : MonoBehaviour
                 total += RaritysWeight[i];
             }
 
-            Debug.Log(player.gachaLootTable[i].name);
-            Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
+            // Debug.Log(player.gachaLootTable[i].name);
+            // Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
             posX += 1.5f;
         }
     }

@@ -6,6 +6,7 @@ public class Controller : MonoBehaviour {
     public InventoryObject inventory;
     public PlayerModel player;
     public CraftingRecipe recipes;
+    public GameObject ItemViewPrefab;
     
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
     public int[] weightsHard = {30, 30, 30, 30, 10, 10};
@@ -15,8 +16,6 @@ public class Controller : MonoBehaviour {
     private float posX;
     private Camera _camera;
 
-    public GameObject ItemViewPrefab;
-
     void Start() {
         _camera = Camera.main;
         var moneyWon = GameObject.Find("MoneyWon");
@@ -24,16 +23,12 @@ public class Controller : MonoBehaviour {
             moneyWon.GetComponent<MoneyWon>().AddToStash();
         }
     }
+    
     public void Update() {
         if (Input.GetMouseButtonDown(0)) {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var hit)) {
-                // var item = hit.collider.GetComponent<Item>();
-                // if (item) {
-                //     inventory.AddItem(item.item, 1);
-                //     Destroy(hit.collider.gameObject);
-                // }
                 var gButton = hit.collider.CompareTag("GachaButton");
                 if (gButton) {
                     RollGachaHard();
@@ -48,13 +43,11 @@ public class Controller : MonoBehaviour {
     
     public void RollGachaSoft() {
         if (!player.HasEnoughGold(rollCost)) return;
-        Debug.Log("Rolled Soft Currency Gacha");
         player.Gold -= rollCost;
-        posX = -1.5f;
+        posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
             var random = Random.Range(0, totalWeights);
-
             var total = weightsSoft[0];
             var i = 0;
             while (total < random) { 
@@ -62,11 +55,9 @@ public class Controller : MonoBehaviour {
                 total += weightsSoft[i];
             }
             
-            Debug.Log(player.gachaLootTableTest[i].name);
-            GameObject loot = Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity) as GameObject;
-            loot.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            //Instantiate(player.gachaLootTableTest[i], new Vector3(posX, 0, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-            posX += 150.0f;
+            var go = Instantiate(ItemViewPrefab, new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            go.GetComponent<ItemView>().Display(player.gachaLootTable[i]);
+            posX += 100f;
         }
     }
     
@@ -83,11 +74,9 @@ public class Controller : MonoBehaviour {
                 i++; 
                 total += weightsHard[i];
             }
-            // Instantiate(player.gachaLootTable[i], new Vector3(posX, 0, 0), Quaternion.identity);
-            var go =
-            Instantiate(ItemViewPrefab, new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
-            go.GetComponent<ItemView>().Display(player.gachaLootTableNew[i]);
-            //replace this with itemView prefab
+            
+            var go = Instantiate(ItemViewPrefab, new Vector3(470 + posX, 320, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            go.GetComponent<ItemView>().Display(player.gachaLootTable[i]);
             posX += 100f;
         }
     }

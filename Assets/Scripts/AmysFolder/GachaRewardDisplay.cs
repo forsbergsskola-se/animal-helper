@@ -11,10 +11,10 @@ public class GachaRewardDisplay : MonoBehaviour
     public void Start()
     {
     }
-    public void Update()
-    {
-        image.sprite = item.itemSprite;
-        image.color = item.itemSpriteColor;
-        
-    }
+    // public void Update()
+    // {
+    //     image.sprite = item.itemSprite;
+    //     image.color = item.itemSpriteColor;
+    //     
+    // }
 }

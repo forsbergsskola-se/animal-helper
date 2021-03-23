@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2622744891815454007, guid: 63df0d77d06d4924c86fb3dc98aa10b4, type: 3}
   description: 
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 23345eb1d85346849ad06204550793a0, type: 3}
   itemSpriteColor: {r: 0, g: 0, b: 0, a: 0}
   dragReduction: 0
   forceBonus: 0

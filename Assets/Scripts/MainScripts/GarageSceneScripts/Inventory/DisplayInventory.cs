@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour {
     public InventoryObject inventory;
+    public GameObject ItemViewPrefab;
 
     public int X_START;
     public int Y_START;
@@ -22,7 +23,7 @@ public class DisplayInventory : MonoBehaviour {
 
     private void CreateDisplay() {
         for (int i = 0; i < inventory.Container.Count; i++) {
-            var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+            var obj = Instantiate(ItemViewPrefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponent<ItemView>().Display(inventory.Container[i]);
             itemsDisplayed.Add(inventory.Container[i], obj);
@@ -38,7 +39,7 @@ public class DisplayInventory : MonoBehaviour {
             if (itemsDisplayed.ContainsKey(inventory.Container[i])) {
                 itemsDisplayed[inventory.Container[i]].GetComponent<ItemView>().Display(inventory.Container[i]);
             } else {
-                var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
+                var obj = Instantiate(ItemViewPrefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponent<ItemView>().Display(inventory.Container[i]);
                 itemsDisplayed.Add(inventory.Container[i], obj);

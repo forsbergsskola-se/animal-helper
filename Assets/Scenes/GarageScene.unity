@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 251876705}
   - component: {fileID: 251876704}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Fusion Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,15 +1419,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
   gachaLootTable:
-  - {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
-  - {fileID: 7802958507153949901, guid: c0d73b7a6adaa094183aaccd74229795, type: 3}
-  - {fileID: 7802958507153949901, guid: 1acc0bdf4c8a1d940ba79ea7a00858d1, type: 3}
-  - {fileID: 7802958507153949901, guid: 060b9792ebac30348be1f7afa33df967, type: 3}
-  - {fileID: 7802958507153949901, guid: 4b45ae536a11f234c932602a5ac2e76f, type: 3}
-  - {fileID: 7802958507153949901, guid: e304006cbb902024ca209d1413de2dea, type: 3}
-  - {fileID: 2622744891815454007, guid: 63df0d77d06d4924c86fb3dc98aa10b4, type: 3}
-  - {fileID: 5435347240979115065, guid: 6527fc9494fbee14aa936968f7aecf00, type: 3}
-  gachaLootTableNew:
   - item: {fileID: 11400000, guid: 58bd9b8c457166c4bba8d4aa4076c45b, type: 2}
     amount: 1
   - item: {fileID: 11400000, guid: 0872da23670f3ff42948930706bf59f4, type: 2}
@@ -1444,13 +1435,6 @@ MonoBehaviour:
     amount: 1
   - item: {fileID: 11400000, guid: 0ac6f1f74e98c2741a365a3019ea94db, type: 2}
     amount: 1
-  gachaLootTableTest:
-  - {fileID: 8755463999927250746, guid: d61954374cb4a6f47a0140b9c9f6b296, type: 3}
-  - {fileID: 7030660166995883454, guid: 13d8c3eee95bc7e46b2c1cc3752fdc33, type: 3}
-  - {fileID: 8853202324905324557, guid: 7999b4a1dcad77b4891f60aadd89cbb9, type: 3}
-  - {fileID: 3526162423199212213, guid: 0146ab8e05545bc49b5cb68fde501882, type: 3}
-  - {fileID: 7030660166995883454, guid: 13d8c3eee95bc7e46b2c1cc3752fdc33, type: 3}
-  - {fileID: 3526162423199212213, guid: 0146ab8e05545bc49b5cb68fde501882, type: 3}
 --- !u!4 &484601541
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,12 +1562,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
   player: {fileID: 484601540}
-  recipes: {fileID: 0}
+  recipes: {fileID: 11400000, guid: c6b9de5fc08f60549a4ac8213aac3885, type: 2}
+  ItemViewPrefab: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
   weightsSoft: 32000000280000001e000000140000000a0000000a0000000a0000000a000000
   weightsHard: 3c0000003c00000028000000280000002800000014000000140000000a000000
   rollCost: 20
   rewardAmount: 3
-  ItemViewPrefab: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
 --- !u!4 &507825408
 Transform:
   m_ObjectHideFlags: 0
@@ -4451,6 +4435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
+  ItemViewPrefab: {fileID: 1854891391357168826, guid: b2257ac8e03ed234e9e3cfaedd920b9a, type: 3}
   X_START: -500
   Y_START: 140
   X_SPACE_BETWEEN_ITEM: 100

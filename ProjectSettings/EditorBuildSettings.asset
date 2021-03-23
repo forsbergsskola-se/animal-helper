@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CarRollScene.unity
     guid: 5f97294c43489704aaaa3b838a77e9f8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GarageScene.unity
     guid: 778df03ddb316924b98c26d0f48dd334
   m_configObjects: {}

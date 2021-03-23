@@ -661,7 +661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 720.00006, y: -99.999985}
+  m_AnchoredPosition: {x: 89, y: 548}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215379301
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FramesDelay: 82
-  VectorStart: {x: 720, y: -100}
-  VectorTargetPos: {x: 720, y: 80}
+  VectorStart: {x: 80, y: 550}
+  VectorTargetPos: {x: 80, y: 400}
 --- !u!114 &215379302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,8 +1908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FramesDelay: 5
-  VectorStart: {x: 0, y: -100}
-  VectorTargetPos: {x: 0, y: 55}
+  VectorStart: {x: 150, y: -100}
+  VectorTargetPos: {x: 150, y: 55}
 --- !u!1 &693490991
 GameObject:
   m_ObjectHideFlags: 0
@@ -6496,7 +6496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2909551309897962125, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 152
       objectReference: {fileID: 0}
     - target: {fileID: 2909551309897962125, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
       propertyPath: m_AnchoredPosition.y

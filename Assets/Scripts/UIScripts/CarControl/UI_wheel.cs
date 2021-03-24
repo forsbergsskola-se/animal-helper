@@ -14,7 +14,7 @@ public class UI_wheel : MonoBehaviour
     private Quaternion rotation;
     private Vector3 rotVector;
 
-    private GameObject car;
+
     private Image image;
     private float animationSpeed = 0.5f;
 
@@ -30,25 +30,16 @@ public class UI_wheel : MonoBehaviour
     private void Start()
     {
         image = this.GetComponent<Image>();
-        StartCoroutine(Initiate());
+     
     }
 
-    private IEnumerator Initiate()
-    {
-        yield return new WaitForSeconds(0.15f);
-        car = GameObject.Find("Car(Clone)");
-        if (car == null) {StartCoroutine(Initiate());}
-    }
 
     private void FixedUpdate()
     {
-        if (car != null)
-        {
-            timer += (Time.deltaTime * car.GetComponent<Rigidbody2D>().velocity.magnitude) * 3;
-            wheelBar.wobbleSpeedTimer = timer;
+        timer = wheelBar.wobbleSpeedTimer;
             animateSprite();
             Wobble();
-        }
+        
     }
 
 

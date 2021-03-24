@@ -17,6 +17,11 @@ public class ItemView: MonoBehaviour {
         }
     }
 
+    public void Update() {
+        selected = item.item.selected;
+        image.color = selected ? Color.green : ogColour;
+    }
+
     public void Display(InventorySlot item) {
         this.item = item;
         amountText.text = item.amount.ToString("n0");
@@ -27,10 +32,8 @@ public class ItemView: MonoBehaviour {
     public void SelectPart(InventoryObject inventory) {
         var parentName = transform.parent.name;
         if (parentName != "InventoryScreen") return;
-        selected = !selected;
-        item.item.selected = selected;
-        image.color = selected ? Color.green : ogColour;
-        inventory.AddToSelected(item.item, 1);
+        item.item.selected = !item.item.selected;
+        inventory.AddToSelected(item.item, item.amount);
     }
 
     public void AddToInv(InventoryObject inventory) {
@@ -39,5 +42,9 @@ public class ItemView: MonoBehaviour {
             inventory.AddItem(item.item, 1);
             Destroy(gameObject);
         }
+    }
+    
+    private void OnApplicationQuit() {
+        item.item.selected = false;
     }
 }

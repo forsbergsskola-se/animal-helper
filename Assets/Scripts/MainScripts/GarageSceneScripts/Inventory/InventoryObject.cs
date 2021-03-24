@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New inventory", menuName = "Inventory System/Inventory")]
@@ -49,6 +50,27 @@ public class InventoryObject : ScriptableObject {
             }
         }
         return 0;
+    }    
+    public int FusionCount() {
+        var isEmpty = !SelectedParts.Any();
+        return isEmpty ? 0 : SelectedParts[0].amount;
+    }
+
+    public void Fusion(int _amount) {
+        var _item = SelectedParts[0].item;
+        SelectedParts.RemoveAt(0);
+        for (int i = 0; i < Container.Count; i++) {
+            if (Container[i].item == _item) {
+                Container[i].ReduceAmount(_amount);
+                Container[i].item.selected = false;
+            }            
+            if (Container[i].item.type == _item.type && Container[i].item.rarityLevel == _item.rarityLevel+1) {
+                Container[i].AddAmount(1);
+            }
+            else {
+                // Needs to create a new object in the inventory of a higher rarity
+            }
+        }
     }
     
     public void Save() {

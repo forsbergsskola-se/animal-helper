@@ -22,7 +22,8 @@ public class Car_WheelWobble : MonoBehaviour
 
     void FixedUpdate()
     {
-        WheelWobble.x = Mathf.Clamp(wheelBar.wobbleAmount*0.05f,0,0.3f);
+        
+        WheelWobble.x = Mathf.Clamp(wheelBar.wobbleAmount*0.1f,0,0.5f);
         wheelJoints[0].connectedAnchor = WheelWobble;
         wheelJoints[1].connectedAnchor = WheelWobble;
     }

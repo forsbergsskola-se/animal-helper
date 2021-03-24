@@ -64,8 +64,7 @@ public class MoveCar : MonoBehaviour
 
         Vector3 movedDistance = lastPosition - currentPosition;
         if (movedDistance.magnitude < 0.05 && rb.velocity.magnitude < 0.3f && rb.velocity.magnitude > -0.3f) {raceIsOver = true;}
-
-        Debug.Log(movedDistance.magnitude);
+        
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(PositionCheck());
         

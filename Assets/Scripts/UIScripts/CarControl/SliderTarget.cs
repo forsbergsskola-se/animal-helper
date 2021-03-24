@@ -10,7 +10,7 @@ public class SliderTarget : MonoBehaviour
     private Slider slider;
 
     private GameObject car;
-    private Wheel wheel;
+    public UI_WheelBar wheelBar; 
 
     public float targetPos;
 
@@ -30,7 +30,7 @@ public class SliderTarget : MonoBehaviour
 
         if (car != null)
         {
-            if (wheel.isOnGround) Steering();
+            if (wheelBar.BothWheelsOnGround) Steering();
             else ResetSteering();
             
         }
@@ -67,7 +67,7 @@ public class SliderTarget : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         car = GameObject.Find("Car(Clone)");
 
-        wheel = car.GetComponentInChildren<Wheel>();
+        
     }
     
 }

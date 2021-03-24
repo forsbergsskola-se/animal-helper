@@ -6952,12 +6952,16 @@ PrefabInstance:
       objectReference: {fileID: 256992801}
     - target: {fileID: 227875692632950038, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
       propertyPath: AirControlAmount
-      value: 200
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 227875692632950038, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
       propertyPath: sliderSteeringWheel
       value: 
       objectReference: {fileID: 1451737948}
+    - target: {fileID: 227875692632950038, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
+      propertyPath: wobbleAmountMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1709766971298128902, guid: 69071b3ddc6d3954cab75f59c6c9188e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

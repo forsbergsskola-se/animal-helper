@@ -62,7 +62,7 @@ public class InventoryObject : ScriptableObject {
         }
         return 0;
     }    
-    public int FusionCount() {
+    public int SelectedCount() {
         var isEmpty = !SelectedParts.Any();
         return isEmpty ? 0 : SelectedParts[0].amount;
     }    
@@ -87,6 +87,19 @@ public class InventoryObject : ScriptableObject {
             }
         }
         Container.Add(new InventorySlot(_item.nextRarityObject, 1));
+    }
+
+    public int Grinder() {
+        var _item = SelectedParts[0].item;
+        var _amount = SelectedParts[0].amount;
+        for (int i = 0; i < Container.Count; i++) {
+            if (Container[i].item == _item) {
+                Container[i].ReduceAmount(_amount);
+                Container[i].item.selected = false;
+            }
+        }
+        SelectedParts.Clear();
+        return _amount;
     }
     
     public void Save() {

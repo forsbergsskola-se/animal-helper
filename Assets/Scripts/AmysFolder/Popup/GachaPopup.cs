@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GachaPopup : MonoBehaviour
-{
+public class GachaPopup : MonoBehaviour {
     public Image image;
     public Image rarityImage;
-    public GameObject prefab;
     public Color[] rarityColors;
-    private int turnOff = 0;
-    public void ClaimButton()
-    {
+    
+    public void ClaimButton() {
         Destroy(gameObject);
+    }
+
+    public void ColorDisplay(InventorySlot item) {
+        rarityImage.color = rarityColors[item.item.rarityLevel];
     }
 }

@@ -25,11 +25,11 @@ public class Controller : MonoBehaviour {
         if (moneyWon != null) {
             moneyWon.GetComponent<MoneyWon>().AddToStash();
         }
+        inventory.BlurReset();
     }
     
     public void Update() {
-        if(UIDissable == false)
-        {
+        if(!UIDissable) {
             if (Input.GetMouseButtonDown(0)) {
                 var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -85,19 +85,18 @@ public class Controller : MonoBehaviour {
             PrefabBlur.SetActive(true);
             var popUp = Instantiate(PrefabPopup, new Vector3(683, 480, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
-            popUp.GetComponent<GachaPopup>().rarityImage.color = PrefabPopup.GetComponent<GachaPopup>().rarityColors[player.gachaLootTable[i].item.rarityLevel];
+            popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
         }
     }
     
     public void GachaBlurController()
     {
-        if (player.inventory.claimAmountOfTimes == rewardAmount)
+        if (inventory.claimAmountOfTimes == rewardAmount)
         {
             PrefabBlur.SetActive(false);
-            player.inventory.BlurReset();
+            inventory.BlurReset();
             UIDissable = false;
         }
-        Debug.Log("Claimed " + player.inventory.claimAmountOfTimes + " Times");
     }
     
     public void StartRace() {

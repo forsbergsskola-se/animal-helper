@@ -7,16 +7,13 @@ public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
     public List<InventorySlot> SelectedParts = new List<InventorySlot>();
     private const string savePath = "invSave";
-    public int claimAmountOfTimes = 0;
-    public void Awake()
-    {
-        //Note this Always need to be 0 At start.
-        claimAmountOfTimes = 0;
-    }
+    public int claimAmountOfTimes;
+    
     public void GachaBlurController()
     {
         claimAmountOfTimes++;
     }
+    
     public void BlurReset()
     {
         claimAmountOfTimes = 0;

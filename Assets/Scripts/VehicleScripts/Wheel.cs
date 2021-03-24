@@ -18,7 +18,7 @@ public class Wheel : MonoBehaviour
     void FixedUpdate()
     {
         if (countAirTimer) airTimer++;
-        if (airTimer > 20) isOnGround = false;
+        if (airTimer > 10) isOnGround = false;
         else isOnGround = true;
     }
 

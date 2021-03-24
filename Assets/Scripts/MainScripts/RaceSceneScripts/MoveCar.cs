@@ -30,10 +30,10 @@ public class MoveCar : MonoBehaviour
      
     }
     
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
 
-        
+        rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -300, 300);
        
         distance = rb.position - startPos;
         distanceText.text = "Distance: " + Mathf.FloorToInt(distance.x).ToString("D");

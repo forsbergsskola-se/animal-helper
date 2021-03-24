@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UI_CloseAnim : MonoBehaviour
 {
+    public bool closeUpward;
+    
     private bool anticipation = true;
     float offsetY = -10f;
     public int FramesDelay;
@@ -46,11 +48,19 @@ public class UI_CloseAnim : MonoBehaviour
             offsetY = Mathf.Abs(offsetY);
             offsetY *= 1.3f;
         }
-      
-        VectorOffset.y = -offsetY;
 
-
+        if (closeUpward)
+        {
+            VectorOffset.y = +offsetY;
+ 
+        }
+        else
+        {
+            VectorOffset.y = -offsetY;
+        }
+        
         if (offsetY > 500) this.enabled = false;
+       
 
     }
 

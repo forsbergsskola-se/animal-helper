@@ -16,7 +16,9 @@ public class UI_WheelBar : MonoBehaviour
     public UI_wheel rightWheel;
     
     private GameObject car;
-    
+
+
+    public float AirControlAmount = 50;
     
     public float wobbleAmountMultiplier = 1;
     [HideInInspector]
@@ -24,8 +26,10 @@ public class UI_WheelBar : MonoBehaviour
     [HideInInspector]
     public float wobbleSpeedTimer;
 
-    public Wheel wheel;
+    public Wheel FrontWheel;
+    public Wheel BackWheel;
 
+    public bool BothWheelsOnGround;
     private void Start()
     {
         StartCoroutine(Initiate());
@@ -38,9 +42,9 @@ public class UI_WheelBar : MonoBehaviour
 
                 wobbleSpeedTimer += (Time.deltaTime * car.GetComponent<Rigidbody2D>().velocity.magnitude) * 3;
             
-                if (wheel.isOnGround)
+                if (FrontWheel.isOnGround && BackWheel.isOnGround)
                 {
-
+                    BothWheelsOnGround = true;
 
                     wobbleAmount = sliderTarget.targetPos - sliderSteeringWheel.targetPos;
                     leftWheel.WobbleAmount = Mathf.Clamp(wobbleAmount, 0, 1);
@@ -57,10 +61,11 @@ public class UI_WheelBar : MonoBehaviour
                 }
                 else
                 {
+                    BothWheelsOnGround = false;
+                    
                     wobbleAmount *= 0.8f;
-                    var rotator = (sliderTarget.targetPos - sliderSteeringWheel.targetPos)*10;
-                    Debug.Log(rotator);
-                    car.GetComponent<Rigidbody2D>().angularVelocity += rotator;
+                    var rotator = (sliderSteeringWheel.targetPos-0.5f)*AirControlAmount;
+                    car.GetComponent<Rigidbody2D>().angularVelocity -= rotator;
                     
                 }
             
@@ -74,7 +79,9 @@ public class UI_WheelBar : MonoBehaviour
         if (car != null)
         {
             
-            wheel = car.GetComponentInChildren<Wheel>();
+            var wheels = car.GetComponentsInChildren<Wheel>();
+            FrontWheel = wheels[0];
+            BackWheel = wheels[1];
         }
         else
         {

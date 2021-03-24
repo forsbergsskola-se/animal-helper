@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - GachaButton
   - Canvas
   - Fusion
+  - GachaSoft
+  - GachaHard
   layers:
   - Default
   - TransparentFX

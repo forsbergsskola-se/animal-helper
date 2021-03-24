@@ -54,6 +54,10 @@ public class InventoryObject : ScriptableObject {
     public int FusionCount() {
         var isEmpty = !SelectedParts.Any();
         return isEmpty ? 0 : SelectedParts[0].amount;
+    }    
+    public bool CanFuse() {
+        var _item = SelectedParts[0].item;
+        return _item.nextRarityObject != null;
     }
 
     public void Fusion(int _amount) {
@@ -64,6 +68,8 @@ public class InventoryObject : ScriptableObject {
                 Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
             }
+        }        
+        for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item.nextRarityObject) {
                 Container[i].AddAmount(1);
                 return;

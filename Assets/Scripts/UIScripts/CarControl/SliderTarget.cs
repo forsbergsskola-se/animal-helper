@@ -28,8 +28,12 @@ public class SliderTarget : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (car != null && wheel.isOnGround) Steering();
-
+        if (car != null)
+        {
+            if (wheel.isOnGround) Steering();
+            else ResetSteering();
+            
+        }
     }
     
 
@@ -44,6 +48,11 @@ public class SliderTarget : MonoBehaviour
 
 
         targetPos = slider.value;
+    }
+
+    void ResetSteering()
+    {
+        slider.value = Mathf.Lerp(slider.value, 0.5f , 0.05f) ;
     }
 
     IEnumerator wheelPosition()

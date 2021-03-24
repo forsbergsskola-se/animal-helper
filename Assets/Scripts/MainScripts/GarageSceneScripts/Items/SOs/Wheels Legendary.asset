@@ -15,5 +15,7 @@ MonoBehaviour:
   description: 
   itemSprite: {fileID: 21300000, guid: d33c167852e91994ca321436d85373ca, type: 3}
   rarityLevel: 4
-  speedBonus: 0
-  frictionReduction: 0
+  selected: 0
+  nextRarityObject: {fileID: 0}
+  speedBonus: 1
+  frictionReduction: 1

@@ -63,14 +63,13 @@ public class InventoryObject : ScriptableObject {
             if (Container[i].item == _item) {
                 Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
-            }            
-            if (Container[i].item.type == _item.type && Container[i].item.rarityLevel == _item.rarityLevel+1) {
-                Container[i].AddAmount(1);
             }
-            else {
-                // Needs to create a new object in the inventory of a higher rarity
+            if (Container[i].item == _item.nextRarityObject) {
+                Container[i].AddAmount(1);
+                return;
             }
         }
+        Container.Add(new InventorySlot(_item.nextRarityObject, 1));
     }
     
     public void Save() {

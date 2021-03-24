@@ -157,6 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5858592140392963844}
   - component: {fileID: 7282752898685371035}
+  - component: {fileID: 2442870511994412660}
   m_Layer: 5
   m_Name: SliderSteeringWheel
   m_TagString: Untagged
@@ -249,6 +250,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2442870511994412660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756734415796159513}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a912b38b27187e48a8cbea5374f586d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FramesDelay: 10
 --- !u!1 &2909551309054555038
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,12 +353,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelFrame01: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
   wheelFrame02: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
-  Wear: 0
   WobbleAmount: 0
-  sliderTarget: {fileID: 0}
-  sliderSteeringWheel: {fileID: 0}
-  LeftWheel: 0
-  wheelBar: {fileID: 0}
+  wheelBar: {fileID: 227875692632950038}
 --- !u!1 &2909551309787003851
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +441,7 @@ GameObject:
   - component: {fileID: 2909551309897962125}
   - component: {fileID: 227875692632950038}
   - component: {fileID: 7840555001842166298}
+  - component: {fileID: 378859620086467414}
   m_Layer: 5
   m_Name: Wheelbar
   m_TagString: Untagged
@@ -474,8 +485,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7948a5d156822b40afc2b92d66f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sliderTarget: {fileID: 4428497867437155456}
+  sliderSteeringWheel: {fileID: 1544697741907503638}
+  leftWheel: {fileID: 2909551309054555036}
+  rightWheel: {fileID: 2909551309989309604}
+  AirControlAmount: 50
+  wobbleAmountMultiplier: 2
   wobbleAmount: 0
   wobbleSpeedTimer: 0
+  FrontWheel: {fileID: 0}
+  BackWheel: {fileID: 0}
+  BothWheelsOnGround: 0
 --- !u!114 &7840555001842166298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +508,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65829e78fe99994eb068cd3538ce1cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closeUpward: 0
+  FramesDelay: 15
+--- !u!114 &378859620086467414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2909551309897962124}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9acba91a0594ac64287cc9ca9fbf7839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FramesDelay: 5
+  VectorStart: {x: 150, y: -100}
+  VectorTargetPos: {x: 150, y: 70}
 --- !u!1 &2909551309989309600
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,12 +615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelFrame01: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
   wheelFrame02: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
-  Wear: 0
   WobbleAmount: 0
-  sliderTarget: {fileID: 0}
-  sliderSteeringWheel: {fileID: 0}
-  LeftWheel: 0
-  wheelBar: {fileID: 0}
+  wheelBar: {fileID: 227875692632950038}
 --- !u!1 &3225501032381671397
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d190aa887e9d7468a4896696a45e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheelBar: {fileID: 227875692632950038}
   targetPos: 0
 --- !u!1 &5138909321878129052
 GameObject:
@@ -869,6 +903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8692952254522171556}
   - component: {fileID: 6543819756758629418}
+  - component: {fileID: 4428497867437155456}
   m_Layer: 5
   m_Name: SliderTarget
   m_TagString: Untagged
@@ -949,6 +984,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4428497867437155456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386488043540490261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d190aa887e9d7468a4896696a45e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelBar: {fileID: 227875692632950038}
+  targetPos: 0
 --- !u!1 &8042474969898709741
 GameObject:
   m_ObjectHideFlags: 0

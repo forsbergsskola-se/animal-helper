@@ -27,7 +27,7 @@ public class PlayerModel : MonoBehaviour {
     }
 
     public void AddMoney() {
-        Gold += 60;
+        Gold += 500;
     }
 
     private void OnApplicationQuit() {

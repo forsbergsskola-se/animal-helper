@@ -5,7 +5,7 @@ public class CraftingController : MonoBehaviour {
     public int amountForFusion = 5;
 
     public void Fuse() {
-        if (inventory.FusionCount() >= amountForFusion) {
+        if (inventory.FusionCount() >= amountForFusion && inventory.CanFuse()) {
             inventory.Fusion(amountForFusion);
             Debug.Log("Fused!");
         }

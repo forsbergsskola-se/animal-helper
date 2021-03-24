@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
-  m_Name: Spoiler Rare
+  m_Script: {fileID: 11500000, guid: a38ccd5dd4d6021428fd3a7d466639f6, type: 3}
+  m_Name: Front Epic
   m_EditorClassIdentifier: 
   description: 
-  itemSprite: {fileID: 21300000, guid: 6cfbd0e816046ef45b1f21de46e4b7a7, type: 3}
-  rarityLevel: 2
+  itemSprite: {fileID: 21300000, guid: acf434c7e4711034d817994003d6b790, type: 3}
+  rarityLevel: 3
   selected: 0
-  nextRarityObject: {fileID: 11400000, guid: 9e872b4337f7e07458241556b98d19a8, type: 2}
+  nextRarityObject: {fileID: 11400000, guid: 83094b1d308630e499777347915b0612, type: 2}
   dragReduction: 0
+  forceBonus: 0

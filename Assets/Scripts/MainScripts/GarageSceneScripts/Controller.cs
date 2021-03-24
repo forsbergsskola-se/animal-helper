@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class Controller : MonoBehaviour {
     public InventoryObject inventory;
     public PlayerModel player;
-    public CraftingRecipe recipes;
     public GameObject ItemViewPrefab;
     
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
@@ -29,13 +28,13 @@ public class Controller : MonoBehaviour {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out var hit)) {
-                var gButton = hit.collider.CompareTag("GachaButton");
-                if (gButton) {
+                var gsButton = hit.collider.CompareTag("GachaSoft");
+                if (gsButton) {
+                    RollGachaSoft();
+                }                          
+                var ghButton = hit.collider.CompareTag("GachaHard");
+                if (ghButton) {
                     RollGachaHard();
-                }                
-                var fButton = hit.collider.CompareTag("Fusion");
-                if (fButton) {
-                    recipes.Craft(inventory);
                 }
             }
         }

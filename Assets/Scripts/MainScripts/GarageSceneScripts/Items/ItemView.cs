@@ -40,7 +40,7 @@ public class ItemView: MonoBehaviour {
         var parentName = transform.parent.name;
         if(parentName != "InventoryScreen") {
             inventory.AddItem(item.item, 1);
-            Destroy(gameObject);
+            inventory.GachaBlurController();
         }
     }
     

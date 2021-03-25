@@ -32,6 +32,7 @@ public class ItemView: MonoBehaviour {
     public void SelectPart(InventoryObject inventory) {
         var parentName = transform.parent.name;
         if (parentName != "InventoryScreen") return;
+        
         item.item.selected = !item.item.selected;
         inventory.AddToSelected(item.item, item.amount);
     }

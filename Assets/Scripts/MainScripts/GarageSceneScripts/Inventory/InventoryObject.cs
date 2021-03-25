@@ -29,14 +29,14 @@ public class InventoryObject : ScriptableObject {
     }
     
     public void AddToSelected(ItemObject _item, int _amount) {
+        SelectedParts.Clear();
+        
         if (_item.selected) {
             SelectedParts.Add(new InventorySlot(_item, _amount));
-            return;
         }
-        for (int i = 0; i < SelectedParts.Count; i++) {
-            if (SelectedParts[i].item.selected == false) {
-                SelectedParts.RemoveAt(i);
-                return;
+        for (int i = 0; i < Container.Count; i++) {
+            if (Container[i].item != _item) {
+                Container[i].item.selected = false;
             }
         }
     }
@@ -89,8 +89,20 @@ public class InventoryObject : ScriptableObject {
         }
         Container.Add(new InventorySlot(_item.nextRarityObject, 1));
     }
+    
+    public int GrinderSingle() {
+        var _item = SelectedParts[0].item;
+        for (int i = 0; i < Container.Count; i++) {
+            if (Container[i].item == _item) {
+                Container[i].ReduceAmount(1);
+                Container[i].item.selected = false;
+            }
+        }
+        SelectedParts.Clear();
+        return 1;
+    }
 
-    public int Grinder() {
+    public int GrinderStack() {
         var _item = SelectedParts[0].item;
         var _amount = SelectedParts[0].amount;
         for (int i = 0; i < Container.Count; i++) {

@@ -13,10 +13,18 @@ public class CraftingController : MonoBehaviour {
         }
     }
     
-    public void Grind() {
+    public void GrindStack() {
         if (inventory.SelectedCount() > 0) {
-            int partsGrinded = inventory.Grinder();
-            Debug.Log(partsGrinded);
+            int partsGrinded = inventory.GrinderStack();
+            Debug.Log("Grinded: " + partsGrinded);
+            player.Scrap += partsGrinded * resourcePerPart;
+        }
+    }
+    
+    public void GrindSingle() {
+        if (inventory.SelectedCount() > 0) {
+            int partsGrinded = inventory.GrinderSingle();
+            Debug.Log("Grinded: " + partsGrinded);
             player.Scrap += partsGrinded * resourcePerPart;
         }
     }

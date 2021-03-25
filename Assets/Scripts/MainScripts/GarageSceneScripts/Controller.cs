@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour {
     public GameObject PrefabBlur;
     public GameObject PrefabPopup;
     public bool UIDissable = false;
+    private Camera _camera;
 
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
     public int[] weightsHard = {30, 30, 30, 30, 10, 10};
@@ -17,8 +18,6 @@ public class Controller : MonoBehaviour {
     public int gachaCostSoft = 100;
     public int gachaRollHard = 100;
     public int rewardAmount = 3;
-    private float posX;
-    private Camera _camera;
 
     void Start() {
         _camera = Camera.main;
@@ -52,7 +51,6 @@ public class Controller : MonoBehaviour {
     public void RollGachaSoft() {
         if (!player.HasEnoughGold(gachaCostSoft)) return;
         player.NutsBolts -= gachaCostSoft;
-        posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
             var random = Random.Range(0, totalWeights);
@@ -71,9 +69,8 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaHard() {
-        if (!player.HasEnoughGold(gachaRollHard)) return;
+        if (!player.HasEnoughScrap(gachaRollHard)) return;
         player.Scrap -= gachaRollHard;
-        posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
             var random = Random.Range(0, totalWeights);

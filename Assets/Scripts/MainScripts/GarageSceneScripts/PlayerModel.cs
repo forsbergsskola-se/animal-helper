@@ -33,6 +33,10 @@ public class PlayerModel : MonoBehaviour {
     public bool HasEnoughGold(int cost) {
         return NutsBolts >= cost;
     }
+    
+    public bool HasEnoughScrap(int cost) {
+        return Scrap >= cost;
+    }
 
     private void Start() {
         NutsBolts = PlayerPrefs.GetInt("Gold");

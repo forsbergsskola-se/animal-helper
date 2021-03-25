@@ -7,8 +7,8 @@ public class PlayerModel : MonoBehaviour {
     public delegate void ScrapEvent(int scrapValue);
     public event ScrapEvent ListenToScrapChange;
     
-    private int _nutsBolts = 100;
-    private int _scrap = 100;
+    private int _nutsBolts;
+    private int _scrap;
     
     public InventorySlot[] gachaLootTable;
 
@@ -39,7 +39,8 @@ public class PlayerModel : MonoBehaviour {
     }
 
     private void Start() {
-        NutsBolts = PlayerPrefs.GetInt("Gold");
+        NutsBolts = PlayerPrefs.GetInt("NutsBolts");
+        Scrap = PlayerPrefs.GetInt("Scrap");
         inventory.Load();
     }
 

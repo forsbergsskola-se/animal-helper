@@ -1804,7 +1804,6 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
   player: {fileID: 484601540}
   amountForFusion: 2
-  resourcePerPart: 100
 --- !u!1 &623181201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,7 +2448,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 507825409}
         m_TargetAssemblyTypeName: CraftingController, Assembly-CSharp
-        m_MethodName: GrindSingle
+        m_MethodName: Fuse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

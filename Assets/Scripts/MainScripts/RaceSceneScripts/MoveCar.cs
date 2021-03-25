@@ -1,12 +1,14 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-
 public class MoveCar : MonoBehaviour
 {
     private Text distanceText;
+    private float startTime;
+    public double raceLength;
     
     public float speed = 5f;
     private bool raceStarted;
@@ -25,9 +27,6 @@ public class MoveCar : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         startPos = rb.transform.position;
-        
-       
-     
     }
     
     private void FixedUpdate()
@@ -40,13 +39,15 @@ public class MoveCar : MonoBehaviour
         if (raceStarted) 
         {
             
-            if (raceIsOver) 
-            {
+            if (raceIsOver) {
+                raceLength = Math.Round(Time.time - startTime, 2);
+
                 Debug.Log("Race is over");
                 GameObject.Find("MoneyWon").GetComponent<MoneyWon>().Money = Mathf.FloorToInt(distance.x);
 
 
                 GameObject.Find("ResultPopupMenu").GetComponent<UI_menuPopUpAnim>().enabled = true;
+                GameObject.Find("ResultPopupMenu").GetComponent<ResultMenu>().enabled = true;
                 
                 GameObject.Find("Wheelbar").GetComponent<UI_CloseAnim>().enabled = true;
                 GameObject.Find("DragButton").GetComponent<UI_CloseAnim>().enabled = true;
@@ -75,6 +76,7 @@ public class MoveCar : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         raceStarted = true;
+        startTime = Time.time;
     }
 
     public void PushTheCar() {

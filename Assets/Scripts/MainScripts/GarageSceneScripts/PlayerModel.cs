@@ -3,8 +3,12 @@ using UnityEngine;
 public class PlayerModel : MonoBehaviour {
     public InventoryObject inventory;
     public delegate void GoldEvent(int goldValue);
-    public event GoldEvent ListenToGoldChange;
+    public event GoldEvent ListenToGoldChange;    
+    public delegate void ScrapEvent(int scrapValue);
+    public event ScrapEvent ListenToScrapChange;
+    
     private int _gold = 100;
+    private int _scrap = 100;
     
     public InventorySlot[] gachaLootTable;
 
@@ -14,6 +18,14 @@ public class PlayerModel : MonoBehaviour {
             _gold = value;
             PlayerPrefs.SetInt("Gold", value);
             ListenToGoldChange?.Invoke(value);
+        }
+    }
+    public int Scrap {
+        get => _scrap;
+        set {
+            _scrap = value;
+            PlayerPrefs.SetInt("Scrap", value);
+            ListenToScrapChange?.Invoke(value);
         }
     }
 
@@ -28,6 +40,9 @@ public class PlayerModel : MonoBehaviour {
 
     public void AddMoney() {
         Gold += 500;
+    }
+    public void AddScrap() {
+        Scrap += 100;
     }
 
     private void OnApplicationQuit() {

@@ -75,6 +75,9 @@ public class InventoryObject : ScriptableObject {
                 Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
             }
+            // if (Container[i].amount == 0) {
+            //     Container.RemoveAt(i);
+            // }
         }
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item.nextRarityObject) {

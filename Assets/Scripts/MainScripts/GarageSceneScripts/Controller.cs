@@ -37,7 +37,6 @@ public class Controller : MonoBehaviour {
                     var gsButton = hit.collider.CompareTag("GachaSoft");
                     if (gsButton) {
                         RollGachaSoft();
-                        
                     }                          
                     var ghButton = hit.collider.CompareTag("GachaHard");
                     if (ghButton) {

@@ -15,7 +15,7 @@ public class GachaController : MonoBehaviour
     public void RollGacha()
     {
         if (!player.HasEnoughGold(rollCost)) return;
-        player.Gold -= rollCost;
+        player.NutsBolts -= rollCost;
         posX = 0;
         for (int j = 0; j < rewardAmount; j++)
         {

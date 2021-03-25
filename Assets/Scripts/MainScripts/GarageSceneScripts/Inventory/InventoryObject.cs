@@ -9,13 +9,11 @@ public class InventoryObject : ScriptableObject {
     private const string savePath = "invSave";
     public int claimAmountOfTimes;
     
-    public void GachaBlurController()
-    {
+    public void GachaBlurController() {
         claimAmountOfTimes++;
     }
     
-    public void BlurReset()
-    {
+    public void BlurReset() {
         claimAmountOfTimes = 0;
     }
 
@@ -29,6 +27,7 @@ public class InventoryObject : ScriptableObject {
         }
         Container.Add(new InventorySlot(_item, _amount));
     }
+    
     public void AddToSelected(ItemObject _item, int _amount) {
         if (_item.selected) {
             SelectedParts.Add(new InventorySlot(_item, _amount));
@@ -61,11 +60,13 @@ public class InventoryObject : ScriptableObject {
             }
         }
         return 0;
-    }    
+    }
+    
     public int SelectedCount() {
         var isEmpty = !SelectedParts.Any();
         return isEmpty ? 0 : SelectedParts[0].amount;
-    }    
+    }
+    
     public bool CanFuse() {
         var _item = SelectedParts[0].item;
         return _item.nextRarityObject != null;
@@ -79,7 +80,7 @@ public class InventoryObject : ScriptableObject {
                 Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
             }
-        }        
+        }
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item.nextRarityObject) {
                 Container[i].AddAmount(1);
@@ -114,7 +115,6 @@ public class InventoryObject : ScriptableObject {
             JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(savePath), this);
         }
     }
-
 }
 
 [System.Serializable]

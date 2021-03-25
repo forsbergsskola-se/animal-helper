@@ -12,11 +12,12 @@ public class CraftingController : MonoBehaviour {
             Debug.Log("Fused!");
         }
     }
+    
     public void Grind() {
         if (inventory.SelectedCount() > 0) {
             int partsGrinded = inventory.Grinder();
-            player.Gold += partsGrinded * resourcePerPart;
             Debug.Log(partsGrinded);
+            player.Scrap += partsGrinded * resourcePerPart;
         }
     }
 }

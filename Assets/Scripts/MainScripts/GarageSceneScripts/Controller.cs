@@ -14,7 +14,8 @@ public class Controller : MonoBehaviour {
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
     public int[] weightsHard = {30, 30, 30, 30, 10, 10};
 
-    public int rollCost = 20;
+    public int gachaCostSoft = 100;
+    public int gachaRollHard = 100;
     public int rewardAmount = 3;
     private float posX;
     private Camera _camera;
@@ -49,8 +50,8 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaSoft() {
-        if (!player.HasEnoughGold(rollCost)) return;
-        player.Gold -= rollCost;
+        if (!player.HasEnoughGold(gachaCostSoft)) return;
+        player.NutsBolts -= gachaCostSoft;
         posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
@@ -63,15 +64,15 @@ public class Controller : MonoBehaviour {
             }
             UIDissable = true;
             PrefabBlur.SetActive(true);
-            var popUp = Instantiate(PrefabPopup, new Vector3(563, 316, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            var popUp = Instantiate(PrefabPopup, new Vector3(570, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
         }
     }
     
     public void RollGachaHard() {
-        if (!player.HasEnoughGold(rollCost)) return;
-        player.Gold -= rollCost;
+        if (!player.HasEnoughGold(gachaRollHard)) return;
+        player.Scrap -= gachaRollHard;
         posX = 0;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
@@ -84,7 +85,7 @@ public class Controller : MonoBehaviour {
             }
             UIDissable = true;
             PrefabBlur.SetActive(true);
-            var popUp = Instantiate(PrefabPopup, new Vector3(563, 316, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            var popUp = Instantiate(PrefabPopup, new Vector3(570, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
         }

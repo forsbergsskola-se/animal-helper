@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoneyWon : MonoBehaviour
@@ -22,11 +20,7 @@ public class MoneyWon : MonoBehaviour
     
     //called when garage scene starts
     public void AddToStash() {
-        GameObject.Find("PlayerModel").GetComponent<PlayerModel>().Gold += Money;
+        GameObject.Find("PlayerModel").GetComponent<PlayerModel>().NutsBolts += Money;
         Destroy(gameObject);
     }
-
-    
-    
-    
 }

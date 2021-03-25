@@ -7,20 +7,21 @@ public class View : MonoBehaviour {
     public PlayerModel player;
     
     private void OnEnable() {
-        player.ListenToGoldChange += UpdateGoldText;
+        player.ListenToNutsBoltsChange += UpdateGoldText;
         player.ListenToScrapChange += UpdateScraptext;
-        UpdateGoldText(player.Gold);
+        UpdateGoldText(player.NutsBolts);
         UpdateScraptext(player.Scrap);
     }
     
     private void OnDisable() {
-        player.ListenToGoldChange -= UpdateGoldText;
+        player.ListenToNutsBoltsChange -= UpdateGoldText;
         player.ListenToScrapChange -= UpdateScraptext;
     }
     
     void UpdateGoldText(int playerGold) {
-        cogwheelsField.text = $"{player.Gold.ToString()}";
-    }    
+        cogwheelsField.text = $"{player.NutsBolts.ToString()}";
+    }
+    
     void UpdateScraptext(int playerGold) {
         scrapField.text = $"{player.Scrap.ToString()}";
     }

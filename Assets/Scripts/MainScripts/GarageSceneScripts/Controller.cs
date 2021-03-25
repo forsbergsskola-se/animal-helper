@@ -49,7 +49,7 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaSoft() {
-        if (!player.HasEnoughGold(gachaCostSoft)) return;
+        if (!player.HasEnoughNutsBolts(gachaCostSoft)) return;
         player.NutsBolts -= gachaCostSoft;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();

@@ -90,21 +90,9 @@ public class InventoryObject : ScriptableObject {
         Container.Add(new InventorySlot(_item.nextRarityObject, 1));
     }
     
-    public int GrinderSingle() {
+    public void Grinder(int _amount) {
         var _item = SelectedParts[0].item;
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].ReduceAmount(1);
-                Container[i].item.selected = false;
-            }
-        }
-        SelectedParts.Clear();
-        return 1;
-    }
-
-    public int GrinderStack() {
-        var _item = SelectedParts[0].item;
-        var _amount = SelectedParts[0].amount;
+        
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
                 Container[i].ReduceAmount(_amount);
@@ -112,7 +100,6 @@ public class InventoryObject : ScriptableObject {
             }
         }
         SelectedParts.Clear();
-        return _amount;
     }
     
     public void Save() {

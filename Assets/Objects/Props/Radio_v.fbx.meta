@@ -1,20 +1,9 @@
 fileFormatVersion: 2
-guid: b962b52d618198c4b98b7986044c9b80
+guid: efbf704e3270e1b4fbd752451e68fcea
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable:
-  - first:
-      74: 1480026790640025081
-    second: electromagnet|CubeAction
-  - first:
-      74: -3999578356269874737
-    second: Cube|CubeAction
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Radio
-    second: {fileID: 2100000, guid: 22c4e84e8ec706b438fb687f7aea5d72, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

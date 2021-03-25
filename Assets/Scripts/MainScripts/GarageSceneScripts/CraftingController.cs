@@ -6,7 +6,11 @@ public class CraftingController : MonoBehaviour {
     public int amountForFusion = 5;
 
     public void Fuse() {
-        if (inventory.SelectedCount() >= amountForFusion && inventory.CanFuse()) {
+        if (inventory.SelectedCount() >= amountForFusion) {
+            int rarity = inventory.SelectedParts[0].item.rarityLevel;
+            int fuseCost = 500 * (1 + rarity);
+            if (!player.HasEnoughNutsBolts(fuseCost)) return;
+            player.NutsBolts -= fuseCost;
             inventory.Fusion(amountForFusion);
             Debug.Log("Fused!");
         }

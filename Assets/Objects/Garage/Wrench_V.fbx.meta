@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff25f81d18f92dd46a392e20ab6565d7
+guid: 88b096c148c5c7c4282242b92a7d16af
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hammer
-    second: {fileID: 2100000, guid: 48bbd24d0fa7103408ff560460943689, type: 2}
+      name: Wrench
+    second: {fileID: 2100000, guid: 81409bf2aa314c14584228d3a03e27b2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

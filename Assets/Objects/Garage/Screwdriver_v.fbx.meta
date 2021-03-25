@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 635371e7521fe814f8124596708f3038
+guid: 2296591d30f773f4991caadf6b0d6999
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pizza_Spoiler
-    second: {fileID: 2100000, guid: 79e74cdbde6e65e4b9bfabe1a893c372, type: 2}
+      name: Screwdriver
+    second: {fileID: 2100000, guid: 7ea02ef69ab828a4ba5130b68ea99c32, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

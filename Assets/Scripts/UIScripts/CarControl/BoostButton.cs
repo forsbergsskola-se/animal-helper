@@ -57,14 +57,11 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
         if (!flashbutton) image.sprite = imageDown;
         //Output the name of the GameObject that is being clicked
         //Debug.Log(name + " Game Object Click in Progress");
-
-
-        car.GetComponent<Rigidbody2D>().drag = 0;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         image.sprite = imageUp;
-        car.GetComponent<Rigidbody2D>().drag = 1;
+        car.GetComponent<MoveCar>().CarBoost();
     }
 }

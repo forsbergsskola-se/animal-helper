@@ -5,6 +5,7 @@ public class GachaPopup : MonoBehaviour {
     public Image image;
     public Image rarityImage;
     public Color[] rarityColors;
+    public Image[] rarityPNG;
     
     public void ClaimButton() {
         Destroy(gameObject);

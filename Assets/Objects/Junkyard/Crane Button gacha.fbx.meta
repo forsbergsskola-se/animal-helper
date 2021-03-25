@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: e2acc6761d7024645baf198ffda91841
+guid: cbfd9e9b941de4b4ba63703b02deacc6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Crane
-    second: {fileID: 2100000, guid: 44ec7254e12ee7143bbadcdb1c592c6d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

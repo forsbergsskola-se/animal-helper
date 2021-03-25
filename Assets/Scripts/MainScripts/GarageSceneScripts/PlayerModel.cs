@@ -30,7 +30,7 @@ public class PlayerModel : MonoBehaviour {
         }
     }
 
-    public bool HasEnoughGold(int cost) {
+    public bool HasEnoughNutsBolts(int cost) {
         return NutsBolts >= cost;
     }
     

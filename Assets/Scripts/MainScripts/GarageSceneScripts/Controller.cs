@@ -49,7 +49,7 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaSoft() {
-        if (!player.HasEnoughGold(gachaCostSoft)) return;
+        if (!player.HasEnoughNutsBolts(gachaCostSoft)) return;
         player.NutsBolts -= gachaCostSoft;
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
@@ -62,7 +62,7 @@ public class Controller : MonoBehaviour {
             }
             UIDissable = true;
             PrefabBlur.SetActive(true);
-            var popUp = Instantiate(PrefabPopup, new Vector3(570, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            var popUp = Instantiate(PrefabPopup, new Vector3(563, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
         }
@@ -82,7 +82,7 @@ public class Controller : MonoBehaviour {
             }
             UIDissable = true;
             PrefabBlur.SetActive(true);
-            var popUp = Instantiate(PrefabPopup, new Vector3(570, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
+            var popUp = Instantiate(PrefabPopup, new Vector3(563, 340, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
         }

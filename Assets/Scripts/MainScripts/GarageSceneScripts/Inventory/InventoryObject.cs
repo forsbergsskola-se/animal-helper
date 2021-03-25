@@ -41,18 +41,6 @@ public class InventoryObject : ScriptableObject {
         }
     }
     
-    public void RemoveItem(ItemObject _item, int _amount) {
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].ReduceAmount(_amount);
-                // if (Container[i].amount == 0) {
-                //     Container.RemoveAt(i);
-                // }
-                return;
-            }
-        }
-    }
-    
     public int ItemCount(ItemObject _item) {
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
@@ -72,12 +60,13 @@ public class InventoryObject : ScriptableObject {
         SelectedParts.RemoveAt(0);
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
-                Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
+                Container[i].ReduceAmount(_amount);
+                // if (Container[i].amount == 0) {
+                //     Container.RemoveAt(i);
+                // }
+                // UpdateDisplay
             }
-            // if (Container[i].amount == 0) {
-            //     Container.RemoveAt(i);
-            // }
         }
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item.nextRarityObject) {
@@ -93,8 +82,8 @@ public class InventoryObject : ScriptableObject {
         
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
-                Container[i].ReduceAmount(_amount);
                 Container[i].item.selected = false;
+                Container[i].ReduceAmount(_amount);
             }
         }
         SelectedParts.Clear();

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff25f81d18f92dd46a392e20ab6565d7
+guid: b52636dd783dba349a2c02b90a167ef3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hammer
-    second: {fileID: 2100000, guid: 48bbd24d0fa7103408ff560460943689, type: 2}
+      name: BigToolbox
+    second: {fileID: 2100000, guid: da7cdbff6172594458bf8c77a2f2f1c3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

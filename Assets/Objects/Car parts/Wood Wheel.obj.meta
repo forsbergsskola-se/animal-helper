@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 2742994dde704e948b2d556e51673c24
+guid: 78e457ac32f243649a82d363871eb473
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel_chair_pTorus5Mat
+    second: {fileID: 2100000, guid: bec8918834312574dba4a9a91e50e75f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

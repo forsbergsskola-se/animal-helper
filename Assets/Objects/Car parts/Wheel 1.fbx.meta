@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: c44bf8458992f6e458ca100debf39911
+guid: 6c903afebd96e5e48be6c60289d190ba
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Grass texture
-    second: {fileID: 2100000, guid: a08703c0fa1e5954399f4b202845a851, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tree trunk
-    second: {fileID: 2100000, guid: 68b978fdf2426684d878bf93f1c23e06, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

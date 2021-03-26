@@ -17,7 +17,8 @@ public class UI_WheelBar : MonoBehaviour
     
     private GameObject car;
 
-
+    public AudioSource wheelRollSound;
+    
     public float AirControlAmount = 50;
     
     public float wobbleAmountMultiplier = 1;
@@ -44,6 +45,9 @@ public class UI_WheelBar : MonoBehaviour
             
                 if (FrontWheel.isOnGround && BackWheel.isOnGround)
                 {
+                    wheelRollSound.volume = Mathf.Clamp((car.GetComponent<Rigidbody2D>().velocity.magnitude)/5, 0, 1);
+                    wheelRollSound.pitch = Mathf.Clamp((car.GetComponent<Rigidbody2D>().velocity.magnitude)/15, 0.5f, 2);
+                    
                     BothWheelsOnGround = true;
 
                     wobbleAmount = sliderTarget.targetPos - sliderSteeringWheel.targetPos;
@@ -66,7 +70,7 @@ public class UI_WheelBar : MonoBehaviour
                     wobbleAmount *= 0.8f;
                     var rotator = (sliderSteeringWheel.targetPos-0.5f)*AirControlAmount;
                     car.GetComponent<Rigidbody2D>().angularVelocity -= rotator;
-                    
+                    wheelRollSound.volume *= 0.095f;
                 }
             
         }

@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 78c8db542b97c9742aab986e09a1140b
+guid: 725ad99f2618c2243a897b44db4bc563
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface5Mat
+    second: {fileID: 2100000, guid: ccf7952ee6f202046b689ddb3b37f012, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

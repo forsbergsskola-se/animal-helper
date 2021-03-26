@@ -157,7 +157,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5858592140392963844}
   - component: {fileID: 7282752898685371035}
-  - component: {fileID: 2442870511994412660}
   m_Layer: 5
   m_Name: SliderSteeringWheel
   m_TagString: Untagged
@@ -250,19 +249,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2442870511994412660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756734415796159513}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a912b38b27187e48a8cbea5374f586d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FramesDelay: 10
 --- !u!1 &2909551309054555038
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +475,7 @@ MonoBehaviour:
   sliderSteeringWheel: {fileID: 1544697741907503638}
   leftWheel: {fileID: 2909551309054555036}
   rightWheel: {fileID: 2909551309989309604}
-  AirControlAmount: 50
+  AirControlAmount: 10
   wobbleAmountMultiplier: 2
   wobbleAmount: 0
   wobbleSpeedTimer: 0
@@ -509,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closeUpward: 0
-  FramesDelay: 15
+  FramesDelay: 20
 --- !u!114 &378859620086467414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,8 +509,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FramesDelay: 5
-  VectorStart: {x: 150, y: -100}
-  VectorTargetPos: {x: 150, y: 70}
+  VectorStart: {x: -20, y: -100}
+  VectorTargetPos: {x: -20, y: 70}
 --- !u!1 &2909551309989309600
 GameObject:
   m_ObjectHideFlags: 0

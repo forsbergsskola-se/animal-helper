@@ -16,7 +16,6 @@ public class UI_wheel : MonoBehaviour
 
 
     private Image image;
-    private float animationSpeed = 0.5f;
 
     //public float Wear;
     [HideInInspector]

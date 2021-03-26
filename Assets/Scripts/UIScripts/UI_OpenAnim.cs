@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class UI_OpenAnim : MonoBehaviour
 {
-
-    float offsetY = -10f;
     public int FramesDelay;
     private RectTransform rect;
     public Vector2 VectorStart;

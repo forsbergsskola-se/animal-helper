@@ -18,7 +18,6 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void AddItem(ItemObject _item, int _amount) {
-        // remove this loop for non-stackable items
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
                 Container[i].AddAmount(_amount);
@@ -57,15 +56,12 @@ public class InventoryObject : ScriptableObject {
 
     public void Fusion(int _amount) {
         var _item = SelectedParts[0].item;
-        SelectedParts.RemoveAt(0);
+        SelectedParts.Clear();
+
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
                 Container[i].item.selected = false;
                 Container[i].ReduceAmount(_amount);
-                // if (Container[i].amount == 0) {
-                //     Container.RemoveAt(i);
-                // }
-                // UpdateDisplay
             }
         }
         for (int i = 0; i < Container.Count; i++) {

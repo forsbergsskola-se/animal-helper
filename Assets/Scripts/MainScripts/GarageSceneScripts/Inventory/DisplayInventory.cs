@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public class DisplayInventory : MonoBehaviour {
+    private Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
+    
     public InventoryObject inventory;
     public GameObject ItemViewPrefab;
 
@@ -10,8 +12,6 @@ public class DisplayInventory : MonoBehaviour {
     public int X_SPACE_BETWEEN_ITEM;
     public int NUMBER_OF_COLUMN;
     public int Y_SPACE_BETWEEN_ITEM;
-
-    private Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
     private void Start() {
         CreateDisplay();
@@ -38,11 +38,16 @@ public class DisplayInventory : MonoBehaviour {
         for (int i = 0; i < inventory.Container.Count; i++) {
             if (itemsDisplayed.ContainsKey(inventory.Container[i])) {
                 itemsDisplayed[inventory.Container[i]].GetComponent<ItemView>().Display(inventory.Container[i]);
-            } else {
+            }
+            else {
                 var obj = Instantiate(ItemViewPrefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
                 obj.GetComponent<ItemView>().Display(inventory.Container[i]);
                 itemsDisplayed.Add(inventory.Container[i], obj);
+            }
+            if (inventory.Container[i].amount == 0) {
+                Destroy(itemsDisplayed[inventory.Container[i]]);
+                itemsDisplayed.Remove(inventory.Container[i]);
             }
         }
     }

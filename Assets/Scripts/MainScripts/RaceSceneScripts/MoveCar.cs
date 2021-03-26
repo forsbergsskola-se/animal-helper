@@ -22,6 +22,8 @@ public class MoveCar : MonoBehaviour
     private Vector3 lastPosition;
     private Vector3 currentPosition;
 
+    public AudioSource CrashSound;
+
     private void Start()
     {
         distanceText = GameObject.Find("CarDistanceText").GetComponent<Text>();
@@ -88,5 +90,10 @@ public class MoveCar : MonoBehaviour
     
     public void CarBoost() {
         rb.AddForce(Vector2.right * boostForce);
+    }
+
+    private void OnCollisionEnter2D()
+    {
+        CrashSound.Play();
     }
 }

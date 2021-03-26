@@ -19,6 +19,7 @@ public class UI_WheelBar : MonoBehaviour
 
     public AudioSource wheelRollSound;
     
+    
     public float AirControlAmount = 50;
     
     public float wobbleAmountMultiplier = 1;
@@ -47,7 +48,7 @@ public class UI_WheelBar : MonoBehaviour
                 {
                     wheelRollSound.volume = Mathf.Clamp((car.GetComponent<Rigidbody2D>().velocity.magnitude)/5, 0, 1);
                     wheelRollSound.pitch = Mathf.Clamp((car.GetComponent<Rigidbody2D>().velocity.magnitude)/15, 0.5f, 2);
-                    
+
                     BothWheelsOnGround = true;
 
                     wobbleAmount = sliderTarget.targetPos - sliderSteeringWheel.targetPos;

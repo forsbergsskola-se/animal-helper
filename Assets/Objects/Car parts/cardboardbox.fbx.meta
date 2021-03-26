@@ -21,7 +21,12 @@ ModelImporter:
   - first:
       74: 4559562236191579391
     second: trashcan|Cylinder.003Action.002
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cardboard
+    second: {fileID: 2100000, guid: 2da94cf6f7dd0fe4cbdedb8626d45fd4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

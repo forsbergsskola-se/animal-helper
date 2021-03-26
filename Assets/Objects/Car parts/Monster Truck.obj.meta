@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5e8ab54ee473724a96522b105a2da69
+guid: 6222135887d7139458eb6af77200f545
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Airpump
-    second: {fileID: 2100000, guid: 262c8a4102a24fc409c2dfe54983d30e, type: 2}
+      name: pCube9Mat
+    second: {fileID: 2100000, guid: 47d5c7b213113b241b0dea664414bb5d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

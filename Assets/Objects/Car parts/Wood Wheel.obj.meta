@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e57abbd05279a7f4eaa32770040ce60a
+guid: 78e457ac32f243649a82d363871eb473
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Hammer
-    second: {fileID: 2100000, guid: 48bbd24d0fa7103408ff560460943689, type: 2}
+      name: wheel_chair_pTorus5Mat
+    second: {fileID: 2100000, guid: bec8918834312574dba4a9a91e50e75f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

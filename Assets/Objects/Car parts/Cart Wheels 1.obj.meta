@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cb001264d72497419a3ce3994b1d8d9
+guid: 6af646e40679fb14a966cd89c6b9c8c3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Small_Toolbox
-    second: {fileID: 2100000, guid: 9a7b212b463542946b4869e6e406963f, type: 2}
+      name: polySurface52Mat
+    second: {fileID: 2100000, guid: c919cef179442ff438608fde34f00010, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b52636dd783dba349a2c02b90a167ef3
+guid: 7d7ed9f2bc5b25843b4ca2683624c6c5
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BigToolbox
-    second: {fileID: 2100000, guid: da7cdbff6172594458bf8c77a2f2f1c3, type: 2}
+      name: polySurface2Mat
+    second: {fileID: 2100000, guid: 4d5cb2e2be58c2f4b841ac5c86c772f0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

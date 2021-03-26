@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 44eeae84bed152d4bb7c788a66d43d26
+guid: 6c903afebd96e5e48be6c60289d190ba
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stroller_wheel
+    second: {fileID: 2100000, guid: 9ab5d02a6191bf448a27ca975db105d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

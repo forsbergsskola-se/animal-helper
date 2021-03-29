@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
     public List<InventorySlot> SelectedParts = new List<InventorySlot>();
-    private const string savePath = "invSave";
+    private const string SavePath = "invSave";
     public int claimAmountOfTimes;
     
     public void GachaBlurController() {
@@ -17,39 +17,39 @@ public class InventoryObject : ScriptableObject {
         claimAmountOfTimes = 0;
     }
 
-    public void AddItem(ItemObject _item, int _amount) {
-        // remove this loop for non-stackable items
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].AddAmount(_amount);
-                return;
-            }
-        }
-        Container.Add(new InventorySlot(_item, _amount));
-    }
-    
-    public void AddToSelected(ItemObject _item, int _amount) {
-        SelectedParts.Clear();
+    public void AddItem(ItemObject item, int amount, int level) {
+        var newSlot = new InventorySlot(item, amount, level);
+        var slot = TryGetExistingInvSlot(newSlot);
         
-        if (_item.selected) {
-            SelectedParts.Add(new InventorySlot(_item, _amount));
+        if (slot == null) {
+            Container.Add(newSlot);
+        } else {
+            slot.AddAmount(amount);
         }
+        
+        // for (int i = 0; i < Container.Count; i++) {
+        //     if (Container[i].item == _item) {
+        //         Container[i].AddAmount(_amount);
+        //         return;
+        //     }
+        // }
+        // Container.Add(new InventorySlot(_item, _amount));
+    }
+    
+    public void AddToSelected(InventorySlot item) {
+        SelectedParts.Clear();
+        // Then the problem aint here but in itemview? Can be a combination of them since they are now not working with eachother
+        if (item.selected) {
+            SelectedParts.Add(new InventorySlot(item.item, item.amount, item.level));
+        }
+        
         for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item != _item) {
-                Container[i].item.selected = false;
+            if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item) {
+                Container[i].selected = false;
             }
         }
     }
-    
-    public int ItemCount(ItemObject _item) {
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                return Container[i].amount;
-            }
-        }
-        return 0;
-    }
-    
+
     public int SelectedCount() {
         var isEmpty = !SelectedParts.Any();
         return isEmpty ? 0 : SelectedParts[0].amount;
@@ -57,15 +57,12 @@ public class InventoryObject : ScriptableObject {
 
     public void Fusion(int _amount) {
         var _item = SelectedParts[0].item;
-        SelectedParts.RemoveAt(0);
+        SelectedParts.Clear();
+
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
-                Container[i].item.selected = false;
+                Container[i].selected = false;
                 Container[i].ReduceAmount(_amount);
-                // if (Container[i].amount == 0) {
-                //     Container.RemoveAt(i);
-                // }
-                // UpdateDisplay
             }
         }
         for (int i = 0; i < Container.Count; i++) {
@@ -74,32 +71,55 @@ public class InventoryObject : ScriptableObject {
                 return;
             }
         }
-        Container.Add(new InventorySlot(_item.nextRarityObject, 1));
+        Container.Add(new InventorySlot(_item.nextRarityObject, 1, 0));
     }
     
-    public void Grinder(int _amount) {
-        var _item = SelectedParts[0].item;
-        
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].item.selected = false;
-                Container[i].ReduceAmount(_amount);
-            }
-        }
+    public void Grinder(int amount) {
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        slot.selected = false;
+        slot.ReduceAmount(amount);
+
         SelectedParts.Clear();
     }
     
+    public void LevelUp() {
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        var newSlot = new InventorySlot(slot.item, 1, slot.level + 1);
+        slot.selected = false;
+        slot.ReduceAmount(1);
+        
+
+        if (TryGetExistingInvSlot(newSlot) == null)
+        {
+            Container.Add(newSlot);
+        }
+        else
+        {
+            TryGetExistingInvSlot(newSlot).AddAmount(1);
+        }
+        SelectedParts.Clear();
+    }
+
     public void Save() {
         string saveData = JsonUtility.ToJson(this, true);
-        PlayerPrefs.SetString(savePath,saveData);
+        PlayerPrefs.SetString(SavePath,saveData);
         
         // File.WriteAllText(Path.Combine(Application.persistentDataPath,savePath), saveData);
     }
 
     public void Load() {
-        if (PlayerPrefs.HasKey(savePath)) {
-            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(savePath), this);
+        if (PlayerPrefs.HasKey(SavePath)) {
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(SavePath), this);
         }
+    }
+
+    private InventorySlot TryGetExistingInvSlot(InventorySlot slot) {
+        foreach (var inventorySlot in Container) {
+            if (inventorySlot.Matches(slot)) {
+                return inventorySlot;
+            }
+        }
+        return null;
     }
 }
 
@@ -107,10 +127,13 @@ public class InventoryObject : ScriptableObject {
 public class InventorySlot {
     public ItemObject item;
     public int amount;
+    public int level;
+    public bool selected;
 
-    public InventorySlot(ItemObject _item, int _amount) {
-        item = _item;
-        amount = _amount;
+    public InventorySlot(ItemObject item, int amount, int level) {
+        this.item = item;
+        this.amount = amount;
+        this.level = level;
     }
 
     public void AddAmount(int value) {
@@ -118,5 +141,9 @@ public class InventorySlot {
     }
     public void ReduceAmount(int value) {
         amount -= value;
+    }
+
+    public bool Matches(InventorySlot other) {
+        return other.item == this.item && other.level == this.level;
     }
 }

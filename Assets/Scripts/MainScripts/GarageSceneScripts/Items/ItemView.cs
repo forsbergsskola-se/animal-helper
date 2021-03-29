@@ -18,10 +18,10 @@ public class ItemView: MonoBehaviour {
     }
 
     public void Update() {
-        selected = item.item.selected;
+        selected = item.selected;
         image.color = selected ? Color.green : ogColour;
     }
-
+    
     public void Display(InventorySlot item) {
         this.item = item;
         amountText.text = item.amount.ToString("n0");
@@ -32,20 +32,21 @@ public class ItemView: MonoBehaviour {
     public void SelectPart(InventoryObject inventory) {
         var parentName = transform.parent.name;
         if (parentName != "InventoryScreen") return;
-        
-        item.item.selected = !item.item.selected;
-        inventory.AddToSelected(item.item, item.amount);
+
+        // Can we make so it checks the selected amount? SelectedParts.length <1
+        item.selected = !item.selected;
+        inventory.AddToSelected(item);
     }
 
     public void AddToInv(InventoryObject inventory) {
         var parentName = transform.parent.name;
         if(parentName != "InventoryScreen") {
-            inventory.AddItem(item.item, 1);
+            inventory.AddItem(item.item, 1, 0);
             inventory.GachaBlurController();
         }
     }
     
     private void OnApplicationQuit() {
-        item.item.selected = false;
+        item.selected = false;
     }
 }

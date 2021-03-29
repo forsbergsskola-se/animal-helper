@@ -4,15 +4,34 @@ public class CraftingController : MonoBehaviour {
     public InventoryObject inventory;
     public PlayerModel player;
     public int amountForFusion = 5;
-
+    public int baseCost = 100;
+    public int maxLevel = 3;
     public void Fuse() {
         if (inventory.SelectedCount() >= amountForFusion) {
             int rarity = inventory.SelectedParts[0].item.rarityLevel;
-            int fuseCost = 500 * (1 + rarity);
+            int fuseCost = 150 * ((rarity + 1) ^ 2);
             if (!player.HasEnoughNutsBolts(fuseCost)) return;
             player.NutsBolts -= fuseCost;
             inventory.Fusion(amountForFusion);
             Debug.Log("Fused!");
+        }
+    }
+    public void LeveUp()
+    {
+        if (inventory.SelectedCount() > 0)
+        {
+            var inventoryObject = inventory.SelectedParts[0];
+            var totalCost = baseCost * inventoryObject.item.rarityLevel + 10 * inventoryObject.level;
+            //var totalCostV2 = baseCost * inventoryObject.level + 10 * inventoryObject.item.rarityLevel;
+            Debug.Log("Level Up Cost " + totalCost);
+            if (inventoryObject.level >= maxLevel)
+                return;
+            if (!player.HasEnoughScrap(totalCost))
+                return;
+            player.Scrap -= totalCost;
+            //player.Scrap -= totalCostV2
+            inventory.LevelUp();
+
         }
     }
     

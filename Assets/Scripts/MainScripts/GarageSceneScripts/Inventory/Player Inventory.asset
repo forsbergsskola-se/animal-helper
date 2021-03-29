@@ -12,22 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e6ef8288dc81a429ca350721f8c381, type: 3}
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
-  Container:
-  - item: {fileID: 11400000, guid: 22fdb084d3c68874d9540637528c772b, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: dee60fab26d59d04c80da91c99504d2e, type: 2}
-    amount: 0
-  - item: {fileID: 11400000, guid: 1ee5a470f694f724a96f3e77e14fb975, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
-    amount: 2
-  - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 213df87bcf4b70a48822d1bba8bd5b24, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: bd85018f7a9eb584e85064e87c124ece, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 0ac6f1f74e98c2741a365a3019ea94db, type: 2}
-    amount: 1
+  Container: []
   SelectedParts: []
   claimAmountOfTimes: 0

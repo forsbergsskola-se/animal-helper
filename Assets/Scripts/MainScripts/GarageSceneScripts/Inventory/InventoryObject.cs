@@ -6,7 +6,7 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
     public List<InventorySlot> SelectedParts = new List<InventorySlot>();
-    private const string savePath = "invSave";
+    private const string SavePath = "invSave";
     public int claimAmountOfTimes;
     
     public void GachaBlurController() {
@@ -17,38 +17,38 @@ public class InventoryObject : ScriptableObject {
         claimAmountOfTimes = 0;
     }
 
-    public void AddItem(ItemObject _item, int _amount) {
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].AddAmount(_amount);
-                return;
-            }
+    public void AddItem(ItemObject item, int amount, int level = 0) {
+        var newSlot = new InventorySlot(item, amount, level);
+        var slot = TryGetExistingInvSlot(newSlot);
+        
+        if (slot == null) {
+            Container.Add(newSlot);
+        } else {
+            slot.AddAmount(amount);
         }
-        Container.Add(new InventorySlot(_item, _amount));
+        
+        // for (int i = 0; i < Container.Count; i++) {
+        //     if (Container[i].item == _item) {
+        //         Container[i].AddAmount(_amount);
+        //         return;
+        //     }
+        // }
+        // Container.Add(new InventorySlot(_item, _amount));
     }
     
-    public void AddToSelected(ItemObject _item, int _amount) {
+    public void AddToSelected(ItemObject item, int amount) {
         SelectedParts.Clear();
         
-        if (_item.selected) {
-            SelectedParts.Add(new InventorySlot(_item, _amount));
+        if (item.selected) {
+            SelectedParts.Add(new InventorySlot(item, amount));
         }
         for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item != _item) {
+            if (Container[i].item != item) {
                 Container[i].item.selected = false;
             }
         }
     }
-    
-    public int ItemCount(ItemObject _item) {
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                return Container[i].amount;
-            }
-        }
-        return 0;
-    }
-    
+
     public int SelectedCount() {
         var isEmpty = !SelectedParts.Any();
         return isEmpty ? 0 : SelectedParts[0].amount;
@@ -73,29 +73,44 @@ public class InventoryObject : ScriptableObject {
         Container.Add(new InventorySlot(_item.nextRarityObject, 1));
     }
     
-    public void Grinder(int _amount) {
-        var _item = SelectedParts[0].item;
-        
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item == _item) {
-                Container[i].item.selected = false;
-                Container[i].ReduceAmount(_amount);
-            }
-        }
+    public void Grinder(int amount) {
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        slot.item.selected = false;
+        slot.ReduceAmount(amount);
+
         SelectedParts.Clear();
     }
     
+    public void LevelUp() {
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        var newSlot = new InventorySlot(slot.item, 1, slot.level + 1);
+        
+        slot.ReduceAmount(1);
+        Container.Add(newSlot);
+
+        SelectedParts.Clear();
+    }
+
     public void Save() {
         string saveData = JsonUtility.ToJson(this, true);
-        PlayerPrefs.SetString(savePath,saveData);
+        PlayerPrefs.SetString(SavePath,saveData);
         
         // File.WriteAllText(Path.Combine(Application.persistentDataPath,savePath), saveData);
     }
 
     public void Load() {
-        if (PlayerPrefs.HasKey(savePath)) {
-            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(savePath), this);
+        if (PlayerPrefs.HasKey(SavePath)) {
+            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(SavePath), this);
         }
+    }
+
+    private InventorySlot TryGetExistingInvSlot(InventorySlot slot) {
+        foreach (var inventorySlot in Container) {
+            if (inventorySlot.Matches(slot)) {
+                return inventorySlot;
+            }
+        }
+        return null;
     }
 }
 
@@ -103,10 +118,12 @@ public class InventoryObject : ScriptableObject {
 public class InventorySlot {
     public ItemObject item;
     public int amount;
+    public int level;
 
-    public InventorySlot(ItemObject _item, int _amount) {
-        item = _item;
-        amount = _amount;
+    public InventorySlot(ItemObject item, int amount, int level = 0) {
+        this.item = item;
+        this.amount = amount;
+        this.level = level;
     }
 
     public void AddAmount(int value) {
@@ -114,5 +131,9 @@ public class InventorySlot {
     }
     public void ReduceAmount(int value) {
         amount -= value;
+    }
+
+    public bool Matches(InventorySlot other) {
+        return other.item == this.item && other.level == this.level;
     }
 }

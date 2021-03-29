@@ -17,7 +17,7 @@ public class InventoryObject : ScriptableObject {
         claimAmountOfTimes = 0;
     }
 
-    public void AddItem(ItemObject item, int amount, int level = 0) {
+    public void AddItem(ItemObject item, int amount, int level) {
         var newSlot = new InventorySlot(item, amount, level);
         var slot = TryGetExistingInvSlot(newSlot);
         
@@ -36,15 +36,16 @@ public class InventoryObject : ScriptableObject {
         // Container.Add(new InventorySlot(_item, _amount));
     }
     
-    public void AddToSelected(ItemObject item, int amount) {
+    public void AddToSelected(InventorySlot item) {
         SelectedParts.Clear();
-        
+        // Then the problem aint here but in itemview? Can be a combination of them since they are now not working with eachother
         if (item.selected) {
-            SelectedParts.Add(new InventorySlot(item, amount));
+            SelectedParts.Add(new InventorySlot(item.item, item.amount, item.level));
         }
+        
         for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].item != item) {
-                Container[i].item.selected = false;
+            if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item) {
+                Container[i].selected = false;
             }
         }
     }
@@ -60,7 +61,7 @@ public class InventoryObject : ScriptableObject {
 
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == _item) {
-                Container[i].item.selected = false;
+                Container[i].selected = false;
                 Container[i].ReduceAmount(_amount);
             }
         }
@@ -70,12 +71,12 @@ public class InventoryObject : ScriptableObject {
                 return;
             }
         }
-        Container.Add(new InventorySlot(_item.nextRarityObject, 1));
+        Container.Add(new InventorySlot(_item.nextRarityObject, 1, 0));
     }
     
     public void Grinder(int amount) {
         var slot = TryGetExistingInvSlot(SelectedParts[0]);
-        slot.item.selected = false;
+        slot.selected = false;
         slot.ReduceAmount(amount);
 
         SelectedParts.Clear();
@@ -84,10 +85,18 @@ public class InventoryObject : ScriptableObject {
     public void LevelUp() {
         var slot = TryGetExistingInvSlot(SelectedParts[0]);
         var newSlot = new InventorySlot(slot.item, 1, slot.level + 1);
-        
+        slot.selected = false;
         slot.ReduceAmount(1);
-        Container.Add(newSlot);
+        
 
+        if (TryGetExistingInvSlot(newSlot) == null)
+        {
+            Container.Add(newSlot);
+        }
+        else
+        {
+            TryGetExistingInvSlot(newSlot).AddAmount(1);
+        }
         SelectedParts.Clear();
     }
 
@@ -119,8 +128,9 @@ public class InventorySlot {
     public ItemObject item;
     public int amount;
     public int level;
+    public bool selected;
 
-    public InventorySlot(ItemObject item, int amount, int level = 0) {
+    public InventorySlot(ItemObject item, int amount, int level) {
         this.item = item;
         this.amount = amount;
         this.level = level;

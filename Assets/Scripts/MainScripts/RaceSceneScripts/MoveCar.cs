@@ -84,6 +84,7 @@ public class MoveCar : MonoBehaviour
 
     public void PushTheCar() {
         rb.AddForce(Vector2.right * (speed * 200));
+        rb.constraints = RigidbodyConstraints2D.None;
         StartCoroutine(Initiate());
         StartCoroutine(PositionCheck());
     }

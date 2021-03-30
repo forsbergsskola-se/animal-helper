@@ -188,7 +188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raceLength: 0
-  speed: 5
+  boostForce: 1000
+  pushSpeed: 5
   CrashSound: {fileID: 1189590419511706017}
 --- !u!114 &-1874399857153285699
 MonoBehaviour:
@@ -220,6 +221,15 @@ MonoBehaviour:
   - {fileID: 5524275583827076945}
   - {fileID: 7480597917606102655}
   item: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
+  wheelBar: {fileID: 0}
+  moveCar: {fileID: 5524275583780581179}
+  dragButton: {fileID: 0}
+  PushSpeed: 0
+  BoostForce: 0
+  Drag: 0
+  WobbleAmount: 0
+  Mass: 0
+  rigidBody: {fileID: 0}
 --- !u!61 &5524275583780581173
 BoxCollider2D:
   m_ObjectHideFlags: 0

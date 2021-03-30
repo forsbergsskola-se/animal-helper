@@ -199,7 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raceLength: 0
-  speed: 5
+  boostForce: 1000
+  pushSpeed: 5
   CrashSound: {fileID: 1189590419511706017}
 --- !u!114 &-1874399857153285699
 MonoBehaviour:

@@ -6,6 +6,7 @@ using UnityEngine;
 public class InventoryObject : ScriptableObject {
     public List<InventorySlot> Container = new List<InventorySlot>();
     public List<InventorySlot> SelectedParts = new List<InventorySlot>();
+    public List<InventorySlot> EquipedParts = new List<InventorySlot>();
     private const string SavePath = "invSave";
     public int claimAmountOfTimes;
     

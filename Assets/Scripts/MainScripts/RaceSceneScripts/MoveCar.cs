@@ -10,8 +10,8 @@ public class MoveCar : MonoBehaviour
     private float startTime;
     public double raceLength;
     
-    private int boostForce = 1000;
-    public float speed = 5f;
+    public int boostForce = 1000;
+    public float pushSpeed = 5f;
     private bool raceStarted;
     private bool raceIsOver;
     
@@ -83,7 +83,7 @@ public class MoveCar : MonoBehaviour
     }
 
     public void PushTheCar() {
-        rb.AddForce(Vector2.right * (speed * 200));
+        rb.AddForce(Vector2.right * (pushSpeed * 200));
         rb.constraints = RigidbodyConstraints2D.None;
         StartCoroutine(Initiate());
         StartCoroutine(PositionCheck());

@@ -7,7 +7,7 @@ public class RepeatBackground : MonoBehaviour
     private Vector3 startPos;
     public float repeatWidth;
 
-    public float speed = 5.0f;
+    public float speed = 3.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,9 @@ public class RepeatBackground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * Time.deltaTime * speed);
+        transform.Translate(Vector3.right * Time.deltaTime * speed);
 
-        if (transform.position.x < startPos.x - repeatWidth)
+        if (transform.position.x > startPos.x - repeatWidth)
         {
             transform.position = startPos;
         }

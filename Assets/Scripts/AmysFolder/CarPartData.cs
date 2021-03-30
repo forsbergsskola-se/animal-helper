@@ -40,6 +40,6 @@ public class CarPartData
     }
     public CarPartData (UI_WheelBar uI_WheelBar)
     {
-        WobbleAmount = uI_WheelBar.wobbleAmount;
+        wobbleAmount = uI_WheelBar.wobbleAmount;
     }
 }

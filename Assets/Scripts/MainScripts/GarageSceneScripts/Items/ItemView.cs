@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ItemView: MonoBehaviour {
     public TextMeshProUGUI amountText;
     public TextMeshProUGUI nameText;
+    public TextMeshProUGUI levelText;
     public Image image;
     private bool selected;
     private Color ogColour;
@@ -27,13 +28,12 @@ public class ItemView: MonoBehaviour {
         amountText.text = item.amount.ToString("n0");
         nameText.text = item.item.name;
         image.sprite = item.item.itemSprite;
+        levelText.text = item.level.ToString("n0");
     }
     
     public void SelectPart(InventoryObject inventory) {
         var parentName = transform.parent.name;
         if (parentName != "InventoryScreen") return;
-
-        // Can we make so it checks the selected amount? SelectedParts.length <1
         item.selected = !item.selected;
         inventory.AddToSelected(item);
     }

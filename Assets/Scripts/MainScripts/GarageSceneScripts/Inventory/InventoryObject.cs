@@ -39,13 +39,38 @@ public class InventoryObject : ScriptableObject {
     
     public void AddToSelected(InventorySlot item) {
         SelectedParts.Clear();
-        // Then the problem aint here but in itemview? Can be a combination of them since they are now not working with eachother
         if (item.selected) {
             SelectedParts.Add(new InventorySlot(item.item, item.amount, item.level));
         }
         
         for (int i = 0; i < Container.Count; i++) {
             if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item) {
+                Container[i].selected = false;
+            }
+        }
+    }
+    public void AddToEquiped(InventorySlot item)
+    {
+        ///Equip order Body > Front Wheel > Back Wheel > Spoiler; return complain if not in right order.
+        ///Deequip Spoiler > Back Wheel > Front Wheel > Body. or Just clear entier list.
+        ///Have it ask before you race if you are happy with your Car > Save the data.
+        ///In Race when Car spawns it load the saved data.
+
+        SelectedParts.Clear();
+        
+        if (item.selected)
+        {
+            EquipedParts.Add(new InventorySlot(item.item, item.amount, item.level));
+        }
+
+        for (int i = 0; i < Container.Count; i++)
+        {
+            if (EquipedParts[i].item == item.item && EquipedParts[i].level != item.level || EquipedParts[i].item != item.item)
+            {
+                Container[i].selected = false;
+            }
+            if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item)
+            {
                 Container[i].selected = false;
             }
         }

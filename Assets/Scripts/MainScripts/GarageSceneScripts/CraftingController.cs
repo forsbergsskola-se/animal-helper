@@ -34,7 +34,19 @@ public class CraftingController : MonoBehaviour {
 
         }
     }
-    
+    public void Equip()
+    {
+        if (inventory.SelectedCount() > 0)
+        {
+            var inventoryObject = inventory.SelectedParts[0];
+            inventory.AddToEquiped(inventoryObject);
+        }
+    }
+    public void Unequip()
+    {
+
+    }
+
     public void GrindStack() {
         if (inventory.SelectedCount() > 0) {
             int rarity = inventory.SelectedParts[0].item.rarityLevel;

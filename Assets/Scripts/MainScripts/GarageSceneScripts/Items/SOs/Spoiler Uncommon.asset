@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2fd9d53f39d014782e881045fbebac, type: 3}
   m_Name: Spoiler Uncommon
   m_EditorClassIdentifier: 
+  itemType: Spoiler
   description: 
   itemSprite: {fileID: 21300000, guid: 6cfbd0e816046ef45b1f21de46e4b7a7, type: 3}
   rarityLevel: 1
-  selected: 0
+  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: 75ac3552ce51b5b4b8494d43e8c79b3a, type: 2}
   dragReduction: 0

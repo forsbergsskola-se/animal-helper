@@ -49,31 +49,24 @@ public class InventoryObject : ScriptableObject {
             }
         }
     }
-    public void AddToEquiped(InventorySlot item)
+    public void AddToEquiped()
     {
-        ///Equip order Body > Front Wheel > Back Wheel > Spoiler; return complain if not in right order.
-        ///Deequip Spoiler > Back Wheel > Front Wheel > Body. or Just clear entier list.
-        ///Have it ask before you race if you are happy with your Car > Save the data.
-        ///In Race when Car spawns it load the saved data.
-
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        slot.selected = false;
         SelectedParts.Clear();
+        Debug.Log("Before For. Slot is " + slot.item);
+        for (int i = 0; i < EquipedParts.Count; i++)
+        {
+            if (EquipedParts[i].item.itemType == slot.item.itemType)
+            {
+                Debug.Log("You already have this equiped ");
+                EquipedParts[i] = new InventorySlot(slot.item, 1, slot.level);
+                return;
+            }
+        }
+        EquipedParts.Add(new InventorySlot(slot.item, 1, slot.level));
+        Debug.Log("Item have been added to Equiped " + EquipedParts[0].item);
         
-        if (item.selected)
-        {
-            EquipedParts.Add(new InventorySlot(item.item, item.amount, item.level));
-        }
-
-        for (int i = 0; i < Container.Count; i++)
-        {
-            if (EquipedParts[i].item == item.item && EquipedParts[i].level != item.level || EquipedParts[i].item != item.item)
-            {
-                Container[i].selected = false;
-            }
-            if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item)
-            {
-                Container[i].selected = false;
-            }
-        }
     }
 
     public int SelectedCount() {
@@ -134,14 +127,28 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void Load() {
+        /*
         if (PlayerPrefs.HasKey(SavePath)) {
             JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(SavePath), this);
         }
+    */
     }
 
     private InventorySlot TryGetExistingInvSlot(InventorySlot slot) {
         foreach (var inventorySlot in Container) {
             if (inventorySlot.Matches(slot)) {
+                return inventorySlot;
+            }
+        }
+        return null;
+    }
+
+    private InventorySlot TryGetExistingEquipment(InventorySlot slot)
+    {
+        foreach (var inventorySlot in EquipedParts)
+        {
+            if (inventorySlot.Matches(slot))
+            {
                 return inventorySlot;
             }
         }

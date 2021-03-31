@@ -92,7 +92,8 @@ public class MoveCar : MonoBehaviour
     public void CarBoost() {
         // var bodyLvl = HackySave.Body.level;
         // var bodyRarity = HackySave.Body.item.rarityLevel;
-        // var boostForce = bodyLvl * 2 + bodyRarity / 50;
+        // var boostyForce = bodyLvl * 2 + bodyRarity + 2;
+        // Debug.Log(boostyForce);
 
         rb.AddForce(Vector2.right * boostForce);
     }

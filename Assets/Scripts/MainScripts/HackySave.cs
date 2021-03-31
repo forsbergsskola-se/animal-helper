@@ -1,9 +1,9 @@
 using UnityEngine;
 
 public static class HackySave {
-    public static InventorySlot _wheel;
-    public static InventorySlot _front;
-    public static InventorySlot _spoiler;
+    private static InventorySlot _wheel;
+    private static InventorySlot _front;
+    private static InventorySlot _spoiler;
     private static InventorySlot _body;
     
     public static InventorySlot Body {
@@ -18,31 +18,31 @@ public static class HackySave {
     }
     public static InventorySlot Wheel {
         get{
-            Debug.Log("Getting Body: " + _wheel);
+            Debug.Log("Getting Wheel: " + _wheel);
             return _wheel;
         }
         set{
-            Debug.Log("Setting Body: " + value);
+            Debug.Log("Setting Wheel: " + value);
             _wheel = value;
         }
     }
     public static InventorySlot Front {
         get{
-            Debug.Log("Getting Body: " + _front);
+            Debug.Log("Getting Front: " + _front);
             return _front;
         }
         set{
-            Debug.Log("Setting Body: " + value);
+            Debug.Log("Setting Front: " + value);
             _front = value;
         }
     }
     public static InventorySlot Spoiler {
         get{
-            Debug.Log("Getting Body: " + _spoiler);
+            Debug.Log("Getting Spoiler: " + _spoiler);
             return _spoiler;
         }
         set{
-            Debug.Log("Setting Body: " + value);
+            Debug.Log("Setting Spoiler: " + value);
             _spoiler = value;
         }
     }

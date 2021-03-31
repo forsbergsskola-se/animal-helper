@@ -49,24 +49,55 @@ public class InventoryObject : ScriptableObject {
             }
         }
     }
-    public void AddToEquiped()
-    {
+
+    public void AddToEquiped() {
         var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        var newSlot = new InventorySlot(slot.item, 1, slot.level);
         slot.selected = false;
         SelectedParts.Clear();
-        Debug.Log("Before For. Slot is " + slot.item);
-        for (int i = 0; i < EquipedParts.Count; i++)
-        {
-            if (EquipedParts[i].item.itemType == slot.item.itemType)
-            {
-                Debug.Log("You already have this equiped ");
-                EquipedParts[i] = new InventorySlot(slot.item, 1, slot.level);
-                return;
+        
+        if(newSlot.item.itemType == "Wheel") {
+            var count = 0;
+            for (int i = 0; i < EquipedParts.Count; i++) {
+                if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
+                    if(count == 0){
+                        count = 1;
+                    } else {
+                        EquipedParts[i] = newSlot;
+                        return;
+                    }
+                }
             }
         }
-        EquipedParts.Add(new InventorySlot(slot.item, 1, slot.level));
-        Debug.Log("Item have been added to Equiped " + EquipedParts[0].item);
-        
+        else {
+            for (int i = 0; i < EquipedParts.Count; i++) {
+                if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
+                    EquipedParts[i] = newSlot;
+                    return;
+                }
+            }
+        }
+        EquipedParts.Add(newSlot);
+        SaveEquippedParts();
+    }
+
+    public void SaveEquippedParts() {
+        for (int i = 0; i < EquipedParts.Count; i++) {
+            switch (EquipedParts[i].item.itemType) {
+                case "Front":
+                    HackySave.Front = EquipedParts[i];
+                    break;
+                case "Wheel":
+                    HackySave.FirstWheel = EquipedParts[i];
+                    break;
+                case "Body":
+                    HackySave.Body = EquipedParts[i];
+                    break;
+                case "Spoiler":
+                    HackySave.Spoiler = EquipedParts[i];
+                    break;
+            }
+        }
     }
 
     public int SelectedCount() {
@@ -127,7 +158,7 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void Load() {
-        /*
+    /*
         if (PlayerPrefs.HasKey(SavePath)) {
             JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(SavePath), this);
         }
@@ -137,18 +168,6 @@ public class InventoryObject : ScriptableObject {
     private InventorySlot TryGetExistingInvSlot(InventorySlot slot) {
         foreach (var inventorySlot in Container) {
             if (inventorySlot.Matches(slot)) {
-                return inventorySlot;
-            }
-        }
-        return null;
-    }
-
-    private InventorySlot TryGetExistingEquipment(InventorySlot slot)
-    {
-        foreach (var inventorySlot in EquipedParts)
-        {
-            if (inventorySlot.Matches(slot))
-            {
                 return inventorySlot;
             }
         }

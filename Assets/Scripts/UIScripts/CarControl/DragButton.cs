@@ -32,7 +32,7 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
 
     IEnumerator Initiate()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.1f);
         car = GameObject.Find("Car(Clone)");
         DefaultDrag = car.GetComponent<Rigidbody2D>().drag;
         yield return new WaitForSeconds(1.2f);

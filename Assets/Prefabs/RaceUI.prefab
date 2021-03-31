@@ -399,7 +399,7 @@ MonoBehaviour:
   leftWheel: {fileID: 3686743960906572740}
   rightWheel: {fileID: 3686743960777161980}
   wheelRollSound: {fileID: 3977225888766536101}
-  AirControlAmount: 10
+  AirControlAmount: 30
   wobbleAmountMultiplier: 2
   wobbleAmount: 0
   wobbleSpeedTimer: 0
@@ -2563,7 +2563,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666648068819344179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17f127805082f1546a36e4e21d47fad9, type: 3}
   m_Name: 
@@ -3050,7 +3050,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666648069705755472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54cd6dc6230bb1f4abb92c5e24ed9e96, type: 3}
   m_Name: 

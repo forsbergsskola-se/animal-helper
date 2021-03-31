@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Front Common
   m_EditorClassIdentifier: 
   itemType: Front
-  description: 
-  itemSprite: {fileID: 21300000, guid: acf434c7e4711034d817994003d6b790, type: 3}
+  itemSprite: {fileID: 21300000, guid: 8ca052b020e128c49b8a916567cda44a, type: 3}
   rarityLevel: 0
-  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: 607edd39e78bf964b9cb76d0c23de76d, type: 2}
   dragReduction: 0
   forceBonus: 0

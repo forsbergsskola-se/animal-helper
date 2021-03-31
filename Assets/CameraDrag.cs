@@ -1,32 +1,19 @@
 using UnityEngine;
  
 public class CameraDrag : MonoBehaviour {
-    public float dragSpeed = 2;
-    private Vector3 dragOrigin;
-    private bool move;
-    
+    public bool move;
+
     public void MoveCam() {
-         if (Input.GetMouseButtonDown(0)) {
-            dragOrigin = Input.mousePosition;
-            return;
-        }
-       
-         if (!Input.GetMouseButton(0)) return;
-        
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        /*
         move = !move;
-        if (move) {
-            Vector3 move = new Vector3(dragSpeed, 0, 0);
-     
-            transform.Translate(move, Space.World);
+        if (!move) {
+            Vector3 newPos = new Vector3(1.5f, -1.6f, -21);
+
+            transform.position = newPos;
         }
         else {
-            Vector3 move = new Vector3(-dragSpeed, 0, 0);
-     
-            transform.Translate(move, Space.World);
+            Vector3 newPos = new Vector3(11, -1.6f, -21);
+
+            transform.position = newPos;
         }
-        */
     }
-    
 }

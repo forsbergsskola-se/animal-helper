@@ -176,12 +176,12 @@ GameObject:
   - component: {fileID: 5524275583780581172}
   - component: {fileID: 5524275583780581179}
   - component: {fileID: -1874399857153285699}
-  - component: {fileID: 4889223292563503138}
   - component: {fileID: 5524275583780581173}
   - component: {fileID: 5524275583780581174}
   - component: {fileID: 5524275583780581176}
   - component: {fileID: 5524275583780581177}
   - component: {fileID: 1189590419511706017}
+  - component: {fileID: 7637270208740536251}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -286,34 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5385d1f0e90d54b99541498f9cc7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4889223292563503138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5524275583780581170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d20538cdc1e04a45b4a708df6be6c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 5524275583780581172}
-  - {fileID: 7480597917606102655}
-  - {fileID: 4504539724907455693}
-  wheelsprites:
-  - {fileID: 5524275583832715634}
-  - {fileID: 5524275583827076945}
-  item: {fileID: 11400000, guid: e4a9bbabc5ea89c4ebab544ba0a6ea35, type: 2}
-  wheelBar: {fileID: 0}
-  moveCar: {fileID: 5524275583780581179}
-  dragButton: {fileID: 0}
-  PushSpeed: 0
-  BoostForce: 0
-  Drag: 0
-  WobbleAmount: 0
-  rigidBody: {fileID: 0}
 --- !u!61 &5524275583780581173
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -505,6 +477,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7637270208740536251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524275583780581170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d20538cdc1e04a45b4a708df6be6c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite_Body: {fileID: 5524275583780581172}
+  Sprite_Front: {fileID: 7480597917606102655}
+  Sprite_FrontWheel: {fileID: 5524275583832715634}
+  Sprite_BackWheel: {fileID: 5524275583827076945}
+  Sprite_Spoiler: {fileID: 4504539724907455693}
+  sprites: []
 --- !u!1 &5524275583827077036
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,7 +523,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5524275583827077036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.933, y: -0.9780004, z: 0}
+  m_LocalPosition: {x: -0.933, y: -0.9780004, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5524275583780581175}
@@ -668,7 +658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5524275583832715598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -0.953, z: 0}
+  m_LocalPosition: {x: 0.96, y: -0.953, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5524275583780581175}

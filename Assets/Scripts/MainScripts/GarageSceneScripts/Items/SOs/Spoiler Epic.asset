@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Spoiler Epic
   m_EditorClassIdentifier: 
   itemType: Spoiler
-  description: 
-  itemSprite: {fileID: 21300000, guid: 6cfbd0e816046ef45b1f21de46e4b7a7, type: 3}
+  itemSprite: {fileID: 21300000, guid: 98be56d2f2fc459449900e18364a165c, type: 3}
   rarityLevel: 3
-  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: 2eec46672ab39134e9842b59941262c2, type: 2}
   dragReduction: 0

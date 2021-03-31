@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38ccd5dd4d6021428fd3a7d466639f6, type: 3}
   m_Name: Front Legendary
   m_EditorClassIdentifier: 
-  description: 
-  itemSprite: {fileID: 21300000, guid: acf434c7e4711034d817994003d6b790, type: 3}
+  itemType: 
+  itemSprite: {fileID: 21300000, guid: a108bc9f884ae27468d692b00e25ed8d, type: 3}
   rarityLevel: 4
-  selected: 0
   nextRarityObject: {fileID: 0}
   dragReduction: 0
   forceBonus: 0

@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Spoiler Legendary
   m_EditorClassIdentifier: 
   itemType: Spoiler
-  description: 
-  itemSprite: {fileID: 21300000, guid: 6cfbd0e816046ef45b1f21de46e4b7a7, type: 3}
+  itemSprite: {fileID: 21300000, guid: c384ecec845703f47b8220a30a551848, type: 3}
   rarityLevel: 4
-  itemLevel: 0
   nextRarityObject: {fileID: 0}
   dragReduction: 0

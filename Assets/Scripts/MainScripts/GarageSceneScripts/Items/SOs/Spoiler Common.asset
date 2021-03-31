@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Spoiler Common
   m_EditorClassIdentifier: 
   itemType: Spoiler
-  description: A small spoiler
-  itemSprite: {fileID: 21300000, guid: 6cfbd0e816046ef45b1f21de46e4b7a7, type: 3}
+  itemSprite: {fileID: 21300000, guid: 3003804f26930cd46ac607822a095f4a, type: 3}
   rarityLevel: 0
-  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: bd85018f7a9eb584e85064e87c124ece, type: 2}
   dragReduction: 0.5

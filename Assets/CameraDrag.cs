@@ -1,9 +1,52 @@
 using UnityEngine;
  
-public class CameraDrag : MonoBehaviour {
-    public float dragSpeed = 2;
-    private Vector3 dragOrigin;
-    private bool move;
+public class CameraDrag : MonoBehaviour
+{
+    [SerializeField]
+    private Camera cam;
+
+    private Vector3 _dragOrigin;
+    private Vector3 _difference;
+
+    private void Update()
+    {
+        PanCamera();
+    }
+
+    private void PanCamera()
+    {
+        // Save position of mouse in world space when drag starts (first time clicked)
+
+        if (Input.GetMouseButtonDown(0))
+            _dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        // Calculate distance between drag origin and new position if it is still held down
+
+        if (Input.GetMouseButton(0))
+        {
+            _difference = _dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
+            print("Origin " + _dragOrigin + " NewPosition " + cam.ScreenToWorldPoint(Input.mousePosition) + " = Difference " + _difference);
+        }
+      
+        // Move the camera by that distance
+        cam.transform.position += _difference;
+    }
+}
+
+
+
+     /* public float Speed = 5;
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            transform.eulerAngles += Speed * new Vector3(Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X"), 0);
+        }
+    }*/
+
+    /*private Vector3 dragOrigin;
+    //private bool move;
     
     public void MoveCam() {
          if (Input.GetMouseButtonDown(0)) {
@@ -26,7 +69,6 @@ public class CameraDrag : MonoBehaviour {
      
             transform.Translate(move, Space.World);
         }
-        */
-    }
+       
+    } */
     
-}

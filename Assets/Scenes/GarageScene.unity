@@ -2192,6 +2192,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4605149813783490759}
     m_Modifications:
+    - target: {fileID: 2554375457068864592, guid: 67e98876005fdfd46891917681d67bee, type: 3}
+      propertyPath: playerModel
+      value: 
+      objectReference: {fileID: 484601540}
+    - target: {fileID: 2554375457068864592, guid: 67e98876005fdfd46891917681d67bee, type: 3}
+      propertyPath: scrapRewardAmount
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2554375457068864604, guid: 67e98876005fdfd46891917681d67bee, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

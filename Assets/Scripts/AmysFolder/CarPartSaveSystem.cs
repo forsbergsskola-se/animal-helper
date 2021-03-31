@@ -1,7 +1,7 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-
+/*
 public static class CarPartSaveSystem
 {
     public static void SavePlayer(CarPartController controller) 
@@ -35,3 +35,4 @@ public static class CarPartSaveSystem
         }
     }
 }
+*/

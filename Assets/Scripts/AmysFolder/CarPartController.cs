@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public class CarPartController : MonoBehaviour
 {
     public SpriteRenderer Sprite_Body;
@@ -37,3 +37,4 @@ public class CarPartController : MonoBehaviour
         WobbleAmount = data.wobbleAmount;
     }
 }
+*/

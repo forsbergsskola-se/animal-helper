@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 5524275583780581177}
   - component: {fileID: 1189590419511706017}
   - component: {fileID: 7637270208740536251}
+  - component: {fileID: 2945379987872037385}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -270,9 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb26b8ca9a8e11c4aa6127f44048eec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 2945379987872037385}
   raceLength: 0
   boostForce: 1000
   pushSpeed: 5
+  rb: {fileID: 5524275583780581174}
   CrashSound: {fileID: 1189590419511706017}
 --- !u!114 &-1874399857153285699
 MonoBehaviour:
@@ -494,7 +497,22 @@ MonoBehaviour:
   Sprite_FrontWheel: {fileID: 5524275583832715634}
   Sprite_BackWheel: {fileID: 5524275583827076945}
   Sprite_Spoiler: {fileID: 4504539724907455693}
-  sprites: []
+--- !u!114 &2945379987872037385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5524275583780581170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f33bf49b9dff043b7cc1e5cfa23cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PushSpeed: 0
+  BoostForce: 0
+  Drag: 0
+  WobbleAmount: 0
 --- !u!1 &5524275583827077036
 GameObject:
   m_ObjectHideFlags: 0

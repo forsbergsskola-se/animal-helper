@@ -5,7 +5,6 @@ public static class HackySave {
     private static InventorySlot _front;
     private static InventorySlot _spoiler;
     private static InventorySlot _body;
-    
     public static InventorySlot Body {
         get{
             Debug.Log("Getting Body: " + _body);

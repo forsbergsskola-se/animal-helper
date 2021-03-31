@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class UI_WheelBar : MonoBehaviour
 {
-    
+    public CarStatsMath stats;
+
     private Quaternion rotation;
     private Vector3 rotVector;
 
@@ -23,9 +24,9 @@ public class UI_WheelBar : MonoBehaviour
     public float AirControlAmount = 50;
     
     public float wobbleAmountMultiplier = 1;
-    [HideInInspector]
-    public float wobbleAmount;
-    [HideInInspector]
+    //[HideInInspector]
+    public float wobbleAmount = 2;
+    //[HideInInspector]
     public float wobbleSpeedTimer;
 
     public Wheel FrontWheel;
@@ -34,6 +35,7 @@ public class UI_WheelBar : MonoBehaviour
     public bool BothWheelsOnGround;
     private void Start()
     {
+        wobbleAmount = stats.WobbleAmount;
         StartCoroutine(Initiate());
     }
 
@@ -41,7 +43,6 @@ public class UI_WheelBar : MonoBehaviour
     {
         if (car != null)
         {
-
                 wobbleSpeedTimer += (Time.deltaTime * car.GetComponent<Rigidbody2D>().velocity.magnitude) * 3;
             
                 if (FrontWheel.isOnGround && BackWheel.isOnGround)

@@ -1207,9 +1207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f127805082f1546a36e4e21d47fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 3739696892941822112}
   imageUp: {fileID: 21300000, guid: 975e42d63e9f65946a3797dad278596d, type: 3}
   imageDown: {fileID: 21300000, guid: 284d21a8baa31c244b4e0cbeb4eb0362, type: 3}
-  DuckDrag: 0
 --- !u!1 &1813976979738218352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1513,7 @@ GameObject:
   - component: {fileID: 1813976980203153390}
   - component: {fileID: 1813976980203153389}
   - component: {fileID: 1813976980203153388}
+  - component: {fileID: 3739696892941822112}
   m_Layer: 5
   m_Name: RaceUI
   m_TagString: Untagged
@@ -1606,6 +1607,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3739696892941822112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813976980203153395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f33bf49b9dff043b7cc1e5cfa23cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PushSpeed: 0
+  BoostForce: 0
+  Drag: 0
+  WobbleAmount: 0
 --- !u!1 &1813976980306500737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63b022212a85dd47a3aa60720c8b705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
   wheelFrame01: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
   wheelFrame02: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
   WheelWobbleSound: {fileID: 2749365309095544271}
@@ -2568,6 +2586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7948a5d156822b40afc2b92d66f37fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 3739696892941822112}
   sliderTarget: {fileID: 5140441375274516604}
   sliderSteeringWheel: {fileID: 8019913694523772650}
   leftWheel: {fileID: 5927694693837559648}
@@ -2575,7 +2594,7 @@ MonoBehaviour:
   wheelRollSound: {fileID: 6222678550733544705}
   AirControlAmount: 30
   wobbleAmountMultiplier: 2
-  wobbleAmount: 0
+  wobbleAmount: 2
   wobbleSpeedTimer: 0
   FrontWheel: {fileID: 0}
   BackWheel: {fileID: 0}
@@ -2795,6 +2814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63b022212a85dd47a3aa60720c8b705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
   wheelFrame01: {fileID: 21300000, guid: 4523d00e0b62fc54f89f524cadaeec30, type: 3}
   wheelFrame02: {fileID: 21300000, guid: d787da4e1dca2e346937054a70b1c06b, type: 3}
   WheelWobbleSound: {fileID: 3168871157900505577}

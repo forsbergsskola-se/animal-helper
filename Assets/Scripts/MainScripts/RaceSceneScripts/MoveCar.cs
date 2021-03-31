@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MoveCar : MonoBehaviour
 {
+    public CarStatsMath stats;
+    
     private Text distanceText;
     private float startTime;
     public double raceLength;
@@ -15,7 +17,7 @@ public class MoveCar : MonoBehaviour
     private bool raceStarted;
     private bool raceIsOver;
     
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private Vector2 startPos;
     private Vector2 distance;
 
@@ -83,21 +85,14 @@ public class MoveCar : MonoBehaviour
     }
 
     public void PushTheCar() {
-        rb.AddForce(Vector2.right * (pushSpeed * 200));
+        rb.AddForce(Vector2.right * stats.PushSpeed);
         rb.constraints = RigidbodyConstraints2D.None;
         StartCoroutine(Initiate());
         StartCoroutine(PositionCheck());
     }
     
     public void CarBoost() {
-        var bodyLvl = HackySave.Body.level;
-        var bodyRarity = HackySave.Body.item.rarityLevel;
-        var boostyForce = bodyLvl * 2 + bodyRarity + 2;
-        Debug.Log("level " + bodyLvl);
-        Debug.Log("rarity " + bodyRarity);
-        Debug.Log("math " + boostyForce);
-
-        rb.AddForce(Vector2.right * boostForce);
+        rb.AddForce(Vector2.right * stats.BoostForce);
     }
 
     private void OnCollisionEnter2D()

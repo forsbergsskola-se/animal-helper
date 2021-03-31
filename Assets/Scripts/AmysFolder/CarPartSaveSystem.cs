@@ -1,10 +1,10 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
-
+/*
 public static class CarPartSaveSystem
 {
-    public static void SavePlayer(CarPartController controller)
+    public static void SavePlayer(CarPartController controller) 
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.derby";
@@ -35,3 +35,4 @@ public static class CarPartSaveSystem
         }
     }
 }
+*/

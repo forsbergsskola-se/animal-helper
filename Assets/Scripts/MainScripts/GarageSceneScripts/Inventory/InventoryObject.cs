@@ -49,29 +49,38 @@ public class InventoryObject : ScriptableObject {
             }
         }
     }
-    public void AddToEquiped(InventorySlot item)
-    {
-        ///Equip order Body > Front Wheel > Back Wheel > Spoiler; return complain if not in right order.
-        ///Deequip Spoiler > Back Wheel > Front Wheel > Body. or Just clear entier list.
-        ///Have it ask before you race if you are happy with your Car > Save the data.
-        ///In Race when Car spawns it load the saved data.
 
+    public void AddToEquiped() {
+        var slot = TryGetExistingInvSlot(SelectedParts[0]);
+        var newSlot = new InventorySlot(slot.item, 1, slot.level);
+        slot.selected = false;
         SelectedParts.Clear();
         
-        if (item.selected)
-        {
-            EquipedParts.Add(new InventorySlot(item.item, item.amount, item.level));
-        }
-
-        for (int i = 0; i < Container.Count; i++)
-        {
-            if (EquipedParts[i].item == item.item && EquipedParts[i].level != item.level || EquipedParts[i].item != item.item)
-            {
-                Container[i].selected = false;
+        for (int i = 0; i < EquipedParts.Count; i++) {
+            if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
+                EquipedParts[i] = newSlot;
+                return;
             }
-            if (Container[i].item == item.item && Container[i].level != item.level || Container[i].item != item.item)
-            {
-                Container[i].selected = false;
+        }
+        EquipedParts.Add(newSlot);
+        SaveEquippedParts();
+    }
+
+    public void SaveEquippedParts() {
+        for (int i = 0; i < EquipedParts.Count; i++) {
+            switch (EquipedParts[i].item.itemType) {
+                case "Front":
+                    HackySave.Front = EquipedParts[i];
+                    break;
+                case "Wheel":
+                    HackySave.Wheel = EquipedParts[i];
+                    break;
+                case "Body":
+                    HackySave.Body = EquipedParts[i];
+                    break;
+                case "Spoiler":
+                    HackySave.Spoiler = EquipedParts[i];
+                    break;
             }
         }
     }
@@ -134,9 +143,11 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void Load() {
+    /*
         if (PlayerPrefs.HasKey(SavePath)) {
             JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(SavePath), this);
         }
+    */
     }
 
     private InventorySlot TryGetExistingInvSlot(InventorySlot slot) {

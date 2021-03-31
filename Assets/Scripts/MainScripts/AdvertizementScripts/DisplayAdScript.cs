@@ -12,6 +12,9 @@ public class DisplayAdScript : MonoBehaviour,IUnityAdsListener
     public bool isTargetPlayStore;
     public bool isTestAd;
 
+    public PlayerModel playerModel;
+    public int NutsAndBoltsRewardAmount;
+
     private void Start()
     {
         Advertisement.AddListener(this);
@@ -79,8 +82,8 @@ public class DisplayAdScript : MonoBehaviour,IUnityAdsListener
                 if (placementId == rewardedVideoAd)
                 {
                     Debug.Log("Reward the player");
-                    //TODO add currency
-                    
+                    playerModel.NutsBolts += NutsAndBoltsRewardAmount;
+
                 }
                 if(placementId == interstitialAd){Debug.Log("Finished interstitial");}
                 break;

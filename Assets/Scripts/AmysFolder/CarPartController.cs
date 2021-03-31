@@ -5,47 +5,36 @@ using UnityEngine.UI;
 
 public class CarPartController : MonoBehaviour
 {
-    // This is the one that use the values in data and place them where they need to be.
-    public SpriteRenderer[] sprites; /// 0: Body, 1: Front Wheel, 2: Back Wheel, 3: Spoiler.
-    public InventoryObject item;
-    public UI_WheelBar wheelBar;
-    public MoveCar moveCar;
-    public DragButton dragButton;
+    
+    public SpriteRenderer Sprite_Body;
+    public SpriteRenderer Sprite_Front;
+    public SpriteRenderer Sprite_FrontWheel;
+    public SpriteRenderer Sprite_BackWheel;
+    public SpriteRenderer Sprite_Spoiler;
 
-    public float PushSpeed;
-    public int BoostForce;
-    public float Drag;
-    public float WobbleAmount;
-    public int Mass;
-    public GameObject rigidBody;
-
-    public void PartData()
+    void Start()
     {
+        if (HackySave.Body != null ){
+            this.Sprite_Body.sprite = HackySave.Body.item.itemSprite;
 
-        PushSpeed = moveCar.pushSpeed;
-        BoostForce = moveCar.boostForce;
-        Drag = dragButton.DuckDrag;
-        WobbleAmount = wheelBar.wobbleAmount;
-
-    }
-    public void SaveData()
-    {
-        CarPartSaveSystem.SavePlayer(this);
-    }
-    public void LoadData()
-    {
-        CarPartData data = CarPartSaveSystem.LoadCarParts();
-        PushSpeed = data.pushSpeed;
-        BoostForce = data.boostForce;
-        Drag = data.drag;
-        WobbleAmount = data.wobbleAmount;
-        Mass = data.mass;
-        for (var i = 0; i < sprites.Length; i++)
-        {
-            sprites[0].sprite = data.Body.EquipedParts[0].item.itemSprite;
-            sprites[1].sprite = data.FrontWheel.EquipedParts[1].item.itemSprite;
-            sprites[2].sprite = data.BackWheel.EquipedParts[2].item.itemSprite;
-            sprites[3].sprite = data.Spoiler.EquipedParts[3].item.itemSprite;
         }
+        if (HackySave.Wheel != null)
+        {
+            this.Sprite_FrontWheel.sprite = HackySave.Wheel.item.itemSprite;
+            this.Sprite_BackWheel.sprite = HackySave.Wheel.item.itemSprite;
+
+        }
+        if (HackySave.Front != null)
+        {
+            this.Sprite_Front.sprite = HackySave.Front.item.itemSprite;
+
+        }
+        if (HackySave.Spoiler != null)
+        {
+            this.Sprite_Spoiler.sprite = HackySave.Spoiler.item.itemSprite;
+
+        }
+        return;
     }
 }
+

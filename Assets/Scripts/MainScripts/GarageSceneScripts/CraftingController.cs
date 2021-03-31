@@ -38,8 +38,7 @@ public class CraftingController : MonoBehaviour {
     {
         if (inventory.SelectedCount() > 0)
         {
-            var inventoryObject = inventory.SelectedParts[0];
-            inventory.AddToEquiped(inventoryObject);
+            inventory.AddToEquiped();
         }
     }
     public void Unequip()

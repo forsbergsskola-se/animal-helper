@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b86c807f8919296419fb9a61e0c1c20c, type: 3}
   m_Name: Body Epic
   m_EditorClassIdentifier: 
+  itemType: Body
   description: 
   itemSprite: {fileID: 21300000, guid: eb19ff1187d63e34fa19af6ddb4a1cdc, type: 3}
   rarityLevel: 3
-  selected: 0
+  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: a8cc764eff688b64fb6bb14ccf06b98e, type: 2}
   forceBonus: 0

@@ -22,7 +22,7 @@ public class CarStatsMath : MonoBehaviour
         var spoiler = HackySave.Spoiler;
         //Debug.Log("Front Rarity level " + front.item.rarityLevel);
         PushSpeed = 1000.0f * (front.item.rarityLevel + 1.0f) + (front.level * 0.5f); // 
-        BoostForce = 500 * (body.item.rarityLevel + 1) + (body.level * 1);
+        BoostForce = 500 * (body.item.rarityLevel + 1) + (body.level * 1); // 
         WobbleAmount = 2 - (((wheel.item.rarityLevel + 1.0f) + (wheel.level)) * 0.5f);
         Drag = 16 - ((spoiler.item.rarityLevel + 1.0f) + (spoiler.level * 0.5f));
 

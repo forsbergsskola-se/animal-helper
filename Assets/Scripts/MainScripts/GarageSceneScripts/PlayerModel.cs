@@ -42,6 +42,8 @@ public class PlayerModel : MonoBehaviour {
         NutsBolts = PlayerPrefs.GetInt("NutsBolts");
         Scrap = PlayerPrefs.GetInt("Scrap");
         inventory.Load();
+        inventory.EquipedParts.Clear();
+
     }
 
     public void AddMoney() {
@@ -54,7 +56,7 @@ public class PlayerModel : MonoBehaviour {
 
     private void OnApplicationQuit() {
         inventory.SelectedParts.Clear();
-        inventory.EquipedParts.Clear();
+        // inventory.EquipedParts.Clear();
         inventory.Save();
     }
 }

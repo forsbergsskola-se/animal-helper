@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Body Epic
   m_EditorClassIdentifier: 
   itemType: Body
-  description: 
-  itemSprite: {fileID: 21300000, guid: eb19ff1187d63e34fa19af6ddb4a1cdc, type: 3}
+  itemSprite: {fileID: 21300000, guid: 3d52541822be3bf4391f67391a3dfeb3, type: 3}
   rarityLevel: 3
-  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: a8cc764eff688b64fb6bb14ccf06b98e, type: 2}
   forceBonus: 0

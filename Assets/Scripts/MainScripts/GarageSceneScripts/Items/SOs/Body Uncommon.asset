@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Body Uncommon
   m_EditorClassIdentifier: 
   itemType: Body
-  description: 
-  itemSprite: {fileID: 21300000, guid: eb19ff1187d63e34fa19af6ddb4a1cdc, type: 3}
+  itemSprite: {fileID: 21300000, guid: 24870f33e9b751545bf7dc4f7442f262, type: 3}
   rarityLevel: 1
-  itemLevel: 0
   nextRarityObject: {fileID: 11400000, guid: 9d356164c9c70e64491fe956239f4c21, type: 2}
   forceBonus: 0

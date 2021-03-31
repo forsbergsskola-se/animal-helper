@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheels Uncommon
   m_EditorClassIdentifier: 
   itemType: Wheel
-  itemSprite: {fileID: 21300000, guid: 98717c1db873b214dadcdf17616c3899, type: 3}
+  itemSprite: {fileID: 21300000, guid: 65b4bcb60948d2241a14e73e04ac5088, type: 3}
   rarityLevel: 1
   nextRarityObject: {fileID: 11400000, guid: 22fdb084d3c68874d9540637528c772b, type: 2}
   speedBonus: 20

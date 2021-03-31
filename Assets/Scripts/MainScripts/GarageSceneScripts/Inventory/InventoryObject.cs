@@ -82,13 +82,30 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void SaveEquippedParts() {
-        for (int i = 0; i < EquipedParts.Count; i++) {
+        var count = 0;
+        for (int i = 0; i < EquipedParts.Count; i++)
+        {
+            if (EquipedParts[i].item.itemType == "Wheel")
+            {
+                if (count == 0)
+                {
+                    count = 1;
+                }
+                else
+                {
+                    EquipedParts[i].item.itemType = "FirstWheel";
+                    return;
+                }
+            }
             switch (EquipedParts[i].item.itemType) {
                 case "Front":
                     HackySave.Front = EquipedParts[i];
                     break;
-                case "Wheel":
+                case "FirstWheel": 
                     HackySave.FirstWheel = EquipedParts[i];
+                    break;
+                case "Wheel":
+                    HackySave.SecondWheel = EquipedParts[i];
                     break;
                 case "Body":
                     HackySave.Body = EquipedParts[i];

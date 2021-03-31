@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: Wheels Legendary
   m_EditorClassIdentifier: 
   itemType: Wheel
-  description: 
-  itemSprite: {fileID: 21300000, guid: d33c167852e91994ca321436d85373ca, type: 3}
+  itemSprite: {fileID: 21300000, guid: 98717c1db873b214dadcdf17616c3899, type: 3}
   rarityLevel: 4
-  itemLevel: 0
   nextRarityObject: {fileID: 0}
   speedBonus: 1
   frictionReduction: 1

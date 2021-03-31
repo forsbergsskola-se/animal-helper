@@ -1195,7 +1195,6 @@ GameObject:
   - component: {fileID: 507825408}
   - component: {fileID: 507825407}
   - component: {fileID: 507825409}
-  - component: {fileID: 507825410}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -1257,27 +1256,6 @@ MonoBehaviour:
   amountForFusion: 2
   baseCost: 100
   maxLevel: 3
---- !u!114 &507825410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 507825406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d20538cdc1e04a45b4a708df6be6c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprite_Body: {fileID: 0}
-  Sprite_Front: {fileID: 0}
-  Sprite_FrontWheel: {fileID: 0}
-  Sprite_BackWheel: {fileID: 0}
-  Sprite_Spoiler: {fileID: 0}
-  PushSpeed: 0
-  BoostForce: 0
-  Drag: 0
-  WobbleAmount: 0
 --- !u!1 &623181201
 GameObject:
   m_ObjectHideFlags: 0

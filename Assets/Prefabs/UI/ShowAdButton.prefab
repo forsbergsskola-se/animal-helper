@@ -294,8 +294,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2554375457068864592}
-        m_TargetAssemblyTypeName: DisplayAdYes, Assembly-CSharp
-        m_MethodName: ShowInterstitialAd
+        m_TargetAssemblyTypeName: DisplayAdScript, Assembly-CSharp
+        m_MethodName: PlayRewardedVideoAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -317,4 +317,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefc6ddd6b72c945984f0f54e36fbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySurfacingId: rewardedVideo
+  isTargetPlayStore: 1
+  isTestAd: 1

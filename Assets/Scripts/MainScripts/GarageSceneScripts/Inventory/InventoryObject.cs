@@ -56,25 +56,10 @@ public class InventoryObject : ScriptableObject {
         slot.selected = false;
         SelectedParts.Clear();
         
-        if(newSlot.item.itemType == "Wheel") {
-            var count = 0;
-            for (int i = 0; i < EquipedParts.Count; i++) {
-                if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
-                    if(count == 0){
-                        count = 1;
-                    } else {
-                        EquipedParts[i] = newSlot;
-                        return;
-                    }
-                }
-            }
-        }
-        else {
-            for (int i = 0; i < EquipedParts.Count; i++) {
-                if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
-                    EquipedParts[i] = newSlot;
-                    return;
-                }
+        for (int i = 0; i < EquipedParts.Count; i++) {
+            if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
+                EquipedParts[i] = newSlot;
+                return;
             }
         }
         EquipedParts.Add(newSlot);
@@ -82,30 +67,13 @@ public class InventoryObject : ScriptableObject {
     }
 
     public void SaveEquippedParts() {
-        var count = 0;
-        for (int i = 0; i < EquipedParts.Count; i++)
-        {
-            if (EquipedParts[i].item.itemType == "Wheel")
-            {
-                if (count == 0)
-                {
-                    count = 1;
-                }
-                else
-                {
-                    EquipedParts[i].item.itemType = "FirstWheel";
-                    return;
-                }
-            }
+        for (int i = 0; i < EquipedParts.Count; i++) {
             switch (EquipedParts[i].item.itemType) {
                 case "Front":
                     HackySave.Front = EquipedParts[i];
                     break;
-                case "FirstWheel": 
-                    HackySave.FirstWheel = EquipedParts[i];
-                    break;
                 case "Wheel":
-                    HackySave.SecondWheel = EquipedParts[i];
+                    HackySave.Wheel = EquipedParts[i];
                     break;
                 case "Body":
                     HackySave.Body = EquipedParts[i];

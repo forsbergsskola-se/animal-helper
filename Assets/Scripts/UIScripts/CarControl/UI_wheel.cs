@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class UI_wheel : MonoBehaviour
 {
+    public CarStatsMath stats;
 
     public Sprite wheelFrame01;
     public Sprite wheelFrame02;

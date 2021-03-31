@@ -15,23 +15,23 @@ public class CarPartController : MonoBehaviour
     void Start()
     {
         if (HackySave.Body != null ){
-            this.Sprite_Body.sprite = HackySave.Body.item.itemSprite;
+            Sprite_Body.sprite = HackySave.Body.item.itemSprite;
 
         }
         if (HackySave.Wheel != null)
         {
-            this.Sprite_FrontWheel.sprite = HackySave.Wheel.item.itemSprite;
-            this.Sprite_BackWheel.sprite = HackySave.Wheel.item.itemSprite;
+            Sprite_FrontWheel.sprite = HackySave.Wheel.item.itemSprite;
+            Sprite_BackWheel.sprite = HackySave.Wheel.item.itemSprite;
 
         }
         if (HackySave.Front != null)
         {
-            this.Sprite_Front.sprite = HackySave.Front.item.itemSprite;
+            Sprite_Front.sprite = HackySave.Front.item.itemSprite;
 
         }
         if (HackySave.Spoiler != null)
         {
-            this.Sprite_Spoiler.sprite = HackySave.Spoiler.item.itemSprite;
+            Sprite_Spoiler.sprite = HackySave.Spoiler.item.itemSprite;
 
         }
         return;

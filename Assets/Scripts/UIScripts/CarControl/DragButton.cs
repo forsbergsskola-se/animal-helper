@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandler
 {
+    public CarStatsMath stats;
 
     public Sprite imageUp;
 
@@ -16,7 +17,7 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
     private GameObject car;
 
     private float DefaultDrag;
-    public float DuckDrag;
+    //public float DuckDrag;
     
     private bool flashbutton;
     // Start is called before the first frame update
@@ -54,12 +55,12 @@ public class DragButton : MonoBehaviour , IPointerDownHandler , IPointerUpHandle
         //Debug.Log(name + " Game Object Click in Progress");
 
 
-        car.GetComponent<Rigidbody2D>().drag = DuckDrag;
+        car.GetComponent<Rigidbody2D>().drag = stats.Drag;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         image.sprite = imageUp;
-        car.GetComponent<Rigidbody2D>().drag =DefaultDrag;
+        car.GetComponent<Rigidbody2D>().drag = DefaultDrag;
     }
 }

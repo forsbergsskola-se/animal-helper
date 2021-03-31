@@ -9,12 +9,19 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
     public Sprite imageUp;
 
     public Sprite imageDown;
+    public Sprite imageDisabled;
 
     private Image image;
 
     private GameObject car;
+    private int boostAmount = 3;
 
+    public Text text;
+    
+    private bool pressed;
     private bool flashbutton;
+
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,23 +33,30 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (pressed) onPressed();
+        text.text = boostAmount.ToString("D");
     }
 
 
     void onPressed()
     {
+        image.sprite = imageDisabled;
+        timer += Time.deltaTime;
+        if (timer > 5 && boostAmount > 0)
+        {
+            pressed = false;
+            image.sprite = imageUp;
+        }
         
     }
 
 
     IEnumerator Initiate()
     {
-        yield return new WaitForSeconds(0.1f);
         car = GameObject.Find("Car(Clone)");
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.3f);
         image.sprite = imageDown;
         yield return new WaitForSeconds(0.8f);
         image.sprite = imageUp;
@@ -54,14 +68,24 @@ public class BoostButton : MonoBehaviour, IPointerDownHandler , IPointerUpHandle
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (!flashbutton) image.sprite = imageDown;
+        if (!flashbutton && !pressed && boostAmount > 0)
+        {
+            timer = 0;
+            image.sprite = imageDown;
+            car.GetComponent<MoveCar>().CarBoost();
+            boostAmount--;
+            pressed = true;
+        }
+        
         //Output the name of the GameObject that is being clicked
         //Debug.Log(name + " Game Object Click in Progress");
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        image.sprite = imageUp;
-        car.GetComponent<MoveCar>().CarBoost();
+        if (!flashbutton && !pressed && boostAmount > 0)
+        {
+            image.sprite = imageUp;
+        }
     }
 }

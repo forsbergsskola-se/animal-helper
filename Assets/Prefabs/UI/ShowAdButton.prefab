@@ -319,3 +319,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTargetPlayStore: 1
   isTestAd: 1
+  playerModel: {fileID: 0}
+  NutsAndBoltsRewardAmount: 500

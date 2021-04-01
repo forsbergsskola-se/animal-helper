@@ -42,11 +42,19 @@ public class Controller : MonoBehaviour {
                 if (Physics.Raycast(ray, out var hit)) {
                     var gsButton = hit.collider.CompareTag("GachaSoft");
                     if (gsButton) {
-                        RollGachaSoft();
+                        if (player.HasEnoughNutsBolts(gachaCostSoft))
+                        {
+                            StartCoroutine(PlayAnimationSoft());
+                        }
+                           
+                        
                     }                          
                     var ghButton = hit.collider.CompareTag("GachaHard");
                     if (ghButton) {
-                        RollGachaHard();
+                        if (player.HasEnoughScrap(gachaRollHard))
+                        {
+                            StartCoroutine(PlayAnimationHard());
+                        }
                     }
                 }
             }
@@ -55,11 +63,8 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaSoft() {
-        if (!player.HasEnoughNutsBolts(gachaCostSoft)) return;
+        
         player.NutsBolts -= gachaCostSoft;
-        Anim.SetTrigger("lowerMagnet");
-        magnetSound.Play();
-       // StartCoroutine(PlayAnimation());
 
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
@@ -80,10 +85,9 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaHard() {
-        if (!player.HasEnoughScrap(gachaRollHard)) return;
+      
         player.Scrap -= gachaRollHard;
-        Anim.SetTrigger("lowerMagnet");
-        magnetSound.Play();
+      
 
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
@@ -119,12 +123,23 @@ public class Controller : MonoBehaviour {
         
     }
 
-   /* private IEnumerator PlayAnimation()
+   private IEnumerator PlayAnimationSoft()
     {
         Anim.SetTrigger("lowerMagnet");
-        yield return new WaitForSeconds(2);
+        magnetSound.Play();
+        yield return new WaitForSeconds(1.5f);
+        RollGachaSoft();
 
-    }   */
+    }
 
-    
+    private IEnumerator PlayAnimationHard()
+    {
+        Anim.SetTrigger("lowerMagnet");
+        magnetSound.Play();
+        yield return new WaitForSeconds(1.5f);
+        RollGachaHard();
+
+    }
+
+
 }

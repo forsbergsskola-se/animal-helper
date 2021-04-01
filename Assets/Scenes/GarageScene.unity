@@ -541,6 +541,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93283935}
   m_CullTransparentMesh: 1
+--- !u!95 &95066006 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6400403223725010849, guid: c73949981b223a140ab2869b4367c50e, type: 3}
+  m_PrefabInstance: {fileID: 1383631715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &98752928
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 2.7000732, y: -91.08002}
+  m_AnchoredPosition: {x: 2.7001953, y: -91.08008}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &98752930
@@ -1260,6 +1265,10 @@ MonoBehaviour:
   PrefabBlur: {fileID: 1005372304}
   PrefabPopup: {fileID: 437484234666715648, guid: d497413eafa79f943b91e6a789252945, type: 3}
   UIDissable: 0
+  Anim: {fileID: 95066006}
+  claimAward: {fileID: 995426344}
+  magnetSound: {fileID: 848814664}
+  getItemSound: {fileID: 995426344}
   weightsSoft: 40000000400000004000000040000000140000001400000014000000140000000a0000000a0000000a0000000a0000000500000005000000050000000500000001000000010000000100000001000000
   weightsHard: 0000000000000000000000000000000000000000000000000000000000000000320000003200000032000000320000001e0000001e0000001e0000001e00000014000000140000001400000014000000
   gachaCostSoft: 150

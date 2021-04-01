@@ -14,7 +14,7 @@ public class CameraDrag : MonoBehaviour {
     public void MoveCam() {
         move = !move;
         if (!move) {
-            Vector3 newPos = new Vector3(1.5f, -1.6f, -21);
+            Vector3 newPos = new Vector3(0, -1.6f, -21);
             scrapyardUI.SetActive(true);
             garageUI.SetActive(false);
             navText.text = "Go to garage";

@@ -14,5 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container: []
   SelectedParts: []
-  EquipedParts: []
+  EquipedParts:
+  - item: {fileID: 11400000, guid: 9d356164c9c70e64491fe956239f4c21, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 9e872b4337f7e07458241556b98d19a8, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 7789c98e2a6d78b4fa8cff358e4aacbb, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
   claimAmountOfTimes: 0

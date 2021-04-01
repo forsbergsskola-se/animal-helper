@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour {
@@ -11,6 +12,11 @@ public class Controller : MonoBehaviour {
     public GameObject PrefabPopup;
     public bool UIDissable = false;
     private Camera _camera;
+
+    public Animator Anim;
+    public AudioSource claimAward;
+    public AudioSource magnetSound;
+    public AudioSource getItemSound;
 
     public int[] weightsSoft = {50, 40, 30, 20, 10, 1};
     public int[] weightsHard = {30, 30, 30, 30, 10, 10};
@@ -51,6 +57,10 @@ public class Controller : MonoBehaviour {
     public void RollGachaSoft() {
         if (!player.HasEnoughNutsBolts(gachaCostSoft)) return;
         player.NutsBolts -= gachaCostSoft;
+        Anim.SetTrigger("lowerMagnet");
+        magnetSound.Play();
+       // StartCoroutine(PlayAnimation());
+
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsSoft.Sum();
             var random = Random.Range(0, totalWeights);
@@ -65,12 +75,16 @@ public class Controller : MonoBehaviour {
             var popUp = Instantiate(PrefabPopup, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
+            getItemSound.Play();
         }
     }
     
     public void RollGachaHard() {
         if (!player.HasEnoughScrap(gachaRollHard)) return;
         player.Scrap -= gachaRollHard;
+        Anim.SetTrigger("lowerMagnet");
+        magnetSound.Play();
+
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
             var random = Random.Range(0, totalWeights);
@@ -85,8 +99,10 @@ public class Controller : MonoBehaviour {
             var popUp = Instantiate(PrefabPopup, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
             popUp.GetComponent<GachaPopup>().ColorDisplay(player.gachaLootTable[i]);
+            getItemSound.Play();
         }
     }
+    
     
     public void GachaBlurController()
     {
@@ -100,5 +116,15 @@ public class Controller : MonoBehaviour {
     
     public void StartRace() {
         SceneManager.LoadScene("CarRollScene");
+        
     }
+
+   /* private IEnumerator PlayAnimation()
+    {
+        Anim.SetTrigger("lowerMagnet");
+        yield return new WaitForSeconds(2);
+
+    }   */
+
+    
 }

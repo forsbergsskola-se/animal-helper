@@ -32,6 +32,8 @@ public class MoveCar : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         startPos = rb.transform.position;
+        rb.drag = stats.Drag;
+        Debug.Log("Drag is " + rb.drag);
     }
     
     private void FixedUpdate()

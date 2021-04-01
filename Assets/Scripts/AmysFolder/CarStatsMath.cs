@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CarStatsMath : MonoBehaviour
 {
-    public float PushSpeed; // Front
+    public int PushSpeed; // Front
     public int BoostForce; // Body
     public float Drag; // Spoiler
     public float WobbleAmount; // Front Wheel & Back Wheel
 
     public void Start()
     {
+    }
+    public void Awake()
+    {
         StatController();
+
     }
 
     public void StatController()
@@ -20,32 +24,18 @@ public class CarStatsMath : MonoBehaviour
         var front = HackySave.Front;
         var wheel = HackySave.Wheel;
         var spoiler = HackySave.Spoiler;
-        //Debug.Log("Front Rarity level " + front.item.rarityLevel);
-        PushSpeed = 1000.0f * (front.item.rarityLevel + 1.0f) + (front.level * 0.5f); // 
-        BoostForce = 500 * (body.item.rarityLevel + 1) + (body.level * 1); // 
-        WobbleAmount = 2 - (((wheel.item.rarityLevel + 1.0f) + (wheel.level)) * 0.5f);
-        Drag = 16 - ((spoiler.item.rarityLevel + 1.0f) + (spoiler.level * 0.5f));
+        PushSpeed = 10 * (front.item.rarityLevel + 200) + (front.level * 150); 
+        BoostForce = 10 * ((body.item.rarityLevel * 100) + (body.level * 100) * 10); 
+        WobbleAmount = 10 - ((wheel.item.rarityLevel + 1.0f) + (wheel.level * 0.5f));
+        Drag = 1.0f - (0.8f * ((spoiler.item.rarityLevel * 1.0f) * (0.1f + spoiler.level) * 0.1f)); 
+        /// Need to redo, Level effects more then Rarity.
+        /// 1 - (0.8 * ((4 * 1 ) * ((0.1 + 3) *0.1))) = 0.008 Legendary on Max level.
+        /// 1 - (0.8 * ((1 * 1 ) * ((0.1 + 1) *0.1))) = 0.912 Common on level 0.
 
-    /*
-    if (front.item != null)
-    {
-        this.PushSpeed = 5.0f * (front.item.rarityLevel + 1.0f) + (front.level * 0.5f);
+        /*
+        if (front.item != null)
+        {
+        }
+        */
     }
-    else { 
-        PushSpeed = 5.0f * (1.0f) + (0.5f);
-    }
-    if (body.item != null)
-    {
-        this.BoostForce = 500 * (body.item.rarityLevel + 1) + (body.level * 1);
-    }
-    if (wheel.item != null)
-    {
-        this.WobbleAmount = 2 - (((wheel.item.rarityLevel + 1.0f) + (wheel.level)) * 0.5f);
-    }
-    if (spoiler.item != null)
-    {
-        this.Drag = 16 - ((spoiler.item.rarityLevel + 1.0f) + (spoiler.level * 0.5f));
-    }
-    */
-}
 }

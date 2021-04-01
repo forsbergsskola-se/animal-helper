@@ -6,8 +6,10 @@ public class CameraDrag : MonoBehaviour {
     public GameObject garageUI;
     public GameObject scrapyardUI;
     public Text navText;
+    public AudioSource moveSound;
+    public AudioSource workSound;
 
-  
+
 
     public void MoveCam() {
         move = !move;
@@ -16,6 +18,8 @@ public class CameraDrag : MonoBehaviour {
             scrapyardUI.SetActive(true);
             garageUI.SetActive(false);
             navText.text = "Go to garage";
+            moveSound.Play();
+            workSound.Stop();
 
             transform.position = newPos;
         }
@@ -25,6 +29,9 @@ public class CameraDrag : MonoBehaviour {
             transform.position = newPos;
             scrapyardUI.SetActive(false);
             garageUI.SetActive(true);
+            moveSound.Play();
+            workSound.Play();
+
         }
     }
 }

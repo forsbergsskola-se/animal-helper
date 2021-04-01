@@ -27,7 +27,8 @@ public class CarStatsMath : MonoBehaviour
         PushSpeed = 10 * (front.item.rarityLevel + 200) + (front.level * 150); 
         BoostForce = 10 * ((body.item.rarityLevel * 100) + (body.level * 100) * 10); 
         WobbleAmount = 10 - ((wheel.item.rarityLevel + 1.0f) + (wheel.level * 0.5f));
-        Drag = 1.0f - (0.8f * ((spoiler.item.rarityLevel * 1.0f) * (0.1f + spoiler.level) * 0.1f)); 
+        // Drag = 0.8 - ((0.1 * rarity) + (0.1 * item level));
+        Drag = 0.5f;
         /// Need to redo, Level effects more then Rarity.
         /// 1 - (0.8 * ((4 * 1 ) * ((0.1 + 3) *0.1))) = 0.008 Legendary on Max level.
         /// 1 - (0.8 * ((1 * 1 ) * ((0.1 + 1) *0.1))) = 0.912 Common on level 0.

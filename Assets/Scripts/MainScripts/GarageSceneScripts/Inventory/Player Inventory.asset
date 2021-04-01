@@ -12,43 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e6ef8288dc81a429ca350721f8c381, type: 3}
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
-  Container:
-  - item: {fileID: 11400000, guid: 213df87bcf4b70a48822d1bba8bd5b24, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: 3a1c6bd84ee7b684b8c5365aafc80287, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
-    amount: 3
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: a8cc764eff688b64fb6bb14ccf06b98e, type: 2}
-    amount: 2
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: 83094b1d308630e499777347915b0612, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: 2eec46672ab39134e9842b59941262c2, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: f3c583c84b9d56b4bb6ba2683a1763e1, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
-  - item: {fileID: 11400000, guid: 039c5270420325b46aced0384093fdba, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
+  Container: []
   SelectedParts: []
   EquipedParts: []
   claimAmountOfTimes: 0

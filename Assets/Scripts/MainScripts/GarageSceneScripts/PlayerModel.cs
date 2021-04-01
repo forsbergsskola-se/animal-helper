@@ -7,8 +7,8 @@ public class PlayerModel : MonoBehaviour {
     public delegate void ScrapEvent(int scrapValue);
     public event ScrapEvent ListenToScrapChange;
     
-    private int _nutsBolts;
-    private int _scrap;
+    private int _nutsBolts = 1000;
+    private int _scrap = 1000;
     
     public InventorySlot[] gachaLootTable;
 

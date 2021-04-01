@@ -6,6 +6,11 @@ public class CraftingController : MonoBehaviour {
     public int amountForFusion = 5;
     public int baseCost = 100;
     public int maxLevel = 3;
+
+    public AudioSource rewardSound;
+    public AudioSource grindSound;
+    public AudioSource fuseSound;
+
     public void Fuse() {
         if (inventory.SelectedCount() >= amountForFusion) {
             int rarity = inventory.SelectedParts[0].item.rarityLevel;
@@ -14,6 +19,7 @@ public class CraftingController : MonoBehaviour {
             player.NutsBolts -= fuseCost;
             inventory.Fusion(amountForFusion);
             Debug.Log("Fused!");
+            fuseSound.Play();
         }
     }
     public void LeveUp()
@@ -31,6 +37,7 @@ public class CraftingController : MonoBehaviour {
             player.Scrap -= totalCost;
             //player.Scrap -= totalCostV2
             inventory.LevelUp();
+            rewardSound.Play();
 
         }
     }
@@ -60,6 +67,7 @@ public class CraftingController : MonoBehaviour {
             int scrapEarned = amount * 50 * (1 + rarity);
             player.Scrap += scrapEarned;
             Debug.Log("Grinded " + amount + " parts for " + scrapEarned);
+            grindSound.Play();
         }
     }
     
@@ -77,6 +85,7 @@ public class CraftingController : MonoBehaviour {
             int scrapEarned = 50 * (1 + rarity);
             player.Scrap += scrapEarned;
             Debug.Log("Grinded " + amount + " part for " + scrapEarned);
+            grindSound.Play();
         }
     }
 }

@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CarPartController : MonoBehaviour
+public class CarGarageEquipment : MonoBehaviour
 {
-    
+    //public CarPartController controller;
+
     public SpriteRenderer Sprite_Body;
     public SpriteRenderer Sprite_Front;
     public SpriteRenderer Sprite_FrontWheel;
     public SpriteRenderer Sprite_BackWheel;
     public SpriteRenderer Sprite_Spoiler;
-
     void Start()
     {
-        if (HackySave.Body != null ){
+        if (HackySave.Body != null)
+        {
             Sprite_Body.sprite = HackySave.Body.item.itemSprite;
 
         }
@@ -36,7 +36,7 @@ public class CarPartController : MonoBehaviour
         }
         return;
     }
-    public void UpdateEquiped()
+    void Update()
     {
         if (HackySave.Body != null)
         {

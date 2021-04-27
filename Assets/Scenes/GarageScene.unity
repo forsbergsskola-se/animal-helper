@@ -3016,6 +3016,68 @@ MonoBehaviour:
   navText: {fileID: 1079293633}
   moveSound: {fileID: 966508052}
   workSound: {fileID: 1650473567}
+--- !u!1001 &1236961100
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1687851834}
+    m_Modifications:
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -525.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -301.492
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201777304683095973, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+      propertyPath: m_Name
+      value: CarGarage
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+--- !u!4 &1236961101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6201777304683095968, guid: 392cd4c4b593ec04481d4e05e3f8c997, type: 3}
+  m_PrefabInstance: {fileID: 1236961100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1245895446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3841,6 +3903,7 @@ RectTransform:
   - {fileID: 117417187}
   - {fileID: 1193513124}
   - {fileID: 352922414}
+  - {fileID: 1236961101}
   m_Father: {fileID: 4605149813783490759}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -24,7 +24,7 @@ public class CameraDrag : MonoBehaviour {
             transform.position = newPos;
         }
         else {
-            Vector3 newPos = new Vector3(11, -1.9f, -20);
+            Vector3 newPos = new Vector3(9.5f, -1.65f, -16);
             navText.text = "Go to scrapard";
             transform.position = newPos;
             scrapyardUI.SetActive(false);

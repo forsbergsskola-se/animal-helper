@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour {
 
     public GameObject PrefabBlur;
     public GameObject PrefabPopup;
+    public GameObject PopupRaceDenied;
     public bool UIDissable = false;
     private Camera _camera;
 
@@ -119,8 +120,18 @@ public class Controller : MonoBehaviour {
     }
     
     public void StartRace() {
+        if(inventory.EquipedParts.Count != 4)
+        {
+            Debug.Log("Your car is not finished");
+            PopupRaceDenied.SetActive(true);
+            return;
+        }
+        Debug.Log("Loading Race");
         SceneManager.LoadScene("CarRollScene");
-        
+    }
+    public void ClosePopup()
+    {
+        PopupRaceDenied.SetActive(false);
     }
 
    private IEnumerator PlayAnimationSoft()

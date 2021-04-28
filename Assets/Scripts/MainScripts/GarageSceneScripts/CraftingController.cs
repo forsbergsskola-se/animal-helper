@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class CraftingController : MonoBehaviour {
     public InventoryObject inventory;
+    public CarGarageEquipment carGarage;
     public PlayerModel player;
     public int amountForFusion = 5;
     public int baseCost = 100;
@@ -53,6 +54,7 @@ public class CraftingController : MonoBehaviour {
         if (inventory.SelectedCount() > 0)
         {
             inventory.AddToEquiped();
+            carGarage.UpdateSprites();
         }
     }
     public void Unequip()

@@ -4,62 +4,34 @@ using UnityEngine;
 
 public class CarGarageEquipment : MonoBehaviour
 {
-    //public CarPartController controller;
-
     public SpriteRenderer Sprite_Body;
     public SpriteRenderer Sprite_Front;
     public SpriteRenderer Sprite_FrontWheel;
     public SpriteRenderer Sprite_BackWheel;
     public SpriteRenderer Sprite_Spoiler;
-    void Start()
+    public InventoryObject inventory;
+
+    public void UpdateSprites()
     {
-        if (HackySave.Body != null)
+        for (int i = 0; i < inventory.EquipedParts.Count; i++)
         {
-            Sprite_Body.sprite = HackySave.Body.item.itemSprite;
-
+            switch (inventory.EquipedParts[i].item.itemType)
+            {
+                case "Front":
+                    Sprite_Front.sprite = inventory.EquipedParts[i].item.itemSprite; ;
+                    break;
+                case "Wheel":
+                    Sprite_FrontWheel.sprite = inventory.EquipedParts[i].item.itemSprite;
+                    Sprite_BackWheel.sprite = inventory.EquipedParts[i].item.itemSprite;
+                    break;
+                case "Body":
+                    Sprite_Body.sprite = inventory.EquipedParts[i].item.itemSprite;
+                    break;
+                case "Spoiler":
+                    Sprite_Spoiler.sprite = inventory.EquipedParts[i].item.itemSprite; ;
+                    break;
+            }
         }
-        if (HackySave.Wheel != null)
-        {
-            Sprite_FrontWheel.sprite = HackySave.Wheel.item.itemSprite;
-            Sprite_BackWheel.sprite = HackySave.Wheel.item.itemSprite;
-
-        }
-        if (HackySave.Front != null)
-        {
-            Sprite_Front.sprite = HackySave.Front.item.itemSprite;
-
-        }
-        if (HackySave.Spoiler != null)
-        {
-            Sprite_Spoiler.sprite = HackySave.Spoiler.item.itemSprite;
-
-        }
-        return;
-    }
-    void Update()
-    {
-        if (HackySave.Body != null)
-        {
-            Sprite_Body.sprite = HackySave.Body.item.itemSprite;
-
-        }
-        if (HackySave.Wheel != null)
-        {
-            Sprite_FrontWheel.sprite = HackySave.Wheel.item.itemSprite;
-            Sprite_BackWheel.sprite = HackySave.Wheel.item.itemSprite;
-
-        }
-        if (HackySave.Front != null)
-        {
-            Sprite_Front.sprite = HackySave.Front.item.itemSprite;
-
-        }
-        if (HackySave.Spoiler != null)
-        {
-            Sprite_Spoiler.sprite = HackySave.Spoiler.item.itemSprite;
-
-        }
-        return;
     }
 }
 

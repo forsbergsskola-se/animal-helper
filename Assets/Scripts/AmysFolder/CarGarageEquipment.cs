@@ -30,6 +30,7 @@ public class CarGarageEquipment : MonoBehaviour
                 case "Spoiler":
                     Sprite_Spoiler.sprite = inventory.EquipedParts[i].item.itemSprite; ;
                     break;
+
             }
         }
     }

@@ -59,6 +59,7 @@ public class InventoryObject : ScriptableObject {
         for (int i = 0; i < EquipedParts.Count; i++) {
             if (EquipedParts[i].item.itemType == newSlot.item.itemType) {
                 EquipedParts[i] = newSlot;
+                SaveEquippedParts();
                 return;
             }
         }
@@ -69,14 +70,14 @@ public class InventoryObject : ScriptableObject {
     public void SaveEquippedParts() {
         for (int i = 0; i < EquipedParts.Count; i++) {
             switch (EquipedParts[i].item.itemType) {
-                case "Front":
-                    HackySave.Front = EquipedParts[i];
+                case "Body":
+                    HackySave.Body= EquipedParts[i];
                     break;
                 case "Wheel":
                     HackySave.Wheel = EquipedParts[i];
                     break;
-                case "Body":
-                    HackySave.Body = EquipedParts[i];
+                case "Front":
+                    HackySave.Front = EquipedParts[i];
                     break;
                 case "Spoiler":
                     HackySave.Spoiler = EquipedParts[i];

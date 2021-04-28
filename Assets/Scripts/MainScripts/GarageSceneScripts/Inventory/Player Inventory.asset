@@ -13,27 +13,47 @@ MonoBehaviour:
   m_Name: Player Inventory
   m_EditorClassIdentifier: 
   Container:
-  - item: {fileID: 11400000, guid: 607edd39e78bf964b9cb76d0c23de76d, type: 2}
-    amount: 2
+  - item: {fileID: 11400000, guid: a8cc764eff688b64fb6bb14ccf06b98e, type: 2}
+    amount: 1
     level: 0
     selected: 0
-  - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
-    amount: 4
+  - item: {fileID: 11400000, guid: f3c583c84b9d56b4bb6ba2683a1763e1, type: 2}
+    amount: 1
     level: 0
     selected: 0
-  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
-    amount: 2
+  - item: {fileID: 11400000, guid: 2eec46672ab39134e9842b59941262c2, type: 2}
+    amount: 1
     level: 0
     selected: 0
   - item: {fileID: 11400000, guid: 3a1c6bd84ee7b684b8c5365aafc80287, type: 2}
     amount: 2
     level: 0
     selected: 0
-  - item: {fileID: 11400000, guid: 7789c98e2a6d78b4fa8cff358e4aacbb, type: 2}
+  - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
+    amount: 3
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
+    amount: 2
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 9e872b4337f7e07458241556b98d19a8, type: 2}
     amount: 1
     level: 0
     selected: 0
   - item: {fileID: 11400000, guid: 213df87bcf4b70a48822d1bba8bd5b24, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 75ac3552ce51b5b4b8494d43e8c79b3a, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 9d356164c9c70e64491fe956239f4c21, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 1ee5a470f694f724a96f3e77e14fb975, type: 2}
     amount: 1
     level: 0
     selected: 0
@@ -43,15 +63,15 @@ MonoBehaviour:
     amount: 1
     level: 0
     selected: 0
-  - item: {fileID: 11400000, guid: 607edd39e78bf964b9cb76d0c23de76d, type: 2}
-    amount: 1
-    level: 0
-    selected: 0
   - item: {fileID: 11400000, guid: f58ffb3e99ba19c4cb8ef40067447fb7, type: 2}
     amount: 1
     level: 0
     selected: 0
   - item: {fileID: 11400000, guid: c812936d3fbba2243ba52587e2f8794f, type: 2}
+    amount: 1
+    level: 0
+    selected: 0
+  - item: {fileID: 11400000, guid: 3a1c6bd84ee7b684b8c5365aafc80287, type: 2}
     amount: 1
     level: 0
     selected: 0

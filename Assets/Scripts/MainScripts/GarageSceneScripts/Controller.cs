@@ -43,17 +43,16 @@ public class Controller : MonoBehaviour {
                 if (Physics.Raycast(ray, out var hit)) {
                     var gsButton = hit.collider.CompareTag("GachaSoft");
                     if (gsButton) {
-                        if (player.HasEnoughNutsBolts(gachaCostSoft))
-                        {
+                        if (player.HasEnoughNutsBolts(gachaCostSoft)) {
+                            UIDissable = true;
                             StartCoroutine(PlayAnimationSoft());
                         }
-                           
-                        
-                    }                          
+                    }
+                    
                     var ghButton = hit.collider.CompareTag("GachaHard");
                     if (ghButton) {
-                        if (player.HasEnoughScrap(gachaRollHard))
-                        {
+                        if (player.HasEnoughScrap(gachaRollHard)) {
+                            UIDissable = true;
                             StartCoroutine(PlayAnimationHard());
                         }
                     }
@@ -64,7 +63,6 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaSoft() {
-        
         player.NutsBolts -= gachaCostSoft;
 
         for (int j = 0; j < rewardAmount; j++) {
@@ -76,7 +74,6 @@ public class Controller : MonoBehaviour {
                 i++; 
                 total += weightsSoft[i];
             }
-            UIDissable = true;
             PrefabBlur.SetActive(true);
             var popUp = Instantiate(PrefabPopup, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
@@ -86,10 +83,8 @@ public class Controller : MonoBehaviour {
     }
     
     public void RollGachaHard() {
-      
         player.Scrap -= gachaRollHard;
-      
-
+        
         for (int j = 0; j < rewardAmount; j++) {
             var totalWeights = weightsHard.Sum();
             var random = Random.Range(0, totalWeights);
@@ -99,7 +94,6 @@ public class Controller : MonoBehaviour {
                 i++; 
                 total += weightsHard[i];
             }
-            UIDissable = true;
             PrefabBlur.SetActive(true);
             var popUp = Instantiate(PrefabPopup, GameObject.Find("Canvas").transform);
             popUp.GetComponentInChildren<ItemView>().Display(player.gachaLootTable[i]);
@@ -109,10 +103,8 @@ public class Controller : MonoBehaviour {
     }
     
     
-    public void GachaBlurController()
-    {
-        if (inventory.claimAmountOfTimes == rewardAmount)
-        {
+    public void GachaBlurController() {
+        if (inventory.claimAmountOfTimes == rewardAmount) {
             PrefabBlur.SetActive(false);
             inventory.BlurReset();
             UIDissable = false;
@@ -120,8 +112,7 @@ public class Controller : MonoBehaviour {
     }
     
     public void StartRace() {
-        if(inventory.EquipedParts.Count != 4)
-        {
+        if(inventory.EquipedParts.Count != 4) {
             Debug.Log("Your car is not finished");
             PopupRaceDenied.SetActive(true);
             return;
@@ -129,28 +120,23 @@ public class Controller : MonoBehaviour {
         Debug.Log("Loading Race");
         SceneManager.LoadScene("CarRollScene");
     }
-    public void ClosePopup()
-    {
+    
+    public void ClosePopup() {
         PopupRaceDenied.SetActive(false);
     }
 
-   private IEnumerator PlayAnimationSoft()
-    {
+   private IEnumerator PlayAnimationSoft() {
         Anim.SetTrigger("lowerMagnet");
         magnetSound.Play();
         yield return new WaitForSeconds(1.5f);
         RollGachaSoft();
+   }
 
-    }
-
-    private IEnumerator PlayAnimationHard()
-    {
+    private IEnumerator PlayAnimationHard() {
         Anim.SetTrigger("lowerMagnet");
         magnetSound.Play();
         yield return new WaitForSeconds(1.5f);
         RollGachaHard();
-
     }
-
 
 }
